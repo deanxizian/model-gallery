@@ -2,9 +2,11 @@
 
 [GitHub Pages](https://deanxizian.github.io/model-gallery/) · [Vercel](https://model-gallery-theta.vercel.app/) · [GitHub 自动部署记录](https://github.com/deanxizian/model-gallery/actions)
 
-公开浏览和下载个人模型。支持鼠标拖动、滚轮缩放、触屏操作、自动旋转、重置视角、全屏和模型搜索；每个模型都有可分享的链接。
+为拥有过的数码产品留一份 3D 存档，记录规格、购入时间和使用回忆。按「在役 / 已退役」和品牌标签组合筛选产品，公开预览和下载模型。支持拖动、缩放、触屏操作、自动旋转、重置视角和全屏。
 
-当前收录 X3 充电底座、白色阅星瞳 X3、黑色 iPhone 17。点击「下载模型」后选择该模型提供的格式：底座提供 STL 和 STEP，外观模型提供 GLB。原始文件不经过网页转换器修改，网页使用单独生成的 GLB 显示底座。
+当前收录两件在役产品：白色阅星瞳 X3（2026 年 7 月购入）与黑色 512 GB iPhone 17（2025 年 10 月购入）。X3 充电底座是 X3 页面内的配件，不单独计入产品目录。搜索配件名称会找到所属产品，原有 `#x3-dock` 链接仍可直接打开底座预览。
+
+点击「下载模型」后选择当前本体或配件提供的格式：底座提供 STL 和 STEP，外观模型提供 GLB。原始文件不经过网页转换器修改，网页使用单独生成的 GLB 显示底座。
 
 ## 添加一个模型
 
@@ -18,7 +20,13 @@ pnpm dev
 
 `--poster` 可省略。支持 GLB 和 STL；STL 默认单位为毫米、Z 轴朝上，可用 `--units mm` 和 `--up-axis z` 指定。GLB 应从 Blender 导出时包含材质、贴图并使用标准 glTF 坐标。
 
-命令会创建 `public/models/my-model/`。编辑其中的 `model.json` 可补充介绍、尺寸、版本和下载文件。新模型 ID 使用小写英文、数字、连字符，不能与已有目录重复。
+命令会创建 `public/models/my-model/`。编辑其中的 `model.json` 补充拥有记录、参数规格、来源和下载文件。新模型 ID 使用小写英文、数字、连字符，不能与已有目录重复。可通过 `--status active`、`--category "智能手机"`、`--brand "Apple"` 设置分类信息；未确认的状态默认是 `unknown`，不会自动列入在役。
+
+添加配件时用 `--parent` 指向已有产品，配件沿用所属产品的拥有记录：
+
+```sh
+pnpm model:add --file /你的路径/dock.stl --id my-dock --name "充电底座" --parent my-model
+```
 
 先创建工作分支，再添加或更新模型：
 
@@ -44,14 +52,24 @@ public/models/my-model/
 └── model.step      # 可选附加下载
 ```
 
-最小示例：
+产品档案示例（示例日期与配置仅作格式演示）：
 
 ```json
 {
   "id": "my-model",
   "name": "新模型",
-  "subtitle": "白色 · 桌面配件",
-  "description": "模型介绍。",
+  "subtitle": "白色 · 阅读器",
+  "description": "产品外观存档。",
+  "category": "电子书阅读器",
+  "ownership": {
+    "status": "active",
+    "acquired": "2026年7月",
+    "color": "白色",
+    "configurationLabel": "存储卡容量"
+  },
+  "specGroups": [
+    { "title": "机身", "items": [{ "label": "重量", "value": null }] }
+  ],
   "preview": "model.glb",
   "downloads": [{ "label": "GLB", "file": "model.glb" }]
 }
@@ -59,17 +77,26 @@ public/models/my-model/
 
 常用可选项：
 
-| 字段 | 用途 | 示例 |
-| --- | --- | --- |
-| `poster` | 缩略图文件 | `"poster.png"` |
-| `order` | 排序，小的在前 | `10` |
-| `dimensions` | 展示用尺寸说明 | `"68.30 × 39.37 × 13.75 mm"` |
-| `revision` | 可选版本或配色 | `"白色"` |
-| `cameraOrbit` | 水平角、俯仰角、观察距离 | `"32deg 56deg 110%"` |
-| `units` | STL 源文件单位 | `"mm"`、`"cm"`、`"m"` |
-| `upAxis` | STL 源文件朝上方向 | `"z"` 或 `"y"` |
-| `note` | 存档说明（不在页面展示） | `"尺寸为机身尺寸，不包含按键凸起。"` |
-| `source` | 存档来源链接（不在页面展示） | `{"label":"原始资源","url":"https://…"}` |
+| 字段                 | 用途                                     | 示例                                                                |
+| -------------------- | ---------------------------------------- | ------------------------------------------------------------------- |
+| `poster`             | 缩略图文件                               | `"poster.png"`                                                      |
+| `order`              | 排序，小的在前                           | `10`                                                                |
+| `dimensions`         | 展示用尺寸说明                           | `"68.30 × 39.37 × 13.75 mm"`                                        |
+| `revision`           | 可选版本或配色                           | `"白色"`                                                            |
+| `cameraOrbit`        | 水平角、俯仰角、观察距离                 | `"32deg 56deg 110%"`                                                |
+| `units`              | STL 源文件单位                           | `"mm"`、`"cm"`、`"m"`                                               |
+| `upAxis`             | STL 源文件朝上方向                       | `"z"` 或 `"y"`                                                      |
+| `note`               | 存档说明（不在页面展示）                 | `"尺寸为机身尺寸，不包含按键凸起。"`                                |
+| `source`             | 存档来源链接（不在页面展示）             | `{"label":"原始资源","url":"https://…"}`                            |
+| `parentId`           | 配件所属产品 ID；本体不填                | `"xteink-x3"`                                                       |
+| `brand` / `category` | 品牌 / 产品类别                          | `"Apple"` / `"智能手机"`                                            |
+| `ownership`          | 拥有记录，仅本体填写                     | 见上例                                                              |
+| `specGroups`         | 分组参数，缺失值用 `null` 显示「待补充」 | 见上例                                                              |
+| `specSources`        | 规格的官方来源与核对日期                 | `[{"label":"官方规格","url":"https://…","checkedAt":"2026-09-07"}]` |
+
+`ownership.status` 可为 `active`（在役）、`retired`（已退役）、`unknown`（待确认）。可选字段包括 `acquired`（购入时间）、`retired`（退役时间）、`color`、`configuration`、`configurationLabel` 和 `memory`（真实使用回忆）。未知信息省略，日期按用户提供的精度填写，例如只知道月份就不补造日期。退役产品保留原来的规格、回忆和配件；更新状态即可归档。
+
+参数规格默认折叠，只记录实际拥有的那一款，容量与配色不罗列官方的其他选项。已核对的通用硬件指标仍可引用官方规格；随附配件不能替代实际配置。拥有记录直接展示购入时间、颜色和容量。未核实的事实不猜测；X3 当前实际存储卡容量仍待补充。没有回忆文字时不显示回忆区。配件必须直接归属一个存在的产品，构建会拒绝无主配件、循环引用和重复参数名。
 
 预览支持 **GLB、STL**。STEP/STP、OBJ、3MF、BLEND、ZIP 可作为下载文件；要展示这些模型，请同时提供 GLB 或 STL 预览。缩略图支持 PNG、JPEG、WebP、AVIF。
 
@@ -85,7 +112,7 @@ public/models/my-model/
 
 ```sh
 pnpm dev       # 自动生成目录，启动开发服务器
-pnpm test      # 文件和元数据校验测试
+pnpm test      # 文件、元数据、配件关系、状态筛选和旧链接测试
 pnpm build     # 校验资源、转换 STL 预览、TypeScript 检查、构建
 pnpm preview   # 检查 dist 中的生产构建
 ```

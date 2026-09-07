@@ -1,8 +1,8 @@
 {
   "id": "iphone-17",
   "name": "iPhone 17",
-  "subtitle": "黑色 · 外观模型",
-  "description": "基于 Apple 公开 AR 资源整理的黑色外观参考模型。",
+  "subtitle": "黑色 · 512 GB",
+  "description": "黑色 iPhone 17 的外观存档，保留机身、镜头与按键细节。模型取自 Apple 公开 AR 资源。",
   "dimensions": "71.50 × 149.60 × 7.95 mm",
   "revision": "黑色",
   "order": 2,
@@ -19,5 +19,131 @@
     "label": "Apple 原始资源",
     "url": "https://www.apple.com.cn/105/media/ww/iphone-17/2025/b2c72de3-1cbc-4e24-b4d3-23c7abcec4ec/ar/iphone-17-p-sim.usdz"
   },
-  "note": "几何与贴图来源于 Apple；外观参考模型，不是机械制造 CAD。"
+  "note": "几何与贴图来源于 Apple；外观参考模型，不是机械制造 CAD。",
+  "category": "智能手机",
+  "brand": "Apple",
+  "ownership": {
+    "status": "active",
+    "acquired": "2025年10月",
+    "color": "黑色",
+    "configurationLabel": "存储容量",
+    "configuration": "512 GB"
+  },
+  "specGroups": [
+    {
+      "title": "机身与显示",
+      "items": [
+        {
+          "label": "尺寸（高 × 宽 × 厚）",
+          "value": "149.6 × 71.5 × 7.95 mm"
+        },
+        {
+          "label": "重量",
+          "value": "177 g"
+        },
+        {
+          "label": "材质",
+          "value": "铝金属设计；超瓷晶面板 2；融色玻璃背板"
+        },
+        {
+          "label": "屏幕",
+          "value": "6.3 英寸超视网膜 XDR OLED"
+        },
+        {
+          "label": "分辨率",
+          "value": "2622 × 1206，460 PPI"
+        },
+        {
+          "label": "刷新率",
+          "value": "ProMotion 自适应，最高 120 Hz"
+        },
+        {
+          "label": "显示功能",
+          "value": "全天候显示、灵动岛"
+        },
+        {
+          "label": "防护等级",
+          "value": "IP68（实验室条件：6 米水深，最长 30 分钟）"
+        }
+      ]
+    },
+    {
+      "title": "芯片与存储",
+      "items": [
+        {
+          "label": "芯片",
+          "value": "A19"
+        },
+        {
+          "label": "CPU / GPU",
+          "value": "6 核 CPU、5 核 GPU"
+        },
+        {
+          "label": "神经网络引擎",
+          "value": "16 核"
+        },
+        {
+          "label": "存储容量",
+          "value": "512 GB"
+        },
+        {
+          "label": "出厂系统",
+          "value": "iOS 26"
+        }
+      ]
+    },
+    {
+      "title": "影像",
+      "items": [
+        {
+          "label": "主摄",
+          "value": "4800 万像素融合式主摄，ƒ/1.6"
+        },
+        {
+          "label": "超广角",
+          "value": "4800 万像素融合式超广角，ƒ/2.2"
+        },
+        {
+          "label": "前置摄像头",
+          "value": "1800 万像素 Center Stage，ƒ/1.9"
+        },
+        {
+          "label": "视频录制",
+          "value": "最高 4K 杜比视界，60 fps"
+        }
+      ]
+    },
+    {
+      "title": "连接与续航",
+      "items": [
+        {
+          "label": "接口",
+          "value": "USB-C；USB 2，最高 480 Mb/s；DisplayPort"
+        },
+        {
+          "label": "无线连接",
+          "value": "Wi-Fi 7、蓝牙 6、NFC"
+        },
+        {
+          "label": "无线充电",
+          "value": "支持 MagSafe 和 Qi2"
+        },
+        {
+          "label": "视频播放",
+          "value": "最长 30 小时（官方标称）"
+        },
+        {
+          "label": "流媒体视频播放",
+          "value": "最长 27 小时（官方标称）"
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "Apple iPhone 17 技术规格",
+      "url": "https://www.apple.com.cn/iphone-17/specs/",
+      "checkedAt": "2026-09-07"
+    }
+  ]
 }

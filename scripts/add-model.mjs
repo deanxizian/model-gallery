@@ -1,8 +1,8 @@
 import { parseArgs } from 'node:util';
-import { mkdir, copyFile, writeFile, access } from 'node:fs/promises';
+import { mkdir, copyFile, writeFile, readFile, access } from 'node:fs/promises';
 import { resolve, dirname, basename, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { validateMetadata } from './catalog-lib.mjs';
+import { validateMetadata, validateRelationships } from './catalog-lib.mjs';
 
 const { values } = parseArgs({
   options: {
@@ -10,7 +10,11 @@ const { values } = parseArgs({
     id: { type: 'string' },
     name: { type: 'string' },
     description: { type: 'string', default: '3D 模型预览。' },
-    subtitle: { type: 'string', default: '个人作品' },
+    subtitle: { type: 'string', default: '数码产品档案' },
+    parent: { type: 'string' },
+    status: { type: 'string' },
+    category: { type: 'string' },
+    brand: { type: 'string' },
     poster: { type: 'string' },
     units: { type: 'string', default: 'mm' },
     'up-axis': { type: 'string', default: 'z' },
@@ -32,6 +36,11 @@ const metadata = {
   preview: `model${format}`,
   order: 100,
   downloads: [{ label: format.slice(1).toUpperCase(), file: `model${format}` }],
+  ...(values.parent
+    ? { parentId: values.parent }
+    : { ownership: { status: values.status ?? 'unknown' } }),
+  ...(values.category ? { category: values.category } : {}),
+  ...(values.brand ? { brand: values.brand } : {}),
   ...(format === '.stl'
     ? { units: values.units, upAxis: values['up-axis'] }
     : {}),
@@ -40,6 +49,20 @@ const metadata = {
     : {}),
 };
 validateMetadata(metadata, values.id);
+if (values.parent && values.status)
+  throw new Error('配件使用所属产品的状态，请省略 --status');
+if (values.parent) {
+  const parentDir = resolve(
+    dirname(fileURLToPath(import.meta.url)),
+    '../public/models',
+    values.parent,
+  );
+  const parent = validateMetadata(
+    JSON.parse(await readFile(resolve(parentDir, 'model.json'), 'utf8')),
+    values.parent,
+  );
+  validateRelationships([parent, metadata]);
+}
 await access(source);
 if (values.poster) await access(resolve(values.poster));
 const destination = resolve(
@@ -57,5 +80,5 @@ await writeFile(
   JSON.stringify(metadata, null, 2) + '\n',
 );
 console.log(
-  `已添加 ${metadata.name}: public/models/${basename(destination)}\n运行 pnpm dev 预览，确认后 git add、commit、push 即可发布。`,
+  `已添加 ${metadata.name}: public/models/${basename(destination)}\n请补充参数规格与拥有记录，再运行 pnpm test、pnpm build 并预览。修改保留在工作分支；明确要求提 PR 后，经过 Codex Code Review 再合并发布。`,
 );

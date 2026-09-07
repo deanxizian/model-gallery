@@ -2,7 +2,7 @@
   "id": "x3-dock",
   "name": "X3 充电底座",
   "subtitle": "一体式充电底座",
-  "description": "为阅星瞳 X3 设计的一体式充电底座。",
+  "description": "为白色阅星瞳 X3 设计的一体式充电底座，嵌入现有磁吸 Type-C 转接头。",
   "dimensions": "68.30 × 39.37 × 13.75 mm",
   "order": 0,
   "preview": "model.stl",
@@ -20,5 +20,59 @@
   ],
   "units": "mm",
   "upAxis": "z",
-  "note": "本地几何检查通过，实际夹紧与充电接触需试装确认。"
+  "note": "本地几何检查通过，实际夹紧与充电接触需试装确认。",
+  "parentId": "xteink-x3",
+  "category": "充电底座",
+  "specGroups": [
+    {
+      "title": "底座",
+      "items": [
+        {
+          "label": "适配设备",
+          "value": "阅星瞳 X3"
+        },
+        {
+          "label": "结构",
+          "value": "一体式，转接头嵌入安装"
+        },
+        {
+          "label": "尺寸（长 × 宽 × 高）",
+          "value": "68.30 × 39.37 × 13.75 mm"
+        },
+        {
+          "label": "打印材料",
+          "value": null
+        },
+        {
+          "label": "模型文件",
+          "value": "STL、STEP"
+        }
+      ]
+    },
+    {
+      "title": "转接头适配尺寸",
+      "items": [
+        {
+          "label": "主体（长 × 高 × 厚）",
+          "value": "31.74 × 11.92 × 7.90 mm"
+        },
+        {
+          "label": "含台阶总厚度",
+          "value": "10.70 mm，量到黑色台阶表面，不含金属触针"
+        },
+        {
+          "label": "台阶（长 × 高）",
+          "value": "19.30 × 4.66 mm"
+        },
+        {
+          "label": "台阶突出主体",
+          "value": "2.80 mm"
+        },
+        {
+          "label": "实际触针高度",
+          "value": null
+        }
+      ]
+    }
+  ]
 }
