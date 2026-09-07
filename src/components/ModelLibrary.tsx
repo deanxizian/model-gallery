@@ -5,7 +5,12 @@ import {
   type ArchiveFilter,
   type GalleryModel,
 } from '../types';
-import { accessoriesOf, brandsIn, devicesIn } from '../archive';
+import {
+  accessoriesOf,
+  brandsIn,
+  devicesIn,
+  ownedSpecification,
+} from '../archive';
 
 interface Props {
   models: GalleryModel[];
@@ -120,10 +125,7 @@ export default function ModelLibrary({
       </div>
       <nav className="model-list" aria-label="选择设备">
         {filtered.map((model) => {
-          const variant =
-            [model.ownership?.color, model.ownership?.configuration]
-              .filter(Boolean)
-              .join(' · ') || model.subtitle;
+          const variant = ownedSpecification(model.ownership) || model.subtitle;
           const accessoryCount = accessoriesOf(models, model.id).length;
           return (
             <button
@@ -142,7 +144,7 @@ export default function ModelLibrary({
               </span>
               <span className="model-label">
                 <strong>{model.name}</strong>
-                <span>{variant}</span>
+                <span className="model-variant">{variant}</span>
                 <span className="product-status">
                   <span className="device-status">
                     <i

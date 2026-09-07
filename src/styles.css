@@ -82,19 +82,14 @@ button {
   background: #fff;
 }
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 20px;
-  font-size: 25px;
+  min-height: 44px;
+  font-size: 23px;
   font-weight: 650;
+  line-height: 1;
   letter-spacing: -0.6px;
   white-space: nowrap;
-}
-.site-title {
-  font-size: 17px;
-  font-weight: 400;
-  letter-spacing: 0;
-  color: var(--muted);
 }
 .repository-link {
   margin-left: auto;
@@ -269,6 +264,13 @@ button {
   color: #787f87;
   font-size: 13px;
   line-height: 1.5;
+}
+.model-variant {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
 }
 .model-label .product-status {
   display: flex;
@@ -597,10 +599,17 @@ button {
   transform: rotate(180deg);
 }
 .ownership-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 40px;
   margin: 0;
+}
+.ownership-grid > div {
+  flex: 0 1 140px;
+  min-width: 0;
+}
+.ownership-grid > .ownership-specification {
+  flex: 1 1 240px;
 }
 .ownership-grid dt {
   color: var(--muted);
@@ -611,6 +620,8 @@ button {
   font-size: 16px;
   margin: 0;
   line-height: 1.6;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
 }
 .personal-memory {
   margin-top: 28px;
@@ -860,11 +871,7 @@ button {
     gap: 20px;
   }
   .brand {
-    font-size: 19px;
-    gap: 12px;
-  }
-  .site-title {
-    font-size: 14px;
+    font-size: 20px;
   }
   .workspace {
     display: flex;
@@ -1013,7 +1020,6 @@ button {
   }
   .ownership-grid {
     gap: 18px 24px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .ownership-grid dd {
     font-size: 15px;

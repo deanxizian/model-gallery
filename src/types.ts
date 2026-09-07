@@ -10,6 +10,8 @@ export interface Ownership {
   status: OwnershipStatus;
   acquired?: string;
   retired?: string;
+  specification?: string;
+  // Older archives may still use separate color/configuration fields.
   color?: string;
   configuration?: string;
   configurationLabel?: string;

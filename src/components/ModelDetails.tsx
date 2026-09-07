@@ -1,6 +1,7 @@
 import { statusLabels, type GalleryModel } from '../types';
 import { ChevronDown } from 'lucide-react';
 import DownloadMenu from './DownloadMenu';
+import { ownedSpecification } from '../archive';
 
 export default function ModelDetails({
   model,
@@ -11,6 +12,7 @@ export default function ModelDetails({
 }) {
   const accessory = model.id !== device.id;
   const ownership = device.ownership;
+  const specification = ownedSpecification(ownership);
   const status = ownership?.status ?? 'unknown';
   return (
     <section className="model-details" id="model-details" aria-label="模型详情">
@@ -48,11 +50,6 @@ export default function ModelDetails({
           <dl className="ownership-grid">
             {[
               ['购入时间', ownership?.acquired],
-              ['我的配色', ownership?.color],
-              [
-                ownership?.configurationLabel ?? '我的配置',
-                ownership?.configuration,
-              ],
               ...(status === 'retired'
                 ? [['退役时间', ownership?.retired]]
                 : []),
@@ -64,6 +61,12 @@ export default function ModelDetails({
                 </dd>
               </div>
             ))}
+            <div className="ownership-specification">
+              <dt>我的规格</dt>
+              <dd className={!specification ? 'unconfirmed' : undefined}>
+                {specification || '待补充'}
+              </dd>
+            </div>
           </dl>
           {ownership?.memory && (
             <div className="personal-memory">

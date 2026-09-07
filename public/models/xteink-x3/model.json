@@ -20,8 +20,7 @@
   "ownership": {
     "status": "active",
     "acquired": "2026年7月",
-    "color": "白色",
-    "configurationLabel": "存储卡容量"
+    "specification": "白色"
   },
   "specGroups": [
     {

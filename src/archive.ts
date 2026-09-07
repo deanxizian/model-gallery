@@ -1,4 +1,12 @@
-import type { ArchiveFilter, GalleryModel } from './types';
+import type { ArchiveFilter, GalleryModel, Ownership } from './types';
+
+export function ownedSpecification(ownership?: Ownership) {
+  return (
+    ownership?.specification ??
+    ([ownership?.color, ownership?.configuration].filter(Boolean).join(' · ') ||
+      undefined)
+  );
+}
 
 export const devicesIn = (models: GalleryModel[]) =>
   models.filter((model) => !model.parentId);

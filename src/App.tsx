@@ -96,10 +96,9 @@ export default function App() {
         <a
           className="brand"
           href={import.meta.env.BASE_URL}
-          aria-label="Model Gallery 模型藏馆首页"
+          aria-label="Model Gallery 首页"
         >
-          <span>Model Gallery</span>
-          <span className="site-title">模型藏馆</span>
+          Model Gallery
         </a>
         <a
           className="repository-link"

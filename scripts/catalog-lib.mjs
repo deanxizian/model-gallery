@@ -90,6 +90,7 @@ export function validateMetadata(value, folder) {
     for (const key of [
       'acquired',
       'retired',
+      'specification',
       'color',
       'configuration',
       'configurationLabel',

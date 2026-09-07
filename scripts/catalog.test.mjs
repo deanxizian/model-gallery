@@ -99,12 +99,26 @@ test('accessories must belong to an existing device, never themselves or another
 test('ownership and specifications reject ambiguous values while allowing explicitly unknown data', () => {
   const metadata = {
     ...sample(),
-    ownership: { status: 'active', acquired: '2026年7月' },
+    ownership: {
+      status: 'active',
+      acquired: '2026年7月',
+      specification: '处理器与内存配置\n机身与镜头套装，按实物记录',
+    },
     specGroups: [
       { title: '规格', items: [{ label: '存储容量', value: null }] },
     ],
   };
   assert.doesNotThrow(() => validateMetadata(metadata, metadata.id));
+  for (const specification of ['', '  ', 512, ['黑色', '512 GB']]) {
+    assert.throws(
+      () =>
+        validateMetadata(
+          { ...metadata, ownership: { status: 'active', specification } },
+          metadata.id,
+        ),
+      /ownership.specification/,
+    );
+  }
   assert.throws(
     () =>
       validateMetadata(
