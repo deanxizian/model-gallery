@@ -13,6 +13,15 @@ export const supportedDownloads = new Set([
 ]);
 export const maxAssetBytes = 95 * 1024 * 1024;
 
+function isCalendarDate(value) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value))
+    return false;
+  const date = new Date(`${value}T00:00:00.000Z`);
+  return (
+    Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value
+  );
+}
+
 export function validateMetadata(value, folder) {
   if (!value || typeof value !== 'object')
     throw new Error(`${folder}: model.json 必须是对象`);
@@ -38,6 +47,9 @@ export function validateMetadata(value, folder) {
     'revision',
     'note',
     'cameraOrbit',
+    'parentId',
+    'category',
+    'brand',
   ]) {
     if (value[key] !== undefined && typeof value[key] !== 'string')
       throw new Error(`${folder}: ${key} 必须是文本`);
@@ -67,7 +79,129 @@ export function validateMetadata(value, folder) {
       !/^https:\/\//.test(value.source.url))
   )
     throw new Error(`${folder}: 来源链接需要 HTTPS URL 和 label`);
+  if (
+    value.parentId !== undefined &&
+    !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value.parentId)
+  )
+    throw new Error(`${folder}: parentId 必须是产品 ID`);
+  if (value.parentId && value.brand !== undefined)
+    throw new Error(`${folder}: 配件沿用所属产品的品牌，请省略 brand`);
+  if (value.ownership !== undefined) {
+    const record = value.ownership;
+    if (
+      !record ||
+      typeof record !== 'object' ||
+      !['active', 'retired', 'unknown'].includes(record.status)
+    )
+      throw new Error(
+        `${folder}: ownership.status 必须是 active、retired 或 unknown`,
+      );
+    if (value.parentId)
+      throw new Error(`${folder}: 配件沿用所属产品的拥有记录`);
+    for (const key of [
+      'acquired',
+      'retired',
+      'specification',
+      'color',
+      'configuration',
+      'configurationLabel',
+      'memory',
+    ]) {
+      if (
+        record[key] !== undefined &&
+        (typeof record[key] !== 'string' || !record[key].trim())
+      )
+        throw new Error(
+          `${folder}: ownership.${key} 必须是非空文本，未知时省略`,
+        );
+    }
+  }
+  if (value.specGroups !== undefined) {
+    if (!Array.isArray(value.specGroups))
+      throw new Error(`${folder}: specGroups 必须是数组`);
+    const titles = new Set();
+    for (const group of value.specGroups) {
+      if (
+        !group ||
+        typeof group.title !== 'string' ||
+        !group.title.trim() ||
+        titles.has(group.title) ||
+        !Array.isArray(group.items) ||
+        !group.items.length
+      )
+        throw new Error(`${folder}: 规格分组需要唯一标题及至少一项参数`);
+      titles.add(group.title);
+      const labels = new Set();
+      for (const item of group.items) {
+        if (
+          !item ||
+          typeof item.label !== 'string' ||
+          !item.label.trim() ||
+          labels.has(item.label) ||
+          (item.value !== null &&
+            (typeof item.value !== 'string' || !item.value.trim()))
+        )
+          throw new Error(
+            `${folder}: 参数需要唯一名称和文本值，未知值使用 null`,
+          );
+        labels.add(item.label);
+      }
+    }
+  }
+  if (value.specSources !== undefined) {
+    if (!Array.isArray(value.specSources))
+      throw new Error(`${folder}: specSources 必须是数组`);
+    for (const source of value.specSources) {
+      const localDesign = source?.kind === 'local-design';
+      if (
+        source?.kind !== undefined &&
+        !['official', 'local-design'].includes(source.kind)
+      )
+        throw new Error(
+          `${folder}: 规格来源 kind 必须是 official 或 local-design`,
+        );
+      if (localDesign && (!value.parentId || source.url !== undefined))
+        throw new Error(
+          `${folder}: local-design 仅用于自制配件，填写说明而非 URL`,
+        );
+      let link;
+      try {
+        link = new URL(source?.url);
+      } catch {
+        /* Report as invalid source below. */
+      }
+      if (
+        !source ||
+        typeof source.label !== 'string' ||
+        !source.label.trim() ||
+        (!localDesign && link?.protocol !== 'https:') ||
+        !isCalendarDate(source.checkedAt)
+      )
+        throw new Error(
+          `${folder}: 规格来源需要名称、HTTPS URL 和核对日期 YYYY-MM-DD`,
+        );
+      if (source.checkedAt > new Date().toISOString().slice(0, 10))
+        throw new Error(`${folder}: 规格来源核对日期不能晚于当前 UTC 日期`);
+    }
+  }
+  if (value.specGroups?.length && !value.specSources?.length)
+    throw new Error(
+      `${folder}: 参数规格至少需要一项来源；产品使用官方来源，自制配件可使用 local-design 记录`,
+    );
   return value;
+}
+
+export function validateRelationships(models) {
+  const byId = new Map(models.map((model) => [model.id, model]));
+  if (byId.size !== models.length) throw new Error('产品或配件 ID 不能重复');
+  for (const model of models) {
+    if (!model.parentId) continue;
+    const parent = byId.get(model.parentId);
+    if (!parent)
+      throw new Error(`${model.id}: 所属产品 ${model.parentId} 不存在`);
+    if (parent.id === model.id || parent.parentId)
+      throw new Error(`${model.id}: 配件必须直接归属产品，不能嵌套或引用自身`);
+  }
 }
 
 export async function localAsset(directory, file) {

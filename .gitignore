@@ -8,3 +8,4 @@ dist/
 public/catalog.json
 public/generated/
 .qa/
+.vercel/

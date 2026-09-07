@@ -14,6 +14,7 @@ declare module 'react' {
         'camera-controls'?: boolean;
         'camera-orbit'?: string;
         'auto-rotate'?: boolean;
+        'auto-rotate-delay'?: string;
         'rotation-per-second'?: string;
         'shadow-intensity'?: string;
         'shadow-softness'?: string;

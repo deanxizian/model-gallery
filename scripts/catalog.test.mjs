@@ -1,9 +1,31 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, writeFile, mkdir, symlink, rm } from 'node:fs/promises';
+import {
+  mkdtemp,
+  writeFile,
+  readFile,
+  copyFile,
+  readdir,
+  mkdir,
+  symlink,
+  rm,
+} from 'node:fs/promises';
+import { spawnSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
-import { validateMetadata, localAsset, validateGlb } from './catalog-lib.mjs';
+import {
+  validateMetadata,
+  validateRelationships,
+  localAsset,
+  validateGlb,
+} from './catalog-lib.mjs';
+import {
+  devicesIn,
+  accessoriesOf,
+  brandsIn,
+  filterDevices,
+  archiveSelection,
+} from '../src/archive.ts';
 
 const sample = () => ({
   id: 'test-part',
@@ -65,4 +87,361 @@ test('a renamed non-GLB file fails validation before deployment', async () => {
   } finally {
     await rm(root, { recursive: true, force: true });
   }
+});
+
+test('accessories must belong to an existing device, never themselves or another accessory', () => {
+  const device = { id: 'reader' };
+  const dock = { id: 'dock', parentId: 'reader' };
+  assert.doesNotThrow(() => validateRelationships([device, dock]));
+  assert.throws(() => validateRelationships([dock]), /不存在/);
+  assert.throws(
+    () => validateRelationships([{ id: 'dock', parentId: 'dock' }]),
+    /引用自身/,
+  );
+  assert.throws(
+    () =>
+      validateRelationships([device, dock, { id: 'cable', parentId: 'dock' }]),
+    /不能嵌套/,
+  );
+  assert.throws(() => validateRelationships([device, device]), /不能重复/);
+});
+
+test('accessory brands are inherited and invalid CLI options create no model files', async () => {
+  const accessory = { ...sample(), parentId: 'reader' };
+  assert.doesNotThrow(() => validateMetadata(accessory, accessory.id));
+  for (const brand of ['Reader Brand', 'Another Brand', '']) {
+    assert.throws(
+      () => validateMetadata({ ...accessory, brand }, accessory.id),
+      /配件沿用所属产品的品牌/,
+    );
+  }
+  const root = await mkdtemp(resolve(tmpdir(), 'model-gallery-cli-'));
+  try {
+    const scripts = resolve(root, 'scripts');
+    const models = resolve(root, 'public/models');
+    await mkdir(scripts);
+    await mkdir(resolve(models, 'reader'), { recursive: true });
+    for (const name of ['add-model.mjs', 'catalog-lib.mjs']) {
+      await copyFile(new URL(name, import.meta.url), resolve(scripts, name));
+    }
+    await writeFile(
+      resolve(models, 'reader/model.json'),
+      JSON.stringify({ ...sample(), id: 'reader', brand: 'Reader Brand' }),
+    );
+    const source = resolve(root, 'source.stl');
+    await writeFile(source, 'solid sample\nendsolid sample\n');
+    const args = [
+      resolve(scripts, 'add-model.mjs'),
+      '--file',
+      source,
+      '--id',
+      'dock',
+      '--name',
+      'Dock',
+      '--parent',
+      'reader',
+    ];
+    const rejected = spawnSync(
+      process.execPath,
+      [...args, '--brand', 'Another Brand'],
+      {
+        encoding: 'utf8',
+      },
+    );
+    assert.equal(rejected.status, 1);
+    assert.match(rejected.stderr, /请省略 --brand/);
+    assert.deepEqual(await readdir(models), ['reader']);
+
+    const accepted = spawnSync(process.execPath, args, { encoding: 'utf8' });
+    assert.equal(accepted.status, 0, accepted.stderr);
+    const added = JSON.parse(
+      await readFile(resolve(models, 'dock/model.json'), 'utf8'),
+    );
+    assert.equal(added.parentId, 'reader');
+    assert.equal(added.brand, undefined);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test('source verification dates reject rolled-over calendar days and accept real leap days', (t) => {
+  t.mock.timers.enable({
+    apis: ['Date'],
+    now: new Date('2026-09-07T12:00:00Z'),
+  });
+  const metadata = (checkedAt) => ({
+    ...sample(),
+    specSources: [
+      { label: 'Official source', url: 'https://example.com/specs', checkedAt },
+    ],
+  });
+  for (const date of ['2024-02-29', '2000-02-29', '2026-04-30', '2026-09-07']) {
+    assert.doesNotThrow(() => validateMetadata(metadata(date), 'test-part'));
+  }
+  for (const date of [
+    '2026-02-30',
+    '2025-02-29',
+    '1900-02-29',
+    '2026-04-31',
+    '2026-13-01',
+    '2026-00-01',
+    '2026-01-00',
+    '2026-1-01',
+    '',
+    null,
+  ]) {
+    assert.throws(
+      () => validateMetadata(metadata(date), 'test-part'),
+      /核对日期/,
+    );
+  }
+});
+
+test('verification dates cannot claim future checks across the UTC day boundary', (t) => {
+  t.mock.timers.enable({
+    apis: ['Date'],
+    now: new Date('2026-09-07T23:59:59Z'),
+  });
+  const metadata = (checkedAt) => ({
+    ...sample(),
+    specSources: [
+      { label: '官方规格', url: 'https://example.com/specs', checkedAt },
+    ],
+  });
+  assert.doesNotThrow(() =>
+    validateMetadata(metadata('2026-09-07'), 'test-part'),
+  );
+  assert.throws(
+    () => validateMetadata(metadata('2026-09-08'), 'test-part'),
+    /不能晚于当前 UTC 日期/,
+  );
+  assert.throws(
+    () => validateMetadata(metadata('2099-01-01'), 'test-part'),
+    /不能晚于当前 UTC 日期/,
+  );
+  t.mock.timers.setTime(new Date('2026-09-08T00:00:00Z').getTime());
+  assert.doesNotThrow(() =>
+    validateMetadata(metadata('2026-09-08'), 'test-part'),
+  );
+});
+
+test('published specifications require official sources or explicit local accessory provenance', () => {
+  const product = {
+    ...sample(),
+    specGroups: [{ title: '机身', items: [{ label: '重量', value: '58 g' }] }],
+  };
+  const official = {
+    label: '官方规格',
+    url: 'https://example.com/specs',
+    checkedAt: '2024-02-29',
+  };
+  const local = {
+    kind: 'local-design',
+    label: '个人设计及实测记录',
+    checkedAt: '2024-02-29',
+  };
+  for (const specSources of [undefined, []]) {
+    assert.throws(
+      () => validateMetadata({ ...product, specSources }, product.id),
+      /至少需要一项来源/,
+    );
+    assert.throws(
+      () =>
+        validateMetadata(
+          { ...product, parentId: 'reader', specSources },
+          product.id,
+        ),
+      /至少需要一项来源/,
+    );
+  }
+  assert.doesNotThrow(() =>
+    validateMetadata({ ...product, specSources: [official] }, product.id),
+  );
+  assert.doesNotThrow(() =>
+    validateMetadata(
+      { ...product, specSources: [{ ...official, kind: 'official' }] },
+      product.id,
+    ),
+  );
+  assert.throws(
+    () => validateMetadata({ ...product, specSources: [local] }, product.id),
+    /仅用于自制配件/,
+  );
+  const accessory = { ...product, parentId: 'reader' };
+  assert.doesNotThrow(() =>
+    validateMetadata({ ...accessory, specSources: [official] }, product.id),
+  );
+  assert.doesNotThrow(() =>
+    validateMetadata({ ...accessory, specSources: [local] }, product.id),
+  );
+  for (const source of [
+    { ...local, label: '' },
+    { ...local, checkedAt: '2025-02-29' },
+    { ...local, url: 'https://example.com' },
+    { ...local, kind: 'unknown' },
+  ]) {
+    assert.throws(() =>
+      validateMetadata({ ...accessory, specSources: [source] }, product.id),
+    );
+  }
+  assert.doesNotThrow(() =>
+    validateMetadata({ ...sample(), specGroups: [] }, product.id),
+  );
+});
+
+test('ownership and specifications reject ambiguous values while allowing explicitly unknown data', () => {
+  const metadata = {
+    ...sample(),
+    ownership: {
+      status: 'active',
+      acquired: '2026年7月',
+      specification: '处理器与内存配置\n机身与镜头套装，按实物记录',
+    },
+    specGroups: [
+      { title: '规格', items: [{ label: '存储容量', value: null }] },
+    ],
+    specSources: [
+      {
+        label: '官方规格',
+        url: 'https://example.com/specs',
+        checkedAt: '2024-02-29',
+      },
+    ],
+  };
+  assert.doesNotThrow(() => validateMetadata(metadata, metadata.id));
+  for (const specification of ['', '  ', 512, ['黑色', '512 GB']]) {
+    assert.throws(
+      () =>
+        validateMetadata(
+          { ...metadata, ownership: { status: 'active', specification } },
+          metadata.id,
+        ),
+      /ownership.specification/,
+    );
+  }
+  assert.throws(
+    () =>
+      validateMetadata(
+        { ...metadata, ownership: { status: 'new' } },
+        metadata.id,
+      ),
+    /ownership.status/,
+  );
+  assert.throws(
+    () => validateMetadata({ ...metadata, parentId: 'reader' }, metadata.id),
+    /沿用所属产品/,
+  );
+  assert.throws(
+    () =>
+      validateMetadata(
+        {
+          ...metadata,
+          specGroups: [
+            { title: '规格', items: [{ label: '容量', value: 512 }] },
+          ],
+        },
+        metadata.id,
+      ),
+    /未知值使用 null/,
+  );
+  assert.throws(
+    () =>
+      validateMetadata(
+        {
+          ...metadata,
+          specSources: [
+            {
+              label: '来源',
+              url: 'javascript:alert(1)',
+              checkedAt: '2026-09-07',
+            },
+          ],
+        },
+        metadata.id,
+      ),
+    /HTTPS/,
+  );
+});
+
+const archive = [
+  { id: 'dock', parentId: 'reader', name: '充电底座', subtitle: '一体式' },
+  {
+    id: 'reader',
+    name: '阅读器',
+    brand: '阅星瞳',
+    subtitle: '白色',
+    ownership: { status: 'active' },
+  },
+  {
+    id: 'phone',
+    name: '旧手机',
+    brand: 'Apple',
+    subtitle: '黑色',
+    ownership: { status: 'retired' },
+  },
+  { id: 'camera', name: '相机', subtitle: '银色' },
+];
+test('the archive counts devices and accessory search returns the owner, not a separate entry', () => {
+  assert.deepEqual(
+    devicesIn(archive).map((model) => model.id),
+    ['reader', 'phone', 'camera'],
+  );
+  assert.deepEqual(
+    accessoriesOf(archive, 'reader').map((model) => model.id),
+    ['dock'],
+  );
+  assert.deepEqual(
+    filterDevices(archive, 'all', ' 充电底座 ').map((model) => model.id),
+    ['reader'],
+  );
+  assert.deepEqual(
+    filterDevices(archive, 'active', '').map((model) => model.id),
+    ['reader'],
+  );
+  assert.deepEqual(
+    filterDevices(archive, 'retired', '').map((model) => model.id),
+    ['phone'],
+  );
+  assert.deepEqual(
+    filterDevices(archive, 'unknown', '').map((model) => model.id),
+    ['camera'],
+  );
+});
+
+test('legacy accessory links select their owner and filters never display a device outside the result', () => {
+  const dock = archiveSelection(archive, 'dock');
+  assert.equal(dock.device.id, 'reader');
+  assert.equal(dock.model.id, 'dock');
+  const retired = archiveSelection(
+    archive,
+    'dock',
+    filterDevices(archive, 'retired', ''),
+  );
+  assert.equal(retired.device.id, 'phone');
+  assert.equal(retired.model.id, 'phone');
+  assert.equal(
+    archiveSelection(
+      archive,
+      'dock',
+      filterDevices(archive, 'retired', '充电底座'),
+    ),
+    undefined,
+  );
+  assert.equal(archiveSelection(archive, 'missing').model.id, 'reader');
+});
+
+test('brand tags combine with status and accessory searches using the owning product brand', () => {
+  assert.deepEqual(brandsIn(archive), ['阅星瞳', 'Apple']);
+  assert.deepEqual(
+    filterDevices(archive, 'all', '', 'Apple').map((model) => model.id),
+    ['phone'],
+  );
+  assert.deepEqual(filterDevices(archive, 'active', '', 'Apple'), []);
+  assert.deepEqual(
+    filterDevices(archive, 'active', '充电底座', '阅星瞳').map(
+      (model) => model.id,
+    ),
+    ['reader'],
+  );
+  assert.deepEqual(filterDevices(archive, 'all', '充电底座', 'Apple'), []);
 });

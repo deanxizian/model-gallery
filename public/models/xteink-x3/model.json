@@ -1,8 +1,8 @@
 {
   "id": "xteink-x3",
   "name": "阅星瞳 X3",
-  "subtitle": "白色 · 外观模型",
-  "description": "白色阅星瞳 X3，机身、屏幕与按键的外观参考模型。",
+  "subtitle": "白色 · 口袋阅读器",
+  "description": "3.7 英寸墨水屏阅读器，留存白色机身、屏幕与实体按键的外观。配套充电底座也收录在这份档案中。",
   "dimensions": "63.70 × 97.60 × 5.10 mm",
   "revision": "白色",
   "order": 1,
@@ -13,6 +13,80 @@
     {
       "label": "GLB",
       "file": "model.glb"
+    }
+  ],
+  "category": "电子书阅读器",
+  "brand": "阅星瞳",
+  "ownership": {
+    "status": "active",
+    "acquired": "2026年7月",
+    "specification": "白色"
+  },
+  "specGroups": [
+    {
+      "title": "机身与屏幕",
+      "items": [
+        {
+          "label": "尺寸（高 × 宽 × 厚）",
+          "value": "97.6 × 63.7 × 5.1 mm"
+        },
+        {
+          "label": "重量",
+          "value": "58 g"
+        },
+        {
+          "label": "屏幕",
+          "value": "3.7 英寸电子墨水屏"
+        },
+        {
+          "label": "像素密度",
+          "value": "259 PPI"
+        },
+        {
+          "label": "触控 / 前光",
+          "value": "无触控，无前光"
+        },
+        {
+          "label": "操作",
+          "value": "实体按键；支持摇动翻页"
+        }
+      ]
+    },
+    {
+      "title": "存储与连接",
+      "items": [
+        {
+          "label": "存储扩展",
+          "value": "microSD，最高支持 256 GB"
+        },
+        {
+          "label": "实际存储卡容量",
+          "value": null
+        },
+        {
+          "label": "电池容量",
+          "value": "650 mAh"
+        },
+        {
+          "label": "充电接口",
+          "value": "磁吸 Pogo Pin 触点"
+        },
+        {
+          "label": "无线连接",
+          "value": "2.4 GHz Wi-Fi、蓝牙"
+        },
+        {
+          "label": "文档格式",
+          "value": "EPUB、TXT（官方规格表）"
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "Xteink X3 官方规格",
+      "url": "https://www.xteink.com/products/xteink-x3",
+      "checkedAt": "2026-09-07"
     }
   ]
 }

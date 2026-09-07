@@ -1,8 +1,16 @@
 import { useEffect, useState } from 'react';
-import { assetUrl, repositoryUrl, type GalleryModel } from './types';
+import GitHubMark from './components/GitHubMark';
+import {
+  assetUrl,
+  repositoryUrl,
+  type ArchiveFilter,
+  type GalleryModel,
+} from './types';
+import { accessoriesOf, archiveSelection, filterDevices } from './archive';
 import ModelLibrary from './components/ModelLibrary';
 import ModelStage from './components/ModelStage';
 import ModelDetails from './components/ModelDetails';
+import ProductModels from './components/ProductModels';
 
 function hashId() {
   try {
@@ -15,6 +23,9 @@ function hashId() {
 export default function App() {
   const [models, setModels] = useState<GalleryModel[]>([]);
   const [selectedId, setSelectedId] = useState(hashId);
+  const [filter, setFilter] = useState<ArchiveFilter>('all');
+  const [query, setQuery] = useState('');
+  const [brand, setBrand] = useState('');
   const [error, setError] = useState('');
   useEffect(() => {
     const controller = new AbortController();
@@ -35,15 +46,47 @@ export default function App() {
   useEffect(() => {
     const onHashChange = () => {
       const id = hashId();
-      if (id !== 'model-details') setSelectedId(id);
+      if (id !== 'model-details') {
+        setSelectedId(id);
+        setFilter('all');
+        setQuery('');
+        setBrand('');
+      }
     };
     window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
+    window.addEventListener('popstate', onHashChange);
+    return () => {
+      window.removeEventListener('hashchange', onHashChange);
+      window.removeEventListener('popstate', onHashChange);
+    };
   }, []);
-  const selected = models.find((model) => model.id === selectedId) ?? models[0];
+  const filtered = filterDevices(models, filter, query, brand);
+  const selected = archiveSelection(models, selectedId, filtered);
+  function selectModel(id: string) {
+    if (hashId() !== id)
+      history.pushState(null, '', `#${encodeURIComponent(id)}`);
+    setSelectedId(id);
+  }
+  function updateFilter(
+    nextFilter: ArchiveFilter,
+    nextQuery: string,
+    nextBrand = brand,
+  ) {
+    setFilter(nextFilter);
+    setQuery(nextQuery);
+    setBrand(nextBrand);
+    const next = archiveSelection(
+      models,
+      selectedId,
+      filterDevices(models, nextFilter, nextQuery, nextBrand),
+    );
+    if (next && next.model.id !== selectedId) selectModel(next.model.id);
+  }
   useEffect(() => {
-    if (selected) document.title = `${selected.name} · 模型展厅`;
-  }, [selected]);
+    document.title = selected
+      ? `${selected.device.name}${selected.model.parentId ? ` · ${selected.model.name}` : ''} · 模型藏馆`
+      : '我的设备 · 模型藏馆';
+  }, [selected?.device.name, selected?.model.name, selected?.model.parentId]);
   return (
     <>
       <a className="skip-link" href="#model-details">
@@ -53,18 +96,19 @@ export default function App() {
         <a
           className="brand"
           href={import.meta.env.BASE_URL}
-          aria-label="Dean 3D 模型展厅首页"
+          aria-label="Model Gallery 首页"
         >
-          DEAN / 3D
+          Model Gallery
         </a>
-        <span className="site-title">模型展厅</span>
         <a
           className="repository-link"
           href={repositoryUrl}
           target="_blank"
           rel="noreferrer"
+          aria-label="GitHub"
+          title="GitHub"
         >
-          GitHub
+          <GitHubMark />
         </a>
       </header>
       {error ? (
@@ -72,23 +116,59 @@ export default function App() {
           <p>{error}</p>
           <button onClick={() => location.reload()}>重新加载</button>
         </main>
-      ) : !selected ? (
+      ) : !models.length ? (
         <main className="page-message" role="status">
-          正在打开模型展厅…
+          正在打开模型藏馆…
         </main>
       ) : (
         <div className="workspace">
           <ModelLibrary
             models={models}
-            selectedId={selected.id}
-            onSelect={(id) => {
-              location.hash = id;
-              setSelectedId(id);
-            }}
+            filtered={filtered}
+            selectedId={selected?.device.id ?? ''}
+            filter={filter}
+            query={query}
+            brand={brand}
+            onFilter={(value) => updateFilter(value, query)}
+            onQuery={(value) => updateFilter(filter, value)}
+            onBrand={(value) => updateFilter(filter, query, value)}
+            onSelect={selectModel}
           />
           <main className="model-content">
-            <ModelStage key={selected.id} model={selected} />
-            <ModelDetails model={selected} />
+            {selected ? (
+              <>
+                <ProductModels
+                  device={selected.device}
+                  accessories={accessoriesOf(models, selected.device.id)}
+                  selectedId={selected.model.id}
+                  onSelect={selectModel}
+                />
+                <ModelStage key={selected.model.id} model={selected.model} />
+                <ModelDetails model={selected.model} device={selected.device} />
+              </>
+            ) : (
+              <section
+                className="archive-empty"
+                id="model-details"
+                aria-label="空档案分类"
+              >
+                <h2>
+                  {query
+                    ? '没有找到这件设备'
+                    : filter === 'retired'
+                      ? '还没有已退役的设备'
+                      : '这个分类暂时为空'}
+                </h2>
+                <p>
+                  {query
+                    ? '试试设备名称、品牌或配件名称。'
+                    : '在用的日常，退役后的回忆，都可以留在这里。'}
+                </p>
+                <button onClick={() => updateFilter('all', '', '')}>
+                  查看全部设备
+                </button>
+              </section>
+            )}
           </main>
         </div>
       )}

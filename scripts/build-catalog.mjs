@@ -5,7 +5,12 @@ import { createHash } from 'node:crypto';
 import { Document, NodeIO } from '@gltf-transform/core';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 import { toCreasedNormals } from 'three/addons/utils/BufferGeometryUtils.js';
-import { localAsset, validateMetadata, validateGlb } from './catalog-lib.mjs';
+import {
+  localAsset,
+  validateMetadata,
+  validateGlb,
+  validateRelationships,
+} from './catalog-lib.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = resolve(root, 'public');
@@ -131,10 +136,17 @@ for (const entry of (await readdir(modelDir, { withFileTypes: true })).sort(
     downloads,
     note: meta.note,
     source: meta.source,
+    parentId: meta.parentId,
+    category: meta.category,
+    brand: meta.brand,
+    ownership: meta.ownership,
+    specGroups: meta.specGroups,
+    specSources: meta.specSources,
   });
 }
 models.sort((a, b) => a.order - b.order || a.id.localeCompare(b.id));
 if (!models.length) throw new Error('请在 public/models 中添加至少一个模型');
+validateRelationships(models);
 await writeFile(
   resolve(publicDir, 'catalog.json'),
   JSON.stringify({ models }, null, 2) + '\n',
