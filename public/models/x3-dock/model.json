@@ -23,6 +23,13 @@
   "note": "本地几何检查通过，实际夹紧与充电接触需试装确认。",
   "parentId": "xteink-x3",
   "category": "充电底座",
+  "specSources": [
+    {
+      "kind": "local-design",
+      "label": "底座尺寸来自个人设计，转接头尺寸来自实物测量记录",
+      "checkedAt": "2026-09-07"
+    }
+  ],
   "specGroups": [
     {
       "title": "底座",

@@ -164,7 +164,11 @@ test('accessory brands are inherited and invalid CLI options create no model fil
   }
 });
 
-test('source verification dates reject rolled-over calendar days and accept real leap days', () => {
+test('source verification dates reject rolled-over calendar days and accept real leap days', (t) => {
+  t.mock.timers.enable({
+    apis: ['Date'],
+    now: new Date('2026-09-07T12:00:00Z'),
+  });
   const metadata = (checkedAt) => ({
     ...sample(),
     specSources: [
@@ -193,6 +197,98 @@ test('source verification dates reject rolled-over calendar days and accept real
   }
 });
 
+test('verification dates cannot claim future checks across the UTC day boundary', (t) => {
+  t.mock.timers.enable({
+    apis: ['Date'],
+    now: new Date('2026-09-07T23:59:59Z'),
+  });
+  const metadata = (checkedAt) => ({
+    ...sample(),
+    specSources: [
+      { label: '官方规格', url: 'https://example.com/specs', checkedAt },
+    ],
+  });
+  assert.doesNotThrow(() =>
+    validateMetadata(metadata('2026-09-07'), 'test-part'),
+  );
+  assert.throws(
+    () => validateMetadata(metadata('2026-09-08'), 'test-part'),
+    /不能晚于当前 UTC 日期/,
+  );
+  assert.throws(
+    () => validateMetadata(metadata('2099-01-01'), 'test-part'),
+    /不能晚于当前 UTC 日期/,
+  );
+  t.mock.timers.setTime(new Date('2026-09-08T00:00:00Z').getTime());
+  assert.doesNotThrow(() =>
+    validateMetadata(metadata('2026-09-08'), 'test-part'),
+  );
+});
+
+test('published specifications require official sources or explicit local accessory provenance', () => {
+  const product = {
+    ...sample(),
+    specGroups: [{ title: '机身', items: [{ label: '重量', value: '58 g' }] }],
+  };
+  const official = {
+    label: '官方规格',
+    url: 'https://example.com/specs',
+    checkedAt: '2024-02-29',
+  };
+  const local = {
+    kind: 'local-design',
+    label: '个人设计及实测记录',
+    checkedAt: '2024-02-29',
+  };
+  for (const specSources of [undefined, []]) {
+    assert.throws(
+      () => validateMetadata({ ...product, specSources }, product.id),
+      /至少需要一项来源/,
+    );
+    assert.throws(
+      () =>
+        validateMetadata(
+          { ...product, parentId: 'reader', specSources },
+          product.id,
+        ),
+      /至少需要一项来源/,
+    );
+  }
+  assert.doesNotThrow(() =>
+    validateMetadata({ ...product, specSources: [official] }, product.id),
+  );
+  assert.doesNotThrow(() =>
+    validateMetadata(
+      { ...product, specSources: [{ ...official, kind: 'official' }] },
+      product.id,
+    ),
+  );
+  assert.throws(
+    () => validateMetadata({ ...product, specSources: [local] }, product.id),
+    /仅用于自制配件/,
+  );
+  const accessory = { ...product, parentId: 'reader' };
+  assert.doesNotThrow(() =>
+    validateMetadata({ ...accessory, specSources: [official] }, product.id),
+  );
+  assert.doesNotThrow(() =>
+    validateMetadata({ ...accessory, specSources: [local] }, product.id),
+  );
+  for (const source of [
+    { ...local, label: '' },
+    { ...local, checkedAt: '2025-02-29' },
+    { ...local, url: 'https://example.com' },
+    { ...local, kind: 'unknown' },
+  ]) {
+    assert.throws(() =>
+      validateMetadata({ ...accessory, specSources: [source] }, product.id),
+    );
+  }
+  assert.doesNotThrow(() =>
+    validateMetadata({ ...sample(), specGroups: [] }, product.id),
+  );
+});
+
 test('ownership and specifications reject ambiguous values while allowing explicitly unknown data', () => {
   const metadata = {
     ...sample(),
@@ -203,6 +299,13 @@ test('ownership and specifications reject ambiguous values while allowing explic
     },
     specGroups: [
       { title: '规格', items: [{ label: '存储容量', value: null }] },
+    ],
+    specSources: [
+      {
+        label: '官方规格',
+        url: 'https://example.com/specs',
+        checkedAt: '2024-02-29',
+      },
     ],
   };
   assert.doesNotThrow(() => validateMetadata(metadata, metadata.id));

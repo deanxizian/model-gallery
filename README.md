@@ -69,6 +69,9 @@ public/models/my-model/
   "specGroups": [
     { "title": "机身", "items": [{ "label": "重量", "value": null }] }
   ],
+  "specSources": [
+    { "label": "官方规格（替换为产品官方链接）", "url": "https://example.com/specs", "checkedAt": "2026-09-07" }
+  ],
   "preview": "model.glb",
   "downloads": [{ "label": "GLB", "file": "model.glb" }]
 }
@@ -96,6 +99,8 @@ public/models/my-model/
 `ownership.status` 可为 `active`（在役）、`retired`（已退役）、`unknown`（待确认）。可选字段包括 `acquired`（购入时间）、`retired`（退役时间）、`specification`（我的规格）和 `memory`（真实使用回忆）。`specification` 是一段自由文本，支持换行，例如 `"黑色 · 512 GB"`，也可以记录处理器、内存、套装等实际配置，无须按配色或容量拆字段。未知信息省略，日期按用户提供的精度填写，例如只知道月份就不补造日期。退役产品保留原来的规格、回忆和配件；更新状态即可归档。旧档案的 `color`、`configuration` 仍兼容，会合并展示；同时填写时以新的 `specification` 为准。
 
 参数规格默认折叠，只记录实际拥有的那一款，容量与配色不罗列官方的其他选项。已核对的通用硬件指标仍可引用官方规格；随附配件不能替代实际配置。拥有记录直接展示购入时间和一个「我的规格」文本区；列表显示规格摘要，详情保留完整文字。未核实的事实不猜测；X3 当前实际存储卡容量仍在折叠参数中标为待补充。没有回忆文字时不显示回忆区。配件必须直接归属一个存在的产品，构建会拒绝无主配件、循环引用和重复参数名。
+
+填写 `specGroups` 后必须提供至少一项 `specSources`。产品参数引用官方 HTTPS 页面；`checkedAt` 必须是真实日期，且不能晚于当前 UTC 日期。自制配件可显式记录 `{"kind":"local-design","label":"个人设计与实测记录","checkedAt":"2026-09-07"}`，其中说明与日期应按实际记录填写，不能省略依据或套用在产品本体上。普通配件仍使用官方来源。配件省略 `brand`，沿用所属产品的品牌。
 
 预览支持 **GLB、STL**。STEP/STP、OBJ、3MF、BLEND、ZIP 可作为下载文件；要展示这些模型，请同时提供 GLB 或 STL 预览。缩略图支持 PNG、JPEG、WebP、AVIF。
 

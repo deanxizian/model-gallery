@@ -107,18 +107,22 @@ export default function ModelDetails({
             <p className="spec-sources">
               规格参考：
               {model.specSources.map((source, index) => (
-                <span key={source.url}>
+                <span
+                  key={`${source.kind ?? 'official'}-${source.url ?? source.label}-${index}`}
+                >
                   {index > 0 ? '、' : ''}
-                  <a href={source.url} target="_blank" rel="noreferrer">
-                    {source.label}
-                  </a>
+                  {source.kind === 'local-design' ? (
+                    source.label
+                  ) : (
+                    <a href={source.url} target="_blank" rel="noreferrer">
+                      {source.label}
+                    </a>
+                  )}
                   <span>（核对于 {source.checkedAt}）</span>
                 </span>
               ))}
               。拥有记录按实物信息填写。
             </p>
-          ) : accessory ? (
-            <p className="spec-sources">依据本地设计文件与实物测量记录。</p>
           ) : null}
         </details>
       ) : null}

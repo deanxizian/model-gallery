@@ -152,6 +152,18 @@ export function validateMetadata(value, folder) {
     if (!Array.isArray(value.specSources))
       throw new Error(`${folder}: specSources 必须是数组`);
     for (const source of value.specSources) {
+      const localDesign = source?.kind === 'local-design';
+      if (
+        source?.kind !== undefined &&
+        !['official', 'local-design'].includes(source.kind)
+      )
+        throw new Error(
+          `${folder}: 规格来源 kind 必须是 official 或 local-design`,
+        );
+      if (localDesign && (!value.parentId || source.url !== undefined))
+        throw new Error(
+          `${folder}: local-design 仅用于自制配件，填写说明而非 URL`,
+        );
       let link;
       try {
         link = new URL(source?.url);
@@ -162,14 +174,20 @@ export function validateMetadata(value, folder) {
         !source ||
         typeof source.label !== 'string' ||
         !source.label.trim() ||
-        link?.protocol !== 'https:' ||
+        (!localDesign && link?.protocol !== 'https:') ||
         !isCalendarDate(source.checkedAt)
       )
         throw new Error(
           `${folder}: 规格来源需要名称、HTTPS URL 和核对日期 YYYY-MM-DD`,
         );
+      if (source.checkedAt > new Date().toISOString().slice(0, 10))
+        throw new Error(`${folder}: 规格来源核对日期不能晚于当前 UTC 日期`);
     }
   }
+  if (value.specGroups?.length && !value.specSources?.length)
+    throw new Error(
+      `${folder}: 参数规格至少需要一项来源；产品使用官方来源，自制配件可使用 local-design 记录`,
+    );
   return value;
 }
 

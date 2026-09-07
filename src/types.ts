@@ -21,11 +21,12 @@ export interface SpecificationGroup {
   title: string;
   items: { label: string; value: string | null }[];
 }
-export interface SpecificationSource {
+interface SpecificationSourceRecord {
   label: string;
-  url: string;
   checkedAt: string;
 }
+export type SpecificationSource = SpecificationSourceRecord &
+  ({ kind?: 'official'; url: string } | { kind: 'local-design'; url?: never });
 export interface GalleryModel {
   id: string;
   name: string;
