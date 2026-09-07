@@ -91,6 +91,7 @@ export default function ModelStage({ model }: { model: GalleryModel }) {
         camera-controls
         camera-orbit={model.cameraOrbit}
         auto-rotate={rotating || undefined}
+        auto-rotate-delay="0"
         rotation-per-second="15deg"
         environment-image="legacy"
         tone-mapping="aces"

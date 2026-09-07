@@ -14,7 +14,6 @@ export default function ProductModels({
   if (!accessories.length) return null;
   return (
     <nav className="product-models" aria-label={`${device.name} 的本体与配件`}>
-      <span className="product-models-label">{device.name}</span>
       <div className="product-model-options">
         {[device, ...accessories].map((model) => (
           <button
@@ -22,7 +21,7 @@ export default function ProductModels({
             aria-pressed={model.id === selectedId}
             onClick={() => onSelect(model.id)}
           >
-            {model.id === device.id ? '本体' : model.name}
+            {model.id === device.id ? '设备本体' : model.name}
           </button>
         ))}
       </div>

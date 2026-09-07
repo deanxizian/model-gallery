@@ -85,7 +85,7 @@ export default function App() {
   useEffect(() => {
     document.title = selected
       ? `${selected.device.name}${selected.model.parentId ? ` · ${selected.model.name}` : ''} · 模型藏馆`
-      : '数码档案 · 模型藏馆';
+      : '我的设备 · 模型藏馆';
   }, [selected?.device.name, selected?.model.name, selected?.model.parentId]);
   return (
     <>
@@ -155,18 +155,18 @@ export default function App() {
               >
                 <h2>
                   {query
-                    ? '没有找到这件产品'
+                    ? '没有找到这件设备'
                     : filter === 'retired'
-                      ? '还没有已退役的产品'
+                      ? '还没有已退役的设备'
                       : '这个分类暂时为空'}
                 </h2>
                 <p>
                   {query
-                    ? '也可以用配件名称搜索所属产品。'
+                    ? '试试设备名称、品牌或配件名称。'
                     : '在用的日常，退役后的回忆，都可以留在这里。'}
                 </p>
                 <button onClick={() => updateFilter('all', '', '')}>
-                  查看全部产品
+                  查看全部设备
                 </button>
               </section>
             )}
