@@ -1,0 +1,23 @@
+{
+  "id": "iphone-17",
+  "name": "iPhone 17",
+  "subtitle": "黑色 · 外观模型",
+  "description": "基于 Apple 公开 AR 资源整理的黑色外观参考模型。",
+  "dimensions": "71.50 × 149.60 × 7.95 mm",
+  "revision": "黑色",
+  "order": 2,
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "150deg 78deg 110%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    }
+  ],
+  "source": {
+    "label": "Apple 原始资源",
+    "url": "https://www.apple.com.cn/105/media/ww/iphone-17/2025/b2c72de3-1cbc-4e24-b4d3-23c7abcec4ec/ar/iphone-17-p-sim.usdz"
+  },
+  "note": "几何与贴图来源于 Apple；外观参考模型，不是机械制造 CAD。"
+}

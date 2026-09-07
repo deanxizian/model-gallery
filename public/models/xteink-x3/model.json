@@ -1,0 +1,18 @@
+{
+  "id": "xteink-x3",
+  "name": "阅星瞳 X3",
+  "subtitle": "白色 · 外观模型",
+  "description": "白色阅星瞳 X3，机身、屏幕与按键的外观参考模型。",
+  "dimensions": "63.70 × 97.60 × 5.10 mm",
+  "revision": "白色",
+  "order": 1,
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "25deg 77deg 100%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    }
+  ]
+}

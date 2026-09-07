@@ -1,0 +1,31 @@
+{
+  "name": "dean-model-gallery",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "catalog": "node scripts/build-catalog.mjs",
+    "dev": "pnpm catalog && vite --host 127.0.0.1",
+    "build": "pnpm catalog && tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test scripts/*.test.mjs",
+    "model:add": "node scripts/add-model.mjs"
+  },
+  "dependencies": {
+    "@google/model-viewer": "^4.3.1",
+    "lucide-react": "^1.41.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^4.5.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "prettier": "^3.9.6",
+    "three": "^0.183.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2"
+  }
+}

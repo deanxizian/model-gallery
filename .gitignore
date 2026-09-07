@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.DS_Store
+*.blend1
+*.log
+*.tsbuildinfo
+.env*
+public/catalog.json
+public/generated/
+.qa/
