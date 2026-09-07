@@ -1,0 +1,6 @@
+sources/
+design/
+node_modules/
+dist/
+.qa/
+*.tsbuildinfo

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import GitHubMark from './components/GitHubMark';
 import { assetUrl, repositoryUrl, type GalleryModel } from './types';
 import ModelLibrary from './components/ModelLibrary';
 import ModelStage from './components/ModelStage';
@@ -42,7 +43,7 @@ export default function App() {
   }, []);
   const selected = models.find((model) => model.id === selectedId) ?? models[0];
   useEffect(() => {
-    if (selected) document.title = `${selected.name} · 模型展厅`;
+    if (selected) document.title = `${selected.name} · 模型藏馆`;
   }, [selected]);
   return (
     <>
@@ -53,18 +54,20 @@ export default function App() {
         <a
           className="brand"
           href={import.meta.env.BASE_URL}
-          aria-label="Dean 3D 模型展厅首页"
+          aria-label="Model Gallery 模型藏馆首页"
         >
-          DEAN / 3D
+          <span>Model Gallery</span>
+          <span className="site-title">模型藏馆</span>
         </a>
-        <span className="site-title">模型展厅</span>
         <a
           className="repository-link"
           href={repositoryUrl}
           target="_blank"
           rel="noreferrer"
+          aria-label="GitHub"
+          title="GitHub"
         >
-          GitHub
+          <GitHubMark />
         </a>
       </header>
       {error ? (
@@ -74,7 +77,7 @@ export default function App() {
         </main>
       ) : !selected ? (
         <main className="page-message" role="status">
-          正在打开模型展厅…
+          正在打开模型藏馆…
         </main>
       ) : (
         <div className="workspace">

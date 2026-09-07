@@ -1,10 +1,9 @@
 {
   "id": "x3-dock",
   "name": "X3 充电底座",
-  "subtitle": "P19 · 单体底座",
+  "subtitle": "一体式充电底座",
   "description": "为阅星瞳 X3 设计的一体式充电底座。",
   "dimensions": "68.30 × 39.37 × 13.75 mm",
-  "revision": "P19",
   "order": 0,
   "preview": "model.stl",
   "poster": "poster.png",

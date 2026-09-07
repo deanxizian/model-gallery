@@ -82,21 +82,32 @@ button {
   background: #fff;
 }
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   font-size: 25px;
   font-weight: 650;
   letter-spacing: -0.6px;
   white-space: nowrap;
 }
 .site-title {
-  font-size: 19px;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted);
 }
 .repository-link {
   margin-left: auto;
-  font-size: 17px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 6px;
 }
 .repository-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 5px;
+  background: #f3f4f5;
 }
 .workspace {
   display: grid;
@@ -447,33 +458,78 @@ button {
 .download-primary:hover {
   background: #363a3e;
 }
-.download-secondary {
-  font-size: 17px;
-  color: var(--accent);
-  padding: 12px 0;
+.download-menu {
+  position: relative;
 }
-.download-secondary:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.chevron {
+  transition: transform 0.15s;
 }
-.model-note {
+.chevron.open {
+  transform: rotate(180deg);
+}
+.download-options {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  width: 280px;
+  max-width: calc(100vw - 44px);
+  max-height: min(50svh, 380px);
+  overflow-y: auto;
+  z-index: 5;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow:
+    0 8px 30px #18202c15,
+    0 2px 6px #18202c08;
+}
+.download-heading {
+  margin: 6px 10px 8px;
+  color: var(--muted);
   font-size: 13px;
-  color: #858b93;
-  margin-top: 22px;
-  max-width: 640px;
-  line-height: 1.8;
 }
-.model-note summary {
-  cursor: pointer;
-  width: fit-content;
+.download-options ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.model-note p {
-  margin: 8px 0 0;
+.download-options a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  border-radius: 5px;
 }
-.model-note a {
-  color: #5b769a;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.download-options a:hover,
+.download-options a:focus-visible {
+  background: #f2f6fb;
+}
+.download-options a:focus-visible {
+  outline-offset: -2px;
+}
+.download-format {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.download-format strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+.download-format > span {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.download-size {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.download-options a > svg {
+  color: #747b84;
 }
 .page-message {
   min-height: 70svh;
@@ -547,12 +603,10 @@ button {
     gap: 20px;
   }
   .brand {
-    font-size: 20px;
+    font-size: 19px;
+    gap: 12px;
   }
   .site-title {
-    font-size: 15px;
-  }
-  .repository-link {
     font-size: 14px;
   }
   .workspace {
@@ -699,12 +753,9 @@ button {
   .download-primary svg {
     width: 20px;
   }
-  .download-secondary {
-    font-size: 15px;
-  }
-  .model-note {
-    font-size: 12px;
-    margin-top: 18px;
+  .download-options {
+    left: 0;
+    right: auto;
   }
   .downloads {
     gap: 28px;
