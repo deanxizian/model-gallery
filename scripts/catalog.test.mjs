@@ -1,6 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, writeFile, mkdir, symlink, rm } from 'node:fs/promises';
+import {
+  mkdtemp,
+  writeFile,
+  readFile,
+  copyFile,
+  readdir,
+  mkdir,
+  symlink,
+  rm,
+} from 'node:fs/promises';
+import { spawnSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
 import {
@@ -94,6 +104,93 @@ test('accessories must belong to an existing device, never themselves or another
     /不能嵌套/,
   );
   assert.throws(() => validateRelationships([device, device]), /不能重复/);
+});
+
+test('accessory brands are inherited and invalid CLI options create no model files', async () => {
+  const accessory = { ...sample(), parentId: 'reader' };
+  assert.doesNotThrow(() => validateMetadata(accessory, accessory.id));
+  for (const brand of ['Reader Brand', 'Another Brand', '']) {
+    assert.throws(
+      () => validateMetadata({ ...accessory, brand }, accessory.id),
+      /配件沿用所属产品的品牌/,
+    );
+  }
+  const root = await mkdtemp(resolve(tmpdir(), 'model-gallery-cli-'));
+  try {
+    const scripts = resolve(root, 'scripts');
+    const models = resolve(root, 'public/models');
+    await mkdir(scripts);
+    await mkdir(resolve(models, 'reader'), { recursive: true });
+    for (const name of ['add-model.mjs', 'catalog-lib.mjs']) {
+      await copyFile(new URL(name, import.meta.url), resolve(scripts, name));
+    }
+    await writeFile(
+      resolve(models, 'reader/model.json'),
+      JSON.stringify({ ...sample(), id: 'reader', brand: 'Reader Brand' }),
+    );
+    const source = resolve(root, 'source.stl');
+    await writeFile(source, 'solid sample\nendsolid sample\n');
+    const args = [
+      resolve(scripts, 'add-model.mjs'),
+      '--file',
+      source,
+      '--id',
+      'dock',
+      '--name',
+      'Dock',
+      '--parent',
+      'reader',
+    ];
+    const rejected = spawnSync(
+      process.execPath,
+      [...args, '--brand', 'Another Brand'],
+      {
+        encoding: 'utf8',
+      },
+    );
+    assert.equal(rejected.status, 1);
+    assert.match(rejected.stderr, /请省略 --brand/);
+    assert.deepEqual(await readdir(models), ['reader']);
+
+    const accepted = spawnSync(process.execPath, args, { encoding: 'utf8' });
+    assert.equal(accepted.status, 0, accepted.stderr);
+    const added = JSON.parse(
+      await readFile(resolve(models, 'dock/model.json'), 'utf8'),
+    );
+    assert.equal(added.parentId, 'reader');
+    assert.equal(added.brand, undefined);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test('source verification dates reject rolled-over calendar days and accept real leap days', () => {
+  const metadata = (checkedAt) => ({
+    ...sample(),
+    specSources: [
+      { label: 'Official source', url: 'https://example.com/specs', checkedAt },
+    ],
+  });
+  for (const date of ['2024-02-29', '2000-02-29', '2026-04-30', '2026-09-07']) {
+    assert.doesNotThrow(() => validateMetadata(metadata(date), 'test-part'));
+  }
+  for (const date of [
+    '2026-02-30',
+    '2025-02-29',
+    '1900-02-29',
+    '2026-04-31',
+    '2026-13-01',
+    '2026-00-01',
+    '2026-01-00',
+    '2026-1-01',
+    '',
+    null,
+  ]) {
+    assert.throws(
+      () => validateMetadata(metadata(date), 'test-part'),
+      /核对日期/,
+    );
+  }
 });
 
 test('ownership and specifications reject ambiguous values while allowing explicitly unknown data', () => {

@@ -26,6 +26,8 @@ if (!values.file || !values.id || !values.name) {
   );
   process.exit(1);
 }
+if (values.parent && values.brand !== undefined)
+  throw new Error('配件使用所属产品的品牌，请省略 --brand');
 const source = resolve(values.file);
 const format = extname(source).toLowerCase();
 const metadata = {

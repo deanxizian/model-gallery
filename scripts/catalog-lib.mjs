@@ -13,6 +13,15 @@ export const supportedDownloads = new Set([
 ]);
 export const maxAssetBytes = 95 * 1024 * 1024;
 
+function isCalendarDate(value) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value))
+    return false;
+  const date = new Date(`${value}T00:00:00.000Z`);
+  return (
+    Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value
+  );
+}
+
 export function validateMetadata(value, folder) {
   if (!value || typeof value !== 'object')
     throw new Error(`${folder}: model.json 必须是对象`);
@@ -75,6 +84,8 @@ export function validateMetadata(value, folder) {
     !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value.parentId)
   )
     throw new Error(`${folder}: parentId 必须是产品 ID`);
+  if (value.parentId && value.brand !== undefined)
+    throw new Error(`${folder}: 配件沿用所属产品的品牌，请省略 brand`);
   if (value.ownership !== undefined) {
     const record = value.ownership;
     if (
@@ -152,9 +163,7 @@ export function validateMetadata(value, folder) {
         typeof source.label !== 'string' ||
         !source.label.trim() ||
         link?.protocol !== 'https:' ||
-        typeof source.checkedAt !== 'string' ||
-        !/^\d{4}-\d{2}-\d{2}$/.test(source.checkedAt) ||
-        !Number.isFinite(Date.parse(source.checkedAt))
+        !isCalendarDate(source.checkedAt)
       )
         throw new Error(
           `${folder}: 规格来源需要名称、HTTPS URL 和核对日期 YYYY-MM-DD`,
