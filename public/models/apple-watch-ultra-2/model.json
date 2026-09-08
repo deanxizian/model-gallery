@@ -26,35 +26,6 @@
   ],
   "specGroups": [
     {
-      "title": "我的版本",
-      "items": [
-        {
-          "label": "配色",
-          "value": "原色钛金属"
-        },
-        {
-          "label": "存储容量",
-          "value": "64 GB"
-        },
-        {
-          "label": "网络版本",
-          "value": "GPS + Cellular"
-        },
-        {
-          "label": "表带尺码",
-          "value": "M 码"
-        },
-        {
-          "label": "表壳尺寸",
-          "value": "49 毫米"
-        },
-        {
-          "label": "表带",
-          "value": "原色钛金属 钛金属米兰尼斯表带"
-        }
-      ]
-    },
-    {
       "title": "硬件规格",
       "items": [
         {
@@ -64,6 +35,14 @@
         {
           "label": "芯片",
           "value": "Apple S9 SiP"
+        },
+        {
+          "label": "存储容量",
+          "value": "64 GB"
+        },
+        {
+          "label": "网络版本",
+          "value": "GPS + Cellular"
         },
         {
           "label": "尺寸（宽 × 高 × 深）",
@@ -91,7 +70,7 @@
       "title": "型号与地区",
       "items": [
         {
-          "label": "硬件型号（官方匹配）",
+          "label": "硬件型号",
           "value": "A2987"
         },
         {

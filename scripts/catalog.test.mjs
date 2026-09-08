@@ -465,7 +465,7 @@ test('catalog discovery groups accessories under their owner and rejects mismatc
   }
 });
 
-test('published specifications require official sources or explicit local accessory provenance', () => {
+test('published specifications require dated source provenance', () => {
   const product = {
     ...sample(),
     specGroups: [{ title: '机身', items: [{ label: '重量', value: '58 g' }] }],
@@ -502,6 +502,34 @@ test('published specifications require official sources or explicit local access
       { ...product, specSources: [{ ...official, kind: 'official' }] },
       product.id,
     ),
+  );
+  assert.doesNotThrow(() =>
+    validateMetadata(
+      {
+        ...product,
+        specSources: [
+          { ...official, kind: 'retailer', label: 'Retail catalog' },
+        ],
+      },
+      product.id,
+    ),
+  );
+  assert.throws(
+    () =>
+      validateMetadata(
+        {
+          ...product,
+          specSources: [
+            {
+              ...official,
+              kind: 'retailer',
+              url: 'http://example.com/catalog',
+            },
+          ],
+        },
+        product.id,
+      ),
+    /HTTPS/,
   );
   assert.throws(
     () => validateMetadata({ ...product, specSources: [local] }, product.id),

@@ -18,12 +18,10 @@
     },
     "memory_gb": null,
     "sales_region": "中国大陆（国行）",
-    "retail_part_number": null,
+    "retail_part_number": "MG724CH/A",
     "connectivity_variant": "5G · 双 nano-SIM 卡"
   },
-  "unconfirmed_fields": [
-    "retail_part_number"
-  ],
+  "unconfirmed_fields": [],
   "identification": {
     "confirmed_unit_model_number": null,
     "official_references": [
@@ -62,7 +60,15 @@
       }
     ],
     "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
-    "matched_at": "2026-09-08"
+    "matched_at": "2026-09-08",
+    "matched_retail_part_number": {
+      "value": "MG724CH/A",
+      "status": "configuration_match",
+      "basis": "iPhone 17；黑色；512 GB；中国大陆",
+      "source_ref": "retail_configuration_match",
+      "matched_at": "2026-09-09",
+      "note": "按用户提供的配置匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+    }
   },
   "specifications": {
     "chip": "Apple A19",
@@ -107,10 +113,11 @@
   "source_refs": [
     "iphone_17_black_spec",
     "identify_iphone",
-    "china_dual_sim"
+    "china_dual_sim",
+    "retail_configuration_match"
   ],
-  "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。未确认的购买店铺、零售部件号等不作推定。",
-  "updated_at": "2026-09-08",
+  "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。零售部件号按已知配置匹配标准零售目录，来源及适用范围见 identification.matched_retail_part_number；未读取实机部件号，也未据此推定购买店铺。",
+  "updated_at": "2026-09-09",
   "asset": {
     "status": "ready",
     "blend": "iPhone_17_Black.blend",
@@ -141,6 +148,9 @@
     ],
     "identification": [
       "identify_iphone"
+    ],
+    "configuration.retail_part_number": [
+      "retail_configuration_match"
     ]
   },
   "sources": {
@@ -161,6 +171,12 @@
       "publisher": "Apple",
       "accessed_at": "2026-09-08",
       "kind": "official_identification"
+    },
+    "retail_configuration_match": {
+      "url": "https://www.apple.com.cn/shop/buy-iphone/iphone-17/mg724ch/a",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-09",
+      "kind": "official_retail_catalog"
     }
   },
   "ownership": {

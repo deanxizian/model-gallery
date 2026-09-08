@@ -15,11 +15,10 @@
     "storage": null,
     "memory_gb": null,
     "sales_region": "中国大陆（国行）",
-    "retail_part_number": null
+    "retail_part_number": null,
+    "purchase_bundle": "单独购买"
   },
-  "unconfirmed_fields": [
-    "retail_part_number"
-  ],
+  "unconfirmed_fields": [],
   "identification": {
     "confirmed_unit_model_number": null,
     "official_references": [
@@ -40,7 +39,9 @@
       }
     ],
     "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
-    "matched_at": "2026-09-08"
+    "matched_at": "2026-09-08",
+    "retail_part_number_pending_reason": "用户确认单独购买，并要求不展示或继续收集零售部件号；尚未匹配具体地区 SKU，不表示该产品不存在零售编号。",
+    "retail_part_number_display": "omit_by_owner_request"
   },
   "specifications": {
     "chip": null,
@@ -78,7 +79,7 @@
     "remote_number"
   ],
   "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。未确认的购买店铺、零售部件号等不作推定。",
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-09",
   "asset": {
     "status": "ready",
     "blend": "Siri_Remote_3.blend",
@@ -138,6 +139,6 @@
     "specification": "银色 · 国行",
     "acquired": "2026年8月"
   },
-  "configuration_confirmed_at": "2026-09-08",
+  "configuration_confirmed_at": "2026-09-09",
   "ownership_confirmed_at": "2026-09-08"
 }

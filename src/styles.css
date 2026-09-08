@@ -375,6 +375,7 @@ button {
 .stage model-viewer {
   display: block;
   width: 100%;
+  /* Keep the canvas continuous beneath the floating controls. */
   height: 100%;
   --progress-bar-color: #bfc8d3;
   --poster-color: transparent;
@@ -576,31 +577,6 @@ button {
   border-top: 1px solid var(--line);
   margin-top: 30px;
 }
-.product-specs > summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 36px;
-  cursor: pointer;
-  list-style: none;
-}
-.product-specs > summary::-webkit-details-marker {
-  display: none;
-}
-.product-specs > summary h3 {
-  margin: 0;
-}
-.product-specs > summary svg {
-  color: var(--muted);
-  transition: transform 0.15s;
-}
-.product-specs[open] > summary {
-  margin-bottom: 24px;
-}
-.product-specs[open] > summary svg {
-  transform: rotate(-90deg);
-}
 .ownership-grid {
   display: flex;
   flex-wrap: wrap;
@@ -643,10 +619,37 @@ button {
 }
 .spec-groups {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px 48px;
+  gap: 28px;
+}
+.product-specs > summary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+}
+.product-specs > summary::-webkit-details-marker {
+  display: none;
+}
+.product-specs > summary h3 {
+  margin: 0;
+}
+.product-specs[open] > summary {
+  margin-bottom: 24px;
+}
+.spec-chevron {
+  flex-shrink: 0;
+  color: var(--muted);
+}
+.product-specs[open] .spec-chevron {
+  transform: rotate(90deg);
 }
 .spec-group dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 40px;
   margin: 0;
 }
 .spec-group dl > div {
@@ -740,6 +743,7 @@ button {
   max-width: calc(100vw - 44px);
   max-height: min(50svh, 380px);
   overflow-y: auto;
+  scrollbar-gutter: stable;
   z-index: 5;
   padding: 8px;
   background: #fff;
@@ -828,6 +832,7 @@ button {
     flex: 1;
     min-height: 0;
     overflow-y: auto;
+    scrollbar-gutter: stable;
     overscroll-behavior-y: contain;
     scrollbar-width: thin;
     padding: 4px;
@@ -839,6 +844,7 @@ button {
   .model-content {
     min-height: 0;
     overflow-y: auto;
+    scrollbar-gutter: stable;
     overscroll-behavior-y: contain;
   }
 }
@@ -871,9 +877,8 @@ button {
     flex-wrap: wrap;
     gap: 22px;
   }
-  .spec-groups {
+  .spec-group dl {
     grid-template-columns: 1fr;
-    gap: 28px;
   }
   .product-models {
     padding: 12px 26px;
@@ -898,6 +903,9 @@ button {
   }
 }
 @media (max-width: 760px) {
+  html {
+    scrollbar-gutter: stable;
+  }
   :root {
     --header-height: 72px;
   }
@@ -1104,14 +1112,6 @@ button {
   }
   .stage.expanded {
     max-height: none;
-  }
-}
-.stage model-viewer {
-  height: calc(100% - 96px);
-}
-@media (max-width: 760px) {
-  .stage model-viewer {
-    height: calc(100% - 80px);
   }
 }
 @media (prefers-reduced-motion: reduce) {

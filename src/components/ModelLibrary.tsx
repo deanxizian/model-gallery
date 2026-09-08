@@ -124,9 +124,10 @@ export default function ModelLibrary({
         </div>
       </div>
       <nav className="model-list" aria-label="选择设备">
-        {filtered.map((model) => {
+        {filtered.map((model, index) => {
           const variant = ownedSpecification(model.ownership) || model.subtitle;
           const accessoryCount = accessoriesOf(models, model.id).length;
+          const thumbnail = model.thumbnail ?? model.poster;
           return (
             <button
               key={model.id}
@@ -136,8 +137,16 @@ export default function ModelLibrary({
               onClick={() => onSelect(model.id)}
             >
               <span className="thumbnail">
-                {model.poster ? (
-                  <img src={assetUrl(model.poster)} alt="" loading="lazy" />
+                {thumbnail ? (
+                  <img
+                    src={assetUrl(thumbnail)}
+                    alt=""
+                    width={76}
+                    height={76}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    fetchPriority={index === 0 ? 'high' : 'auto'}
+                    decoding="async"
+                  />
                 ) : (
                   <Box size={34} />
                 )}

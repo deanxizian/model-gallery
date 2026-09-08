@@ -26,15 +26,6 @@
   ],
   "specGroups": [
     {
-      "title": "我的版本",
-      "items": [
-        {
-          "label": "配色",
-          "value": "银色"
-        }
-      ]
-    },
-    {
       "title": "硬件规格",
       "items": [
         {
@@ -67,16 +58,12 @@
       "title": "型号与地区",
       "items": [
         {
-          "label": "硬件型号（官方匹配）",
+          "label": "硬件型号",
           "value": "A2854"
         },
         {
           "label": "销售地区",
           "value": "中国大陆（国行）"
-        },
-        {
-          "label": "零售部件号",
-          "value": null
         }
       ]
     }

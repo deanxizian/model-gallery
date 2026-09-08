@@ -26,23 +26,6 @@
   ],
   "specGroups": [
     {
-      "title": "我的版本",
-      "items": [
-        {
-          "label": "配色",
-          "value": "银色"
-        },
-        {
-          "label": "玻璃",
-          "value": "标准玻璃"
-        },
-        {
-          "label": "支架",
-          "value": "可调倾斜度支架"
-        }
-      ]
-    },
-    {
       "title": "硬件规格",
       "items": [
         {
@@ -75,7 +58,7 @@
       "title": "型号与地区",
       "items": [
         {
-          "label": "硬件型号（官方匹配）",
+          "label": "硬件型号",
           "value": "A3350"
         },
         {
@@ -84,7 +67,7 @@
         },
         {
           "label": "零售部件号",
-          "value": null
+          "value": "MFEX4CH/A"
         }
       ]
     }
@@ -106,6 +89,13 @@
       "label": "Studio Display 2026 官方资料",
       "url": "https://support.apple.com/ko-kr/126324",
       "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple 零售配置",
+      "url": "https://www.apple.com.cn/shop/buy-mac/studio-display/mfex4ch/a",
+      "kind": "official",
+      "checkedAt": "2026-09-09",
       "timeZone": "Asia/Shanghai"
     }
   ],

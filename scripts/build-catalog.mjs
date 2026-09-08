@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import { Document, NodeIO } from '@gltf-transform/core';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 import { toCreasedNormals } from 'three/addons/utils/BufferGeometryUtils.js';
+import { buildThumbnail } from './thumbnails.mjs';
 import {
   localAsset,
   modelDownloads,
@@ -99,8 +100,9 @@ for (const { directory, relativePath, meta } of await readModelEntries(
     preview = `generated/${name}`;
   } else await validateGlb(previewFile.path);
   let poster;
+  let thumbnail;
   if (meta.poster) {
-    await localAsset(directory, meta.poster);
+    const posterFile = await localAsset(directory, meta.poster);
     if (
       !['.png', '.jpg', '.jpeg', '.webp', '.avif'].includes(
         extname(meta.poster),
@@ -108,6 +110,7 @@ for (const { directory, relativePath, meta } of await readModelEntries(
     )
       throw new Error(`${meta.id}: 缩略图需要 PNG、JPG、WebP 或 AVIF`);
     poster = url(relativePath, meta.poster);
+    thumbnail = await buildThumbnail(posterFile.path, generatedDir);
   }
   const downloads = [];
   for (const item of meta.downloads) {
@@ -129,6 +132,7 @@ for (const { directory, relativePath, meta } of await readModelEntries(
     order: meta.order ?? 100,
     preview,
     poster,
+    thumbnail,
     cameraOrbit: meta.cameraOrbit ?? '30deg 65deg 100%',
     downloads: modelDownloads(downloads, {
       label: 'GLB',

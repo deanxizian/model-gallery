@@ -26,19 +26,6 @@
   ],
   "specGroups": [
     {
-      "title": "我的版本",
-      "items": [
-        {
-          "label": "配色",
-          "value": "白色"
-        },
-        {
-          "label": "充电盒",
-          "value": "2022 MagSafe 充电盒（Lightning）"
-        }
-      ]
-    },
-    {
       "title": "硬件规格",
       "items": [
         {
@@ -48,6 +35,10 @@
         {
           "label": "芯片",
           "value": "Apple H2（耳机）+ Apple U1（充电盒）"
+        },
+        {
+          "label": "充电盒",
+          "value": "2022 MagSafe 充电盒（Lightning）"
         },
         {
           "label": "尺寸（宽 × 高 × 深）",
@@ -96,7 +87,7 @@
         },
         {
           "label": "零售部件号",
-          "value": null
+          "value": "MQD83AM/A"
         }
       ]
     }
@@ -112,6 +103,13 @@
       "label": "AirPods Pro 2 · Lightning 官方机型识别",
       "url": "https://support.apple.com/zh-cn/109525",
       "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Crutchfield 产品目录",
+      "url": "https://www.crutchfield.com/p_472APDPRO2/Apple-AirPods-Pro-2nd-Gen-Lightning-reg-Connector.html",
+      "kind": "retailer",
+      "checkedAt": "2026-09-09",
       "timeZone": "Asia/Shanghai"
     }
   ],

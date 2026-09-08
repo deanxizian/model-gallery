@@ -26,19 +26,6 @@
   ],
   "specGroups": [
     {
-      "title": "我的版本",
-      "items": [
-        {
-          "label": "配色",
-          "value": "白色"
-        },
-        {
-          "label": "充电盒",
-          "value": "2019 无线充电盒（Lightning）"
-        }
-      ]
-    },
-    {
       "title": "硬件规格",
       "items": [
         {
@@ -52,6 +39,10 @@
         {
           "label": "芯片",
           "value": "Apple H1"
+        },
+        {
+          "label": "充电盒",
+          "value": "2019 无线充电盒（Lightning）"
         },
         {
           "label": "尺寸（宽 × 高 × 深）",
@@ -100,7 +91,7 @@
         },
         {
           "label": "零售部件号",
-          "value": null
+          "value": "MWP22CH/A"
         }
       ]
     }
@@ -122,6 +113,13 @@
       "label": "Apple AirPods Pro 初代上市时间",
       "url": "https://www.apple.com.cn/newsroom/2019/10/airpods-pro-arrive-in-stores-around-the-world/",
       "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "SHI 产品目录",
+      "url": "https://eu.shi.com/product/41719653/Apple-AirPods-Pro-1st-generation",
+      "kind": "retailer",
+      "checkedAt": "2026-09-09",
       "timeZone": "Asia/Shanghai"
     }
   ],

@@ -1,14 +1,14 @@
 {
   "id": "apple-watch-series-6",
   "name": "Apple Watch Series 6",
-  "subtitle": "深空灰色 · 44 毫米 · GPS · 黑色运动回环表带 M/L 码 · 国行",
+  "subtitle": "深空灰色 · 44 毫米 · GPS · 煤灰色 Nike 运动表带 M/L · 国行",
   "description": "配备全天候视网膜显示屏的智能手表，采用铝金属表壳，支持 GPS 定位。",
   "category": "智能手表",
   "brand": "Apple",
   "order": 17,
   "ownership": {
     "status": "retired",
-    "specification": "深空灰色 · 44 毫米 · GPS · 黑色运动回环表带 M/L 码 · 国行",
+    "specification": "深空灰色 · 44 毫米 · GPS · 煤灰色 Nike 运动表带 M/L · 国行",
     "acquired": "2021年3月"
   },
   "preview": "model-gps-case-only.glb",
@@ -26,35 +26,6 @@
   ],
   "specGroups": [
     {
-      "title": "我的版本",
-      "items": [
-        {
-          "label": "配色",
-          "value": "深空灰色"
-        },
-        {
-          "label": "存储容量",
-          "value": "32 GB"
-        },
-        {
-          "label": "网络版本",
-          "value": "GPS"
-        },
-        {
-          "label": "表带尺码",
-          "value": "M/L"
-        },
-        {
-          "label": "表壳尺寸",
-          "value": "44 毫米"
-        },
-        {
-          "label": "表带",
-          "value": "黑色 运动回环式表带"
-        }
-      ]
-    },
-    {
       "title": "硬件规格",
       "items": [
         {
@@ -64,6 +35,14 @@
         {
           "label": "芯片",
           "value": "Apple S6 SiP"
+        },
+        {
+          "label": "存储容量",
+          "value": "32 GB"
+        },
+        {
+          "label": "网络版本",
+          "value": "GPS"
         },
         {
           "label": "尺寸（宽 × 高 × 深）",
@@ -79,7 +58,7 @@
         },
         {
           "label": "材质",
-          "value": "铝金属表壳、Ion-X 玻璃表镜、尼龙运动回环式表带"
+          "value": "铝金属表壳、Ion-X 玻璃表镜、氟橡胶 Nike 运动表带"
         },
         {
           "label": "接口",
@@ -91,7 +70,7 @@
       "title": "型号与地区",
       "items": [
         {
-          "label": "硬件型号（官方匹配）",
+          "label": "硬件型号",
           "value": "A2292"
         },
         {
@@ -100,16 +79,7 @@
         },
         {
           "label": "零售部件号",
-          "value": null
-        }
-      ]
-    },
-    {
-      "title": "版本备注",
-      "items": [
-        {
-          "label": "说明",
-          "value": "44 毫米 GPS 版；表带尺码为 M/L。"
+          "value": "MG173CH/A"
         }
       ]
     }
@@ -131,6 +101,13 @@
       "label": "Apple Watch Series 6 官方资料",
       "url": "https://www.apple.com.cn/newsroom/2020/09/apple-watch-series-6-delivers-breakthrough-wellness-and-fitness-capabilities/",
       "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Mobax 名古屋 产品目录",
+      "url": "https://mobax-nagoya.com/p-2007/",
+      "kind": "retailer",
+      "checkedAt": "2026-09-09",
       "timeZone": "Asia/Shanghai"
     }
   ],

@@ -141,7 +141,7 @@
       "title": "型号与地区",
       "items": [
         {
-          "label": "硬件型号（官方匹配）",
+          "label": "硬件型号",
           "value": "A3521"
         },
         {
@@ -150,7 +150,7 @@
         },
         {
           "label": "零售部件号",
-          "value": null
+          "value": "MG724CH/A"
         }
       ]
     }
@@ -171,6 +171,13 @@
       "label": "Apple 双 nano-SIM 卡说明",
       "url": "https://support.apple.com/zh-cn/108898",
       "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple 零售配置",
+      "url": "https://www.apple.com.cn/shop/buy-iphone/iphone-17/mg724ch/a",
+      "kind": "official",
+      "checkedAt": "2026-09-09",
       "timeZone": "Asia/Shanghai"
     }
   ],

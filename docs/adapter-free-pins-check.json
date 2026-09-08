@@ -1,0 +1,43 @@
+{
+  "source": "public/models/xteink-x3/accessories/x3-type-c-adapter/X3_Type_C_Adapter.blend",
+  "source_sha256": "accc4c087a576917f77ab7e6fce973464660aef0c5b58b08619fed93b37199f2",
+  "before_pin_extension_mm": [
+    0.10899920016527176,
+    0.10899920016527176,
+    0.10899920016527176,
+    0.10899920016527176
+  ],
+  "after_pin_extension_mm": [
+    0.49999868497252464,
+    0.49999868497252464,
+    0.49999868497252464,
+    0.49999868497252464
+  ],
+  "pin_part_translation_mm": [
+    0.3909999651793074,
+    0.3909999651793074,
+    0.3909999651793074,
+    0.3909999651793074,
+    0.3909999651793074,
+    0.3909999651793074,
+    0.3909999651793074,
+    0.3909999651793074
+  ],
+  "unchanged_meshes": {
+    "REFERENCE | Adapter body 31.74 x 11.92 x 7.90 mm": "93d49e217bac6cb1c0b72e198f486fa6acd425830d919be67573313e1691c686",
+    "REFERENCE | Waisted contact step 19.30 x 4.66 mm": "4a3e966e2dd94be4097572f89f3ad1d436e84ba7a42541eaa80e222b75372f8e",
+    "Adapter | Flush magnet": "7c5742d2e13646758b94c037236237f432e689211fe21efd0d3b0001aa5393ae",
+    "Adapter | Flush magnet.001": "13b50b47921786f654358ac350d237099a2e247d900a65fa05a0e5c0cd979c26",
+    "Adapter | Stadium end cap left": "ececa75f06cf769a0c51a4140ca0bc4ce9350aab8d9a64d6f63252bedbaf2db7",
+    "Adapter | Stadium end cap right": "fbbd57d768a930726cc1d8d6d6d80a1fbbb5f1d6aad004eec416cfb80df3c594",
+    "Adapter | Recessed USB-C socket interior": "29e9ac1d1bf37c948773bfc5f054bc6cc548799ad65e3e3f0723bed9921e1ec7"
+  },
+  "original_files_retained": [
+    "model.glb",
+    "X3_Type_C_Adapter.blend",
+    "poster.png",
+    "X3_Type_C_Adapter.step"
+  ],
+  "actual_pin_height_measured": false,
+  "assembly_and_manufacturing_geometry_modified": false
+}

@@ -3,8 +3,8 @@
   "brand": "Apple",
   "category": "watch",
   "name": {
-    "zh_CN": "Apple Watch Series 6 · 44 毫米深空灰黑色运动回环",
-    "en": "Apple Watch Series 6 (44 mm) — Space Gray Aluminum / Black Sport Loop"
+    "zh_CN": "Apple Watch Series 6 · 44 毫米深空灰 Nike 运动表带",
+    "en": "Apple Watch Series 6 (44 mm) — Space Gray Aluminum / Nike Sport Band"
   },
   "release_year": 2020,
   "configuration": {
@@ -18,20 +18,28 @@
     },
     "memory_gb": null,
     "sales_region": "中国大陆（国行）",
-    "retail_part_number": null,
+    "retail_part_number": "MG173CH/A",
     "case_size_mm": 44,
     "band": {
-      "name_zh_CN": "运动回环式表带",
-      "color_zh_CN": "黑色",
-      "material": "nylon"
+      "name_zh_CN": "Nike 运动表带",
+      "color_zh_CN": "煤灰色",
+      "material": "fluoroelastomer",
+      "color_reported_by_owner": "煤灰色",
+      "catalog_color_zh_CN": "煤黑配黑色"
     },
     "connectivity_variant": "GPS",
     "band_size": "M/L",
-    "band_size_label": "M/L"
+    "band_size_label": "M/L",
+    "original_band": {
+      "name_zh_CN": "Nike 运动表带",
+      "color_zh_CN": "煤灰色",
+      "material": "fluoroelastomer",
+      "color_reported_by_owner": "煤灰色",
+      "catalog_color_zh_CN": "煤黑配黑色",
+      "size": "M/L"
+    }
   },
-  "unconfirmed_fields": [
-    "retail_part_number"
-  ],
+  "unconfirmed_fields": [],
   "identification": {
     "confirmed_unit_model_number": null,
     "official_references": [
@@ -64,7 +72,15 @@
       }
     ],
     "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
-    "matched_at": "2026-09-08"
+    "matched_at": "2026-09-08",
+    "matched_retail_part_number": {
+      "value": "MG173CH/A",
+      "status": "configuration_match",
+      "basis": "Apple Watch Nike Series 6；44 毫米深空灰铝金属；GPS；煤黑/黑色 Nike 运动表带；中国大陆标准套装。用户称煤灰色洞洞表带，佩戴 M/L；按原配套装匹配，未读取实机部件号",
+      "source_ref": "retail_configuration_match",
+      "matched_at": "2026-09-09",
+      "note": "按用户提供的配置匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+    }
   },
   "specifications": {
     "chip": "Apple S6 SiP",
@@ -92,7 +108,7 @@
     "materials": [
       "铝金属表壳",
       "Ion-X 玻璃表镜",
-      "尼龙运动回环式表带"
+      "氟橡胶 Nike 运动表带"
     ],
     "ports": [
       "磁力充电"
@@ -104,15 +120,16 @@
     }
   },
   "notes": [
-    "用户确认国行、44 毫米 GPS、黑色运动回环表带 M/L 码；已退役，具体退役日期未提供。"
+    "用户确认国行、44 毫米 GPS；原配煤灰色 Nike 洞洞运动表带，佩戴 M/L；已退役。原 sport_loop 标识保留以兼容历史记录，不代表当前表带类型。"
   ],
   "source_refs": [
     "watch_series_6_44_space_gray_sport_loop_spec",
     "identify_watch",
-    "watch6_launch"
+    "watch6_launch",
+    "retail_configuration_match"
   ],
-  "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。未确认的购买店铺、零售部件号等不作推定。",
-  "updated_at": "2026-09-08",
+  "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。零售部件号按已知配置匹配标准零售目录，来源及适用范围见 identification.matched_retail_part_number；未读取实机部件号，也未据此推定购买店铺。",
+  "updated_at": "2026-09-09",
   "asset": {
     "status": "ready",
     "blend": "Apple_Watch_Series_6_44_GPS_Space_Gray_Case_Only.blend",
@@ -154,6 +171,9 @@
     "identification": [
       "identify_watch",
       "watch6_launch"
+    ],
+    "configuration.retail_part_number": [
+      "retail_configuration_match"
     ]
   },
   "sources": {
@@ -174,13 +194,19 @@
       "publisher": "Apple",
       "accessed_at": "2026-09-08",
       "kind": "official_reference"
+    },
+    "retail_configuration_match": {
+      "url": "https://mobax-nagoya.com/p-2007/",
+      "publisher": "Mobax 名古屋",
+      "accessed_at": "2026-09-09",
+      "kind": "retailer_catalog"
     }
   },
   "ownership": {
     "status": "retired",
-    "specification": "深空灰色 · 44 毫米 · GPS · 黑色运动回环表带 M/L 码 · 国行",
+    "specification": "深空灰色 · 44 毫米 · GPS · 煤灰色 Nike 运动表带 M/L · 国行",
     "acquired": "2021年3月"
   },
-  "configuration_confirmed_at": "2026-09-08",
-  "ownership_confirmed_at": "2026-09-08"
+  "configuration_confirmed_at": "2026-09-09",
+  "ownership_confirmed_at": "2026-09-09"
 }

@@ -26,7 +26,13 @@
       "color_zh_CN": "原色钛金属",
       "introduced_year": 2024
     },
-    "band_size": "M"
+    "band_size": "M",
+    "original_band": {
+      "name_zh_CN": "野径回环式表带",
+      "color_zh_CN": "灰白配色",
+      "size": "M/L",
+      "confirmed_at": "2026-09-09"
+    }
   },
   "unconfirmed_fields": [
     "retail_part_number"
@@ -57,7 +63,8 @@
       }
     ],
     "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
-    "matched_at": "2026-09-08"
+    "matched_at": "2026-09-08",
+    "retail_part_number_pending_reason": "用户确认原配灰白配色野径回环 M/L；公开目录未找到与该完整配色描述唯一对应的 2023 国行套装，不能直接套用绿配灰色或其他近似配色编号。"
   },
   "specifications": {
     "chip": "Apple S9 SiP",
@@ -97,7 +104,8 @@
     }
   },
   "notes": [
-    "Ultra 2 主机于 2023 年推出；本次搭配的钛金属米兰尼斯表带于 2024 年推出，不能将组合写成 2023 年首发套装。"
+    "Ultra 2 主机于 2023 年推出；本次搭配的钛金属米兰尼斯表带于 2024 年推出，不能将组合写成 2023 年首发套装。",
+    "2026-09-09 用户补充：购入时原配灰白配色野径回环式表带 M/L；与当前原色钛金属米兰尼斯 M 码分别记录。"
   ],
   "source_refs": [
     "watch_ultra_2_natural_milanese_spec",
@@ -105,7 +113,7 @@
     "ultra_band"
   ],
   "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。未确认的购买店铺、零售部件号等不作推定。",
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-09",
   "asset": {
     "status": "ready",
     "blend": "Apple_Watch_Ultra_2_Natural_Milanese.blend",
@@ -165,6 +173,6 @@
     "specification": "原色钛金属 · 49 毫米 · 钛金属米兰尼斯表带 M 码 · 国行",
     "acquired": "2023年11月"
   },
-  "configuration_confirmed_at": "2026-09-08",
+  "configuration_confirmed_at": "2026-09-09",
   "ownership_confirmed_at": "2026-09-08"
 }

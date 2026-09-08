@@ -26,11 +26,15 @@
   ],
   "specGroups": [
     {
-      "title": "我的版本",
+      "title": "硬件规格",
       "items": [
         {
-          "label": "配色",
-          "value": "深空灰色"
+          "label": "发布年份",
+          "value": "2022"
+        },
+        {
+          "label": "芯片",
+          "value": "Apple M2"
         },
         {
           "label": "存储容量",
@@ -43,19 +47,6 @@
         {
           "label": "网络版本",
           "value": "Wi-Fi + Cellular（美国，sub-6 GHz + mmWave）"
-        }
-      ]
-    },
-    {
-      "title": "硬件规格",
-      "items": [
-        {
-          "label": "发布年份",
-          "value": "2022"
-        },
-        {
-          "label": "芯片",
-          "value": "Apple M2"
         },
         {
           "label": "尺寸（宽 × 高 × 深）",
@@ -83,7 +74,7 @@
       "title": "型号与地区",
       "items": [
         {
-          "label": "硬件型号（官方匹配）",
+          "label": "硬件型号",
           "value": "A2764"
         },
         {
@@ -92,7 +83,7 @@
         },
         {
           "label": "零售部件号",
-          "value": null
+          "value": "MP5X3LL/A"
         }
       ]
     },
@@ -123,6 +114,13 @@
       "label": "Apple iPad Pro 第六代美国技术规格",
       "url": "https://support.apple.com/en-us/111841",
       "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "B&H Photo Video 产品目录",
+      "url": "https://www.bhphotovideo.com/c/product/1731135-REG/apple_mp5x3ll_a_12_9_ipad_pro_m2.html",
+      "kind": "retailer",
+      "checkedAt": "2026-09-09",
       "timeZone": "Asia/Shanghai"
     }
   ],
