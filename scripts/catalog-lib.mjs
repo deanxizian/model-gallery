@@ -184,10 +184,10 @@ export function validateMetadata(value, folder) {
       const localDesign = source?.kind === 'local-design';
       if (
         source?.kind !== undefined &&
-        !['official', 'local-design'].includes(source.kind)
+        !['official', 'retailer', 'local-design'].includes(source.kind)
       )
         throw new Error(
-          `${folder}: 规格来源 kind 必须是 official 或 local-design`,
+          `${folder}: 规格来源 kind 必须是 official、retailer 或 local-design`,
         );
       if (localDesign && (!value.parentId || source.url !== undefined))
         throw new Error(

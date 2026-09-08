@@ -1,7 +1,7 @@
 import { statusLabels, type GalleryModel } from '../types';
-import { ChevronLeft } from 'lucide-react';
 import DownloadMenu from './DownloadMenu';
 import { ownedSpecification } from '../archive';
+import { ChevronRight } from 'lucide-react';
 
 export default function ModelDetails({
   model,
@@ -70,10 +70,14 @@ export default function ModelDetails({
         </section>
       )}
       {model.specGroups?.length ? (
-        <details className="product-specs" key={model.id} aria-label="参数规格">
+        <details key={model.id} className="product-specs" aria-label="参数规格">
           <summary>
             <h3>参数规格</h3>
-            <ChevronLeft size={19} aria-hidden="true" />
+            <ChevronRight
+              className="spec-chevron"
+              size={16}
+              aria-hidden="true"
+            />
           </summary>
           <div className="spec-groups">
             {model.specGroups.map((group) => (
@@ -98,7 +102,7 @@ export default function ModelDetails({
           </div>
           {model.specSources?.length ? (
             <p className="spec-sources">
-              规格参考：
+              参考：
               {model.specSources.map((source, index) => (
                 <span
                   key={`${source.kind ?? 'official'}-${source.url ?? source.label}-${index}`}
@@ -111,10 +115,8 @@ export default function ModelDetails({
                       {source.label}
                     </a>
                   )}
-                  <span>（核对于 {source.checkedAt}）</span>
                 </span>
               ))}
-              。拥有记录按实物信息填写。
             </p>
           ) : null}
         </details>

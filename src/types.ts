@@ -27,7 +27,10 @@ interface SpecificationSourceRecord {
   timeZone?: string;
 }
 export type SpecificationSource = SpecificationSourceRecord &
-  ({ kind?: 'official'; url: string } | { kind: 'local-design'; url?: never });
+  (
+    | { kind?: 'official' | 'retailer'; url: string }
+    | { kind: 'local-design'; url?: never }
+  );
 export interface GalleryModel {
   id: string;
   name: string;
@@ -37,6 +40,7 @@ export interface GalleryModel {
   revision?: string;
   preview: string;
   poster?: string;
+  thumbnail?: string;
   cameraOrbit: string;
   downloads: DownloadFile[];
   note?: string;

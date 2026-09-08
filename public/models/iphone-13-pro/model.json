@@ -7,7 +7,7 @@
   "brand": "Apple",
   "order": 16,
   "ownership": {
-    "status": "active",
+    "status": "retired",
     "specification": "远峰蓝色 · 256 GB · 国行",
     "acquired": "2022年11月"
   },
@@ -26,23 +26,6 @@
   ],
   "specGroups": [
     {
-      "title": "我的版本",
-      "items": [
-        {
-          "label": "配色",
-          "value": "远峰蓝色"
-        },
-        {
-          "label": "存储容量",
-          "value": "256 GB"
-        },
-        {
-          "label": "网络版本",
-          "value": "国行 · 5G · 双 nano-SIM 卡"
-        }
-      ]
-    },
-    {
       "title": "硬件规格",
       "items": [
         {
@@ -52,6 +35,14 @@
         {
           "label": "芯片",
           "value": "Apple A15 Bionic"
+        },
+        {
+          "label": "存储容量",
+          "value": "256 GB"
+        },
+        {
+          "label": "网络版本",
+          "value": "国行 · 5G · 双 nano-SIM 卡"
         },
         {
           "label": "尺寸（宽 × 高 × 深）",
@@ -79,7 +70,7 @@
       "title": "型号与地区",
       "items": [
         {
-          "label": "硬件型号（官方匹配）",
+          "label": "硬件型号",
           "value": "A2639"
         },
         {
@@ -88,7 +79,7 @@
         },
         {
           "label": "零售部件号",
-          "value": null
+          "value": "MLTE3CH/A"
         }
       ]
     },
@@ -119,6 +110,13 @@
       "label": "Apple 双 nano-SIM 卡说明",
       "url": "https://support.apple.com/zh-cn/108898",
       "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "易点云 产品目录",
+      "url": "https://edianyun.com/item/637652",
+      "kind": "retailer",
+      "checkedAt": "2026-09-09",
       "timeZone": "Asia/Shanghai"
     }
   ],

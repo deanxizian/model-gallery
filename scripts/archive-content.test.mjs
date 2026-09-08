@@ -26,16 +26,31 @@ test('product records contain only owned capacities and reference published asse
       await readFile(resolve(directory, 'product.json'), 'utf8'),
     );
     const { specifications, configuration, asset } = product;
+    assert.ok(
+      !meta.specGroups.some((group) => group.title === '我的版本'),
+      meta.id,
+    );
+    const displayedItems = meta.specGroups.flatMap((group) => group.items);
     assert.equal(specifications.storage_options, undefined, meta.id);
     assert.equal(specifications.configuration_options, undefined, meta.id);
     if (meta.id in storageGB) {
       const expected = { value: storageGB[meta.id], unit: 'GB' };
       assert.deepEqual(configuration.storage, expected, meta.id);
       assert.deepEqual(specifications.storage, expected, meta.id);
+      assert.equal(
+        displayedItems.find((item) => item.label === '存储容量')?.value,
+        `${storageGB[meta.id]} GB`,
+        meta.id,
+      );
     } else assert.equal(configuration.storage, null, meta.id);
     if (meta.id in memoryGB) {
       assert.equal(configuration.memory_gb, memoryGB[meta.id], meta.id);
       assert.equal(specifications.memory_gb, memoryGB[meta.id], meta.id);
+      assert.equal(
+        displayedItems.find((item) => item.label === '内存')?.value,
+        `${memoryGB[meta.id]} GB`,
+        meta.id,
+      );
     }
     assert.equal(asset.status, 'ready');
     assert.equal(asset.path_base, 'relative_to_product_json');
@@ -58,6 +73,68 @@ test('product records contain only owned capacities and reference published asse
     }
     await checkPaths(asset);
     assert.deepEqual(product.ownership, meta.ownership, meta.id);
+  }
+});
+
+test('retail configuration matches have traceable sources and stay distinct from unit readings', async () => {
+  const entries = await readModelEntries(
+    fileURLToPath(new URL('../public/models', import.meta.url)),
+  );
+  for (const { directory, meta } of entries.filter(
+    (entry) => entry.meta.brand === 'Apple',
+  )) {
+    const product = JSON.parse(
+      await readFile(resolve(directory, 'product.json'), 'utf8'),
+    );
+    const match = product.identification.matched_retail_part_number;
+    const retailItem = meta.specGroups
+      .flatMap((group) => group.items)
+      .find((item) => item.label.startsWith('零售部件号'));
+    if (
+      product.identification.retail_part_number_display ===
+      'omit_by_owner_request'
+    ) {
+      assert.equal(retailItem, undefined, meta.id);
+      continue;
+    }
+    if (!match) {
+      assert.equal(product.configuration.retail_part_number, null, meta.id);
+      assert.equal(retailItem?.value, null, meta.id);
+      continue;
+    }
+    assert.equal(match.status, 'configuration_match', meta.id);
+    assert.equal(
+      product.configuration.retail_part_number,
+      match.value,
+      meta.id,
+    );
+    assert.equal(retailItem?.value, match.value, meta.id);
+    assert.equal(retailItem.label, '零售部件号', meta.id);
+    assert.equal(
+      product.identification.confirmed_unit_model_number,
+      null,
+      meta.id,
+    );
+    assert.ok(
+      !product.unconfirmed_fields.includes('retail_part_number'),
+      meta.id,
+    );
+    assert.ok(match.basis && match.matched_at, meta.id);
+    assert.ok(
+      product.field_source_refs['configuration.retail_part_number'].includes(
+        match.source_ref,
+      ),
+      meta.id,
+    );
+    const source = product.sources[match.source_ref];
+    const published = meta.specSources.find((item) => item.url === source.url);
+    assert.ok(published, meta.id);
+    assert.equal(published.checkedAt, source.accessed_at, meta.id);
+    assert.equal(
+      published.kind,
+      source.kind === 'retailer_catalog' ? 'retailer' : 'official',
+      meta.id,
+    );
   }
 });
 
@@ -105,11 +182,11 @@ test('the published archive contains the ten completed Apple models and both X3 
   const ipad = models.find((model) => model.id === 'ipad-pro-m2-12-9');
   assert.equal(
     ipad.specGroups
-      .find((group) => group.title === '我的版本')
+      .find((group) => group.title === '硬件规格')
       .items.find((item) => item.label === '存储容量').value,
     '128 GB',
   );
-  // The owner confirmed that only Series 6 and first-generation AirPods Pro are retired.
+  // The iPad remains active; iPhone 13 Pro, Series 6 and first-generation AirPods Pro are retired.
   assert.equal(ipad.ownership.status, 'active');
   assert.equal(ipad.ownership.acquired, '2024年8月');
 });
