@@ -1,0 +1,138 @@
+{
+  "id": "apple-watch-ultra-2",
+  "name": "Apple Watch Ultra 2",
+  "subtitle": "原色钛金属 · 49 毫米 · 钛金属米兰尼斯表带 M 码 · 国行",
+  "description": "采用 49 毫米钛金属表壳与蓝宝石玻璃表镜的智能手表，支持 GPS 与蜂窝网络。",
+  "category": "智能手表",
+  "brand": "Apple",
+  "order": 12,
+  "ownership": {
+    "status": "active",
+    "specification": "原色钛金属 · 49 毫米 · 钛金属米兰尼斯表带 M 码 · 国行",
+    "acquired": "2023年11月"
+  },
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "25deg 72deg 100%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "Apple_Watch_Ultra_2_Natural_Milanese.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "我的版本",
+      "items": [
+        {
+          "label": "配色",
+          "value": "原色钛金属"
+        },
+        {
+          "label": "存储容量",
+          "value": "64 GB"
+        },
+        {
+          "label": "网络版本",
+          "value": "GPS + Cellular"
+        },
+        {
+          "label": "表带尺码",
+          "value": "M 码"
+        },
+        {
+          "label": "表壳尺寸",
+          "value": "49 毫米"
+        },
+        {
+          "label": "表带",
+          "value": "原色钛金属 钛金属米兰尼斯表带"
+        }
+      ]
+    },
+    {
+      "title": "硬件规格",
+      "items": [
+        {
+          "label": "发布年份",
+          "value": "2023"
+        },
+        {
+          "label": "芯片",
+          "value": "Apple S9 SiP"
+        },
+        {
+          "label": "尺寸（宽 × 高 × 深）",
+          "value": "44 × 49 × 12 mm；官方标称表壳；不含表带"
+        },
+        {
+          "label": "重量 · 原色表壳，不含表带",
+          "value": "61 g"
+        },
+        {
+          "label": "屏幕",
+          "value": "LTPO2 OLED / Always-On Retina · 410 × 502"
+        },
+        {
+          "label": "材质",
+          "value": "5 级钛金属表壳、蓝宝石玻璃表镜、钛金属编织表带"
+        },
+        {
+          "label": "接口",
+          "value": "磁力充电"
+        }
+      ]
+    },
+    {
+      "title": "型号与地区",
+      "items": [
+        {
+          "label": "硬件型号（官方匹配）",
+          "value": "A2987"
+        },
+        {
+          "label": "销售地区",
+          "value": "中国大陆（国行）"
+        },
+        {
+          "label": "零售部件号",
+          "value": null
+        }
+      ]
+    },
+    {
+      "title": "版本备注",
+      "items": [
+        {
+          "label": "说明",
+          "value": "主机于 2023 年推出，搭配的钛金属米兰尼斯表带为 2024 年款。"
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "Apple Watch Ultra 2 官方资料",
+      "url": "https://support.apple.com/zh-cn/111832",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple Watch Ultra 2 官方机型识别",
+      "url": "https://support.apple.com/zh-cn/108056",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple Watch Ultra 2 官方资料",
+      "url": "https://www.apple.com.cn/newsroom/2024/09/apple-watch-ultra-2-now-available-in-black-titanium/",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "note": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。 官方 2024 黑色钛金属米兰尼斯组合 AR 改为原色钛金属；表带为静态展示姿态。"
+}

@@ -2,7 +2,7 @@
   "id": "xteink-x3",
   "name": "阅星瞳 X3",
   "subtitle": "白色 · 口袋阅读器",
-  "description": "3.7 英寸墨水屏阅读器，留存白色机身、屏幕与实体按键的外观。配套充电底座也收录在这份档案中。",
+  "description": "配备 3.7 英寸电子墨水屏与实体翻页按键的便携阅读器，支持 microSD 存储扩展。",
   "dimensions": "63.70 × 97.60 × 5.10 mm",
   "revision": "白色",
   "order": 1,
@@ -13,6 +13,10 @@
     {
       "label": "GLB",
       "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "XTEINK_X3_White.blend"
     }
   ],
   "category": "电子书阅读器",
@@ -20,7 +24,7 @@
   "ownership": {
     "status": "active",
     "acquired": "2026年7月",
-    "specification": "白色"
+    "specification": "白色 · 原装随附 16 GB 存储卡"
   },
   "specGroups": [
     {
@@ -49,6 +53,10 @@
         {
           "label": "操作",
           "value": "实体按键；支持摇动翻页"
+        },
+        {
+          "label": "销售地区",
+          "value": "中国大陆（国行）"
         }
       ]
     },
@@ -60,8 +68,12 @@
           "value": "microSD，最高支持 256 GB"
         },
         {
+          "label": "存储卡",
+          "value": "原装随附 16 GB microSD 存储卡"
+        },
+        {
           "label": "实际存储卡容量",
-          "value": null
+          "value": "16 GB"
         },
         {
           "label": "电池容量",

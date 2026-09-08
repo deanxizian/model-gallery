@@ -6,7 +6,12 @@ import {
   type ArchiveFilter,
   type GalleryModel,
 } from './types';
-import { accessoriesOf, archiveSelection, filterDevices } from './archive';
+import {
+  accessoriesOf,
+  archiveSelection,
+  filterDevices,
+  modelRoute,
+} from './archive';
 import ModelLibrary from './components/ModelLibrary';
 import ModelStage from './components/ModelStage';
 import ModelDetails from './components/ModelDetails';
@@ -63,8 +68,14 @@ export default function App() {
   const filtered = filterDevices(models, filter, query, brand);
   const selected = archiveSelection(models, selectedId, filtered);
   function selectModel(id: string) {
-    if (hashId() !== id)
-      history.pushState(null, '', `#${encodeURIComponent(id)}`);
+    const model = models.find((model) => model.id === id);
+    const route = model ? modelRoute(model) : id;
+    if (hashId() !== route)
+      history.pushState(
+        null,
+        '',
+        `#${route.split('/').map(encodeURIComponent).join('/')}`,
+      );
     setSelectedId(id);
   }
   function updateFilter(
@@ -82,11 +93,15 @@ export default function App() {
     );
     if (next && next.model.id !== selectedId) selectModel(next.model.id);
   }
+  const pageTitle =
+    selected &&
+    (selectedId === selected.model.id ||
+      selectedId === modelRoute(selected.model))
+      ? `${selected.device.name}${selected.model.parentId ? ` · ${selected.model.name}` : ''} · Model Gallery`
+      : 'Model Gallery';
   useEffect(() => {
-    document.title = selected
-      ? `${selected.device.name}${selected.model.parentId ? ` · ${selected.model.name}` : ''} · 模型藏馆`
-      : '我的设备 · 模型藏馆';
-  }, [selected?.device.name, selected?.model.name, selected?.model.parentId]);
+    document.title = pageTitle;
+  }, [pageTitle]);
   return (
     <>
       <a className="skip-link" href="#model-details">

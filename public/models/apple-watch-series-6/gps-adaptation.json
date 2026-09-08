@@ -1,0 +1,10 @@
+{
+  "source": "model.glb",
+  "preview": "model-gps.glb",
+  "change": "Replaced the cellular red crown ring finish with space gray; original geometry and original downloads retained.",
+  "geometry_binary_unchanged": true,
+  "source_sha256": "0eed74b21f710208988b32bdf9f08c0c448c44f08713a04bac41e7d62cb992cd",
+  "result_sha256": "b68c546d2585a9723e0a12f647a340c389f28396fad82f531f3324fa52f0d122",
+  "reference": "https://support.apple.com/zh-cn/108056",
+  "checked_at": "2026-09-08"
+}

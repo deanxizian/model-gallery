@@ -2,9 +2,12 @@
 
 - This is a personal archive of digital products the owner has used, preserving them as 3D models and memories. The library lists products, not every model file.
 - Put accessories inside their owning product with `parentId`; retain existing asset URLs and accessory deep links. Use `active`, `retired`, or `unknown` for ownership status, displayed as 在役、已退役、状态待确认.
+- Store accessory metadata and files in `public/models/<product>/accessories/<accessory>/`; use `#<product>/<accessory>` for canonical page links. Keep legacy links working. Do not add placeholder cards for models that are not available.
 - Brand tags filter the device library together with ownership status and search. Accessories follow their owner's brand and are not counted separately.
 - Record specifications for the exact owned variant with official source links and verification dates; do not list alternative colors, capacities, or assume bundled accessories match the owner's actual setup. Keep specifications collapsed by default and key ownership information visible. Ask for missing personal details; never invent purchase dates, capacity, status, or memories. Leave unknown fields explicitly pending.
-- Use one free-text `ownership.specification` field for 我的规格, rather than requiring separate color and capacity slots. The header wordmark displays Model Gallery alone.
+- Use one free-text `ownership.specification` field for 我的规格, rather than requiring separate color and capacity slots. The header wordmark displays Model Gallery alone. The home document title is Model Gallery even when a default product is previewed; include product/accessory names in the title only for an explicitly selected valid product route.
+- Omit retirement dates from the interface and requests for missing information; keep the retired status. Product descriptions beneath titles should be concise, factual introductions to the product, without model-production or archive language. Specification disclosures point left when collapsed and down when expanded. Keep the wordmark visibly larger than 我的设备 and align their left edges across screen sizes.
+- Sort products by purchase date, newest first, with unknown dates last and stable order for ties. Preserve accessory order within each product. On desktop, the product list scrolls independently of the viewer and details; keep search and filters visible. Mobile retains the horizontal device list.
 
 - Make updates on a feature or fix branch; never commit or push updates directly to `main`.
 - Complete local implementation and verification first. Create a pull request only when the user explicitly asks to submit a PR; an ordinary edit or update request is not permission to create one.
@@ -13,4 +16,5 @@
 - After a successful merge, delete the merged feature branch remotely and locally, then return the local checkout to the updated `main`.
 - Production deployments track `main`. Branch work may use local or preview deployments; do not publish unreviewed branch changes as production.
 - Preserve original downloadable model files. Preview conversion and interface changes must not alter manufacturing geometry or model dimensions.
+- Use a consistent download menu: GLB, Blender, STL, STEP in that order when available. Always expose the viewer GLB (including generated STL previews). Blender projects are optional: publish an existing corresponding project when convenient and keep it synchronized with the current preview; include original STL/STEP only where those files exist. Do not invent source history or convert a preview into a purported parametric source.
 - Validate with `pnpm test` and `pnpm build`; for interface changes also check the affected desktop and mobile interactions.

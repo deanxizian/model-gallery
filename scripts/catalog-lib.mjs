@@ -1,4 +1,4 @@
-import { readFile, stat, realpath } from 'node:fs/promises';
+import { readFile, stat, realpath, readdir, lstat } from 'node:fs/promises';
 import { resolve, sep, extname } from 'node:path';
 
 export const supportedDownloads = new Set([
@@ -12,6 +12,35 @@ export const supportedDownloads = new Set([
   '.zip',
 ]);
 export const maxAssetBytes = 95 * 1024 * 1024;
+
+// Every viewer has a downloadable GLB, including previews generated from STL.
+// Preserve original file descriptors; normalize common format labels and order.
+export function modelDownloads(files, previewGlb) {
+  const formats = new Map([
+    ['.glb', ['GLB', 0]],
+    ['.blend', ['Blender', 1]],
+    ['.stl', ['STL', 2]],
+    ['.step', ['STEP', 3]],
+    ['.stp', ['STEP', 3]],
+  ]);
+  const seen = new Set();
+  return [previewGlb, ...files]
+    .filter((file) => {
+      if (seen.has(file.url)) return false;
+      seen.add(file.url);
+      return true;
+    })
+    .map((file) => ({
+      ...file,
+      label:
+        formats.get(extname(file.filename).toLowerCase())?.[0] ?? file.label,
+    }))
+    .sort(
+      (a, b) =>
+        (formats.get(extname(a.filename).toLowerCase())?.[1] ?? 4) -
+        (formats.get(extname(b.filename).toLowerCase())?.[1] ?? 4),
+    );
+}
 
 function isCalendarDate(value) {
   if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value))
@@ -180,8 +209,26 @@ export function validateMetadata(value, folder) {
         throw new Error(
           `${folder}: 规格来源需要名称、HTTPS URL 和核对日期 YYYY-MM-DD`,
         );
-      if (source.checkedAt > new Date().toISOString().slice(0, 10))
-        throw new Error(`${folder}: 规格来源核对日期不能晚于当前 UTC 日期`);
+      let today;
+      try {
+        if (
+          source.timeZone !== undefined &&
+          (typeof source.timeZone !== 'string' || !source.timeZone.trim())
+        )
+          throw new Error('Invalid time zone');
+        today = new Intl.DateTimeFormat('en-CA', {
+          timeZone: source.timeZone ?? 'UTC',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+        }).format(new Date());
+      } catch {
+        throw new Error(`${folder}: 规格来源 timeZone 必须是有效时区`);
+      }
+      if (source.checkedAt > today)
+        throw new Error(
+          `${folder}: 规格来源核对日期不能晚于当前 ${source.timeZone ?? 'UTC'} 日期`,
+        );
     }
   }
   if (value.specGroups?.length && !value.specSources?.length)
@@ -189,6 +236,55 @@ export function validateMetadata(value, folder) {
       `${folder}: 参数规格至少需要一项来源；产品使用官方来源，自制配件可使用 local-design 记录`,
     );
   return value;
+}
+
+export async function readModelEntries(modelDirectory) {
+  const entries = [];
+  async function collect(directory, relativePath, parentId) {
+    const id = relativePath.split('/').at(-1);
+    const meta = validateMetadata(
+      JSON.parse(await readFile(resolve(directory, 'model.json'), 'utf8')),
+      id,
+    );
+    if (meta.parentId !== parentId)
+      throw new Error(`${relativePath}: parentId 必须与所在产品目录一致`);
+    entries.push({ directory, relativePath, meta });
+  }
+  for (const product of await readdir(modelDirectory, {
+    withFileTypes: true,
+  })) {
+    if (product.name.startsWith('.')) continue;
+    if (product.isSymbolicLink()) throw new Error('产品目录不能使用符号链接');
+    if (!product.isDirectory()) continue;
+    const directory = resolve(modelDirectory, product.name);
+    await collect(directory, product.name, undefined);
+    const accessoriesDir = resolve(directory, 'accessories');
+    let accessories;
+    try {
+      accessories = await readdir(accessoriesDir, { withFileTypes: true });
+    } catch (error) {
+      if (error.code === 'ENOENT') continue;
+      throw error;
+    }
+    if ((await lstat(accessoriesDir)).isSymbolicLink())
+      throw new Error('配件目录不能使用符号链接');
+    for (const accessory of accessories) {
+      if (accessory.name.startsWith('.')) continue;
+      if (accessory.isSymbolicLink())
+        throw new Error('配件目录不能使用符号链接');
+      if (!accessory.isDirectory()) continue;
+      const accessoryDir = resolve(accessoriesDir, accessory.name);
+      if ((await readdir(accessoryDir)).includes('accessories'))
+        throw new Error('配件不能嵌套配件');
+      await collect(
+        accessoryDir,
+        `${product.name}/accessories/${accessory.name}`,
+        product.name,
+      );
+    }
+  }
+  validateRelationships(entries.map((entry) => entry.meta));
+  return entries;
 }
 
 export function validateRelationships(models) {

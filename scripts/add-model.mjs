@@ -1,8 +1,12 @@
 import { parseArgs } from 'node:util';
-import { mkdir, copyFile, writeFile, readFile, access } from 'node:fs/promises';
-import { resolve, dirname, basename, extname } from 'node:path';
+import { mkdir, copyFile, writeFile, access } from 'node:fs/promises';
+import { resolve, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { validateMetadata, validateRelationships } from './catalog-lib.mjs';
+import {
+  validateMetadata,
+  validateRelationships,
+  readModelEntries,
+} from './catalog-lib.mjs';
 
 const { values } = parseArgs({
   options: {
@@ -53,25 +57,21 @@ const metadata = {
 validateMetadata(metadata, values.id);
 if (values.parent && values.status)
   throw new Error('配件使用所属产品的状态，请省略 --status');
-if (values.parent) {
-  const parentDir = resolve(
-    dirname(fileURLToPath(import.meta.url)),
-    '../public/models',
-    values.parent,
-  );
-  const parent = validateMetadata(
-    JSON.parse(await readFile(resolve(parentDir, 'model.json'), 'utf8')),
-    values.parent,
-  );
-  validateRelationships([parent, metadata]);
-}
-await access(source);
-if (values.poster) await access(resolve(values.poster));
-const destination = resolve(
+const modelsDirectory = resolve(
   dirname(fileURLToPath(import.meta.url)),
   '../public/models',
-  metadata.id,
 );
+// IDs are shared by products and every accessory, regardless of their folder.
+// Validate the entire proposed catalog before creating any directories or files.
+const existing = await readModelEntries(modelsDirectory);
+validateRelationships([...existing.map((entry) => entry.meta), metadata]);
+await access(source);
+if (values.poster) await access(resolve(values.poster));
+const parentDirectory = values.parent
+  ? resolve(modelsDirectory, values.parent, 'accessories')
+  : modelsDirectory;
+if (values.parent) await mkdir(parentDirectory, { recursive: true });
+const destination = resolve(parentDirectory, metadata.id);
 // mkdir without recursive deliberately refuses to overwrite an existing model.
 await mkdir(destination);
 await copyFile(source, resolve(destination, metadata.preview));
@@ -82,5 +82,5 @@ await writeFile(
   JSON.stringify(metadata, null, 2) + '\n',
 );
 console.log(
-  `已添加 ${metadata.name}: public/models/${basename(destination)}\n请补充参数规格与拥有记录，再运行 pnpm test、pnpm build 并预览。修改保留在工作分支；明确要求提 PR 后，经过 Codex Code Review 再合并发布。`,
+  `已添加 ${metadata.name}: ${destination}\n请补充参数规格与拥有记录，再运行 pnpm test、pnpm build 并预览。修改保留在工作分支；明确要求提 PR 后，经过 Codex Code Review 再合并发布。`,
 );

@@ -1,0 +1,89 @@
+{
+  "id": "x3-dock",
+  "name": "X3 充电底座",
+  "subtitle": "一体式充电底座",
+  "description": "适用于阅星瞳 X3 的一体式桌面底座，提供倾斜支撑，并配合磁吸转接头为设备充电。",
+  "dimensions": "68.30 × 39.37 × 13.75 mm",
+  "order": 1,
+  "preview": "X3_One_Piece_Dock_P21_Clean_v3.stl",
+  "poster": "poster.png",
+  "cameraOrbit": "32deg 56deg 100%",
+  "downloads": [
+    {
+      "label": "STL",
+      "file": "X3_One_Piece_Dock_P21_Clean_v3.stl"
+    },
+    {
+      "label": "STEP",
+      "file": "X3_One_Piece_Dock_P21.step"
+    },
+    {
+      "label": "Blender",
+      "file": "X3_One_Piece_Dock_P21_Clean_v3.blend"
+    }
+  ],
+  "units": "mm",
+  "upAxis": "z",
+  "note": "当前提供 P21 Clean v3：本地网格与装配检查通过，嘉立创重新检测尚未验证；实际夹紧与充电接触需试装确认。",
+  "parentId": "xteink-x3",
+  "category": "充电底座",
+  "specSources": [
+    {
+      "kind": "local-design",
+      "label": "底座尺寸来自个人设计，转接头尺寸来自实物测量记录",
+      "checkedAt": "2026-09-07"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "底座",
+      "items": [
+        {
+          "label": "适配设备",
+          "value": "阅星瞳 X3"
+        },
+        {
+          "label": "结构",
+          "value": "一体式，转接头嵌入安装"
+        },
+        {
+          "label": "尺寸（长 × 宽 × 高）",
+          "value": "68.30 × 39.37 × 13.75 mm"
+        },
+        {
+          "label": "打印材料",
+          "value": null
+        },
+        {
+          "label": "模型文件",
+          "value": "GLB、Blender、STL、STEP"
+        }
+      ]
+    },
+    {
+      "title": "转接头适配尺寸",
+      "items": [
+        {
+          "label": "主体（长 × 高 × 厚）",
+          "value": "31.74 × 11.92 × 7.90 mm"
+        },
+        {
+          "label": "含台阶总厚度",
+          "value": "10.70 mm，量到黑色台阶表面，不含金属触针"
+        },
+        {
+          "label": "台阶（长 × 高）",
+          "value": "19.30 × 4.66 mm"
+        },
+        {
+          "label": "台阶突出主体",
+          "value": "2.80 mm"
+        },
+        {
+          "label": "实际触针高度",
+          "value": null
+        }
+      ]
+    }
+  ]
+}

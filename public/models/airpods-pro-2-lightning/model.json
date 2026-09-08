@@ -1,0 +1,119 @@
+{
+  "id": "airpods-pro-2-lightning",
+  "name": "AirPods Pro 2 · Lightning",
+  "subtitle": "白色 · 2022 Lightning 充电盒 · 美版",
+  "description": "搭载 H2 芯片的入耳式无线耳机，配备带 Lightning 接口的 MagSafe 充电盒。",
+  "category": "无线耳机",
+  "brand": "Apple",
+  "order": 19,
+  "ownership": {
+    "status": "active",
+    "specification": "白色 · 2022 Lightning 充电盒 · 美版",
+    "acquired": "2022年10月"
+  },
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "25deg 72deg 100%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "AirPods_Pro_2_Lightning_2022.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "我的版本",
+      "items": [
+        {
+          "label": "配色",
+          "value": "白色"
+        },
+        {
+          "label": "充电盒",
+          "value": "2022 MagSafe 充电盒（Lightning）"
+        }
+      ]
+    },
+    {
+      "title": "硬件规格",
+      "items": [
+        {
+          "label": "发布年份",
+          "value": "2022"
+        },
+        {
+          "label": "芯片",
+          "value": "Apple H2（耳机）+ Apple U1（充电盒）"
+        },
+        {
+          "label": "尺寸（宽 × 高 × 深）",
+          "value": "60.6 × 45.2 × 21.7 mm；闭合充电盒"
+        },
+        {
+          "label": "重量 · 单只耳机",
+          "value": "5.3 g"
+        },
+        {
+          "label": "重量 · 充电盒",
+          "value": "50.8 g"
+        },
+        {
+          "label": "材质",
+          "value": "塑料外壳、硅胶耳塞"
+        },
+        {
+          "label": "接口",
+          "value": "Lightning（充电盒）"
+        },
+        {
+          "label": "无线连接",
+          "value": "Bluetooth 5.3"
+        },
+        {
+          "label": "充电方式",
+          "value": "Lightning、MagSafe、Apple Watch 充电器、Qi"
+        }
+      ]
+    },
+    {
+      "title": "型号与地区",
+      "items": [
+        {
+          "label": "耳机官方型号组",
+          "value": "A2931 / A2699 / A2698"
+        },
+        {
+          "label": "充电盒型号",
+          "value": "A2700"
+        },
+        {
+          "label": "销售地区",
+          "value": "美国（美版）"
+        },
+        {
+          "label": "零售部件号",
+          "value": null
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "AirPods Pro 2 · Lightning 官方资料",
+      "url": "https://support.apple.com/zh-cn/111851",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "AirPods Pro 2 · Lightning 官方机型识别",
+      "url": "https://support.apple.com/zh-cn/109525",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "note": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。 使用 2023 年 7 月存档的苹果 2022 Lightning AR；苹果现行同名 URL 已改为 USB-C。"
+}

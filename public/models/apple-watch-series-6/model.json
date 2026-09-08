@@ -1,0 +1,138 @@
+{
+  "id": "apple-watch-series-6",
+  "name": "Apple Watch Series 6",
+  "subtitle": "深空灰色 · 44 毫米 · GPS · 黑色运动回环表带 M/L 码 · 国行",
+  "description": "配备全天候视网膜显示屏的智能手表，采用铝金属表壳，支持 GPS 定位。",
+  "category": "智能手表",
+  "brand": "Apple",
+  "order": 17,
+  "ownership": {
+    "status": "retired",
+    "specification": "深空灰色 · 44 毫米 · GPS · 黑色运动回环表带 M/L 码 · 国行",
+    "acquired": "2021年3月"
+  },
+  "preview": "model-gps-case-only.glb",
+  "poster": "poster-gps-case-only.png",
+  "cameraOrbit": "25deg 72deg 100%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model-gps-case-only.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "Apple_Watch_Series_6_44_GPS_Space_Gray_Case_Only.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "我的版本",
+      "items": [
+        {
+          "label": "配色",
+          "value": "深空灰色"
+        },
+        {
+          "label": "存储容量",
+          "value": "32 GB"
+        },
+        {
+          "label": "网络版本",
+          "value": "GPS"
+        },
+        {
+          "label": "表带尺码",
+          "value": "M/L"
+        },
+        {
+          "label": "表壳尺寸",
+          "value": "44 毫米"
+        },
+        {
+          "label": "表带",
+          "value": "黑色 运动回环式表带"
+        }
+      ]
+    },
+    {
+      "title": "硬件规格",
+      "items": [
+        {
+          "label": "发布年份",
+          "value": "2020"
+        },
+        {
+          "label": "芯片",
+          "value": "Apple S6 SiP"
+        },
+        {
+          "label": "尺寸（宽 × 高 × 深）",
+          "value": "38 × 44 × 10.7 mm；官方标称表壳；不含表带"
+        },
+        {
+          "label": "重量 · 44 毫米铝金属表壳，不含表带",
+          "value": "36.5 g"
+        },
+        {
+          "label": "屏幕",
+          "value": "LTPO OLED / Always-On Retina · 368 × 448"
+        },
+        {
+          "label": "材质",
+          "value": "铝金属表壳、Ion-X 玻璃表镜、尼龙运动回环式表带"
+        },
+        {
+          "label": "接口",
+          "value": "磁力充电"
+        }
+      ]
+    },
+    {
+      "title": "型号与地区",
+      "items": [
+        {
+          "label": "硬件型号（官方匹配）",
+          "value": "A2292"
+        },
+        {
+          "label": "销售地区",
+          "value": "中国大陆（国行）"
+        },
+        {
+          "label": "零售部件号",
+          "value": null
+        }
+      ]
+    },
+    {
+      "title": "版本备注",
+      "items": [
+        {
+          "label": "说明",
+          "value": "44 毫米 GPS 版；表带尺码为 M/L。"
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "Apple Watch Series 6 官方资料",
+      "url": "https://support.apple.com/zh-cn/111918",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple Watch Series 6 官方机型识别",
+      "url": "https://support.apple.com/zh-cn/108056",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple Watch Series 6 官方资料",
+      "url": "https://www.apple.com.cn/newsroom/2020/09/apple-watch-series-6-delivers-breakthrough-wellness-and-fitness-capabilities/",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "note": "当前仅展示表壳，不含表带或连接件；基于最新官方来源表壳，将红色表冠环表面适配为已确认的 GPS 深空灰外观。几何数据未改动，拥有规格保留实物记录。"
+}

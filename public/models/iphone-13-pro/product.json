@@ -1,0 +1,179 @@
+{
+  "id": "iphone_13_pro_sierra_blue",
+  "brand": "Apple",
+  "category": "phone",
+  "name": {
+    "zh_CN": "iPhone 13 Pro · 远峰蓝",
+    "en": "iPhone 13 Pro — Sierra Blue"
+  },
+  "release_year": 2021,
+  "configuration": {
+    "color": {
+      "zh_CN": "远峰蓝色",
+      "en": "Sierra Blue"
+    },
+    "storage": {
+      "value": 256,
+      "unit": "GB"
+    },
+    "memory_gb": null,
+    "sales_region": "中国大陆（国行）",
+    "retail_part_number": null,
+    "connectivity_variant": "5G · 双 nano-SIM 卡"
+  },
+  "unconfirmed_fields": [
+    "retail_part_number"
+  ],
+  "identification": {
+    "confirmed_unit_model_number": null,
+    "official_references": [
+      {
+        "value": "A2483",
+        "kind": "hardware_model_number",
+        "scope": "美国",
+        "source_ref": "identify_iphone"
+      },
+      {
+        "value": "A2636",
+        "kind": "hardware_model_number",
+        "scope": "加拿大、日本、墨西哥、沙特阿拉伯",
+        "source_ref": "identify_iphone"
+      },
+      {
+        "value": "A2639",
+        "kind": "hardware_model_number",
+        "scope": "中国大陆、香港、澳门",
+        "source_ref": "identify_iphone"
+      },
+      {
+        "value": "A2640",
+        "kind": "hardware_model_number",
+        "scope": "亚美尼亚、白俄罗斯、哈萨克斯坦、吉尔吉斯斯坦、俄罗斯",
+        "source_ref": "identify_iphone"
+      },
+      {
+        "value": "A2638",
+        "kind": "hardware_model_number",
+        "scope": "其他国家和地区",
+        "source_ref": "identify_iphone"
+      }
+    ],
+    "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+    "matched_official_models": [
+      {
+        "value": "A2639",
+        "kind": "hardware_model_number",
+        "scope": "中国大陆",
+        "source_ref": "identify_iphone"
+      }
+    ],
+    "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+    "matched_at": "2026-09-08"
+  },
+  "specifications": {
+    "chip": "Apple A15 Bionic",
+    "display": {
+      "diagonal_inches": 6.1,
+      "resolution_px": {
+        "width": 1170,
+        "height": 2532
+      },
+      "technology": "OLED / Super Retina XDR",
+      "max_refresh_hz": 120
+    },
+    "dimensions_mm": {
+      "width": 71.5,
+      "height": 146.7,
+      "depth": 7.65,
+      "scope": "机身，不含镜头和按钮突起"
+    },
+    "weights_g": [
+      {
+        "value": 203,
+        "scope": "整机"
+      }
+    ],
+    "materials": [
+      "不锈钢边框",
+      "亚光玻璃背板",
+      "超瓷晶面板"
+    ],
+    "ports": [
+      "Lightning"
+    ],
+    "source_ref": "iphone_13_pro_sierra_blue_spec",
+    "storage": {
+      "value": 256,
+      "unit": "GB"
+    }
+  },
+  "notes": [
+    "用户确认国行、256 GB；官方对应 A2639。现有预览沿用源 AR 的地区天线细节，尚未完全适配 A2639 外观。"
+  ],
+  "source_refs": [
+    "iphone_13_pro_sierra_blue_spec",
+    "identify_iphone",
+    "china_dual_sim"
+  ],
+  "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。未确认的购买店铺、零售部件号等不作推定。",
+  "updated_at": "2026-09-08",
+  "asset": {
+    "status": "ready",
+    "blend": "iPhone_13_Pro_Sierra_Blue.blend",
+    "glb": "model.glb",
+    "previews": {
+      "poster": "poster.png"
+    },
+    "adaptations": "官方远峰蓝单机 AR，保留源模型天线窗口及 SIM 细节。",
+    "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
+    "modeled_scope": "product_exterior",
+    "omitted_requested_parts": [],
+    "geometry_provenance": {
+      "basis": "official_ar_adapted",
+      "official_mesh_count": 78,
+      "authored_mesh_count": 0,
+      "authored_parts": [],
+      "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
+    },
+    "path_base": "relative_to_product_json"
+  },
+  "field_source_refs": {
+    "name_and_release_year": [
+      "iphone_13_pro_sierra_blue_spec",
+      "identify_iphone"
+    ],
+    "specifications": [
+      "iphone_13_pro_sierra_blue_spec"
+    ],
+    "identification": [
+      "identify_iphone"
+    ]
+  },
+  "sources": {
+    "iphone_13_pro_sierra_blue_spec": {
+      "url": "https://support.apple.com/zh-cn/111871",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_reference"
+    },
+    "identify_iphone": {
+      "url": "https://support.apple.com/zh-cn/108044",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_identification"
+    },
+    "china_dual_sim": {
+      "url": "https://support.apple.com/zh-cn/108898",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_identification"
+    }
+  },
+  "ownership": {
+    "status": "active",
+    "specification": "远峰蓝色 · 256 GB · 国行",
+    "acquired": "2022年11月"
+  },
+  "configuration_confirmed_at": "2026-09-08",
+  "ownership_confirmed_at": "2026-09-08"
+}

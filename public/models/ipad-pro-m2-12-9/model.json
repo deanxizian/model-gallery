@@ -1,0 +1,130 @@
+{
+  "id": "ipad-pro-m2-12-9",
+  "name": "iPad Pro 12.9 英寸 · M2",
+  "subtitle": "深空灰色 · 128 GB · Wi-Fi + 蜂窝网络 · 美版",
+  "description": "搭载 M2 芯片的平板电脑，配备 12.9 英寸 Liquid Retina XDR 显示屏，支持 Wi-Fi 与蜂窝网络。",
+  "category": "平板电脑",
+  "brand": "Apple",
+  "order": 15,
+  "ownership": {
+    "status": "active",
+    "specification": "深空灰色 · 128 GB · Wi-Fi + 蜂窝网络 · 美版",
+    "acquired": "2024年8月"
+  },
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "25deg 72deg 100%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "iPad_Pro_M2_12_9_Cellular_Space_Gray.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "我的版本",
+      "items": [
+        {
+          "label": "配色",
+          "value": "深空灰色"
+        },
+        {
+          "label": "存储容量",
+          "value": "128 GB"
+        },
+        {
+          "label": "内存",
+          "value": "8 GB"
+        },
+        {
+          "label": "网络版本",
+          "value": "Wi-Fi + Cellular（美国，sub-6 GHz + mmWave）"
+        }
+      ]
+    },
+    {
+      "title": "硬件规格",
+      "items": [
+        {
+          "label": "发布年份",
+          "value": "2022"
+        },
+        {
+          "label": "芯片",
+          "value": "Apple M2"
+        },
+        {
+          "label": "尺寸（宽 × 高 × 深）",
+          "value": "214.9 × 280.6 × 6.4 mm；机身，不含镜头和按钮突起"
+        },
+        {
+          "label": "重量 · Wi-Fi + Cellular 整机",
+          "value": "684 g"
+        },
+        {
+          "label": "屏幕",
+          "value": "12.9 英寸 · mini-LED IPS / Liquid Retina XDR · 2048 × 2732 · 最高 120 Hz"
+        },
+        {
+          "label": "材质",
+          "value": "铝金属机身、玻璃屏幕"
+        },
+        {
+          "label": "接口",
+          "value": "Thunderbolt / USB 4（USB-C）；Smart Connector；nano-SIM 卡托"
+        }
+      ]
+    },
+    {
+      "title": "型号与地区",
+      "items": [
+        {
+          "label": "硬件型号（官方匹配）",
+          "value": "A2764"
+        },
+        {
+          "label": "销售地区",
+          "value": "美国（美版）"
+        },
+        {
+          "label": "零售部件号",
+          "value": null
+        }
+      ]
+    },
+    {
+      "title": "版本备注",
+      "items": [
+        {
+          "label": "说明",
+          "value": "A2764 为支持 mmWave 的美版蜂窝机型。现有预览仍为无 mmWave 天线窗口的外观，该地区细节待适配。"
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "iPad Pro 12.9 英寸 · M2 官方资料",
+      "url": "https://support.apple.com/zh-cn/111841",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "iPad Pro 12.9 英寸 · M2 官方机型识别",
+      "url": "https://support.apple.com/zh-cn/108043",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple iPad Pro 第六代美国技术规格",
+      "url": "https://support.apple.com/en-us/111841",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "note": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。 官方银色 Wi-Fi AR 改深空灰，依据尺寸图补建实体 SIM 卡托；无 mmWave 窗口。"
+}

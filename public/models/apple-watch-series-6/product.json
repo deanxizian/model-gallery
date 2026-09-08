@@ -1,0 +1,186 @@
+{
+  "id": "watch_series_6_44_space_gray_sport_loop",
+  "brand": "Apple",
+  "category": "watch",
+  "name": {
+    "zh_CN": "Apple Watch Series 6 · 44 毫米深空灰黑色运动回环",
+    "en": "Apple Watch Series 6 (44 mm) — Space Gray Aluminum / Black Sport Loop"
+  },
+  "release_year": 2020,
+  "configuration": {
+    "color": {
+      "zh_CN": "深空灰色",
+      "en": "Space Gray"
+    },
+    "storage": {
+      "value": 32,
+      "unit": "GB"
+    },
+    "memory_gb": null,
+    "sales_region": "中国大陆（国行）",
+    "retail_part_number": null,
+    "case_size_mm": 44,
+    "band": {
+      "name_zh_CN": "运动回环式表带",
+      "color_zh_CN": "黑色",
+      "material": "nylon"
+    },
+    "connectivity_variant": "GPS",
+    "band_size": "M/L",
+    "band_size_label": "M/L"
+  },
+  "unconfirmed_fields": [
+    "retail_part_number"
+  ],
+  "identification": {
+    "confirmed_unit_model_number": null,
+    "official_references": [
+      {
+        "value": "A2292",
+        "kind": "hardware_model_number",
+        "scope": "44 毫米 GPS",
+        "source_ref": "identify_watch"
+      },
+      {
+        "value": "A2294",
+        "kind": "hardware_model_number",
+        "scope": "44 毫米 GPS + Cellular，北美洲",
+        "source_ref": "identify_watch"
+      },
+      {
+        "value": "A2376",
+        "kind": "hardware_model_number",
+        "scope": "44 毫米 GPS + Cellular，欧洲、亚太地区和中国大陆",
+        "source_ref": "identify_watch"
+      }
+    ],
+    "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+    "matched_official_models": [
+      {
+        "value": "A2292",
+        "kind": "hardware_model_number",
+        "scope": "44 毫米 GPS",
+        "source_ref": "identify_watch"
+      }
+    ],
+    "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+    "matched_at": "2026-09-08"
+  },
+  "specifications": {
+    "chip": "Apple S6 SiP",
+    "display": {
+      "diagonal_inches": null,
+      "resolution_px": {
+        "width": 368,
+        "height": 448
+      },
+      "technology": "LTPO OLED / Always-On Retina",
+      "max_refresh_hz": null
+    },
+    "dimensions_mm": {
+      "width": 38,
+      "height": 44,
+      "depth": 10.7,
+      "scope": "官方标称表壳；不含表带"
+    },
+    "weights_g": [
+      {
+        "value": 36.5,
+        "scope": "44 毫米铝金属表壳，不含表带"
+      }
+    ],
+    "materials": [
+      "铝金属表壳",
+      "Ion-X 玻璃表镜",
+      "尼龙运动回环式表带"
+    ],
+    "ports": [
+      "磁力充电"
+    ],
+    "source_ref": "watch_series_6_44_space_gray_sport_loop_spec",
+    "storage": {
+      "value": 32,
+      "unit": "GB"
+    }
+  },
+  "notes": [
+    "用户确认国行、44 毫米 GPS、黑色运动回环表带 M/L 码；已退役，具体退役日期未提供。"
+  ],
+  "source_refs": [
+    "watch_series_6_44_space_gray_sport_loop_spec",
+    "identify_watch",
+    "watch6_launch"
+  ],
+  "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。未确认的购买店铺、零售部件号等不作推定。",
+  "updated_at": "2026-09-08",
+  "asset": {
+    "status": "ready",
+    "blend": "Apple_Watch_Series_6_44_GPS_Space_Gray_Case_Only.blend",
+    "glb": "model-gps-case-only.glb",
+    "previews": {
+      "poster": "poster-gps-case-only.png"
+    },
+    "adaptations": "仅保留官方银色蜂窝版 AR 表壳部分并改深空灰；移除原始表带和全部自建表带、连接件及表扣。保留屏幕、表冠、侧键、传感器和表壳自身的表带释放按钮。",
+    "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
+    "modeled_scope": "watch_case_only",
+    "omitted_requested_parts": [
+      "表带及表带连接件"
+    ],
+    "geometry_provenance": {
+      "basis": "official_ar_adapted",
+      "official_mesh_count": 35,
+      "authored_mesh_count": 0,
+      "authored_parts": [],
+      "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
+    },
+    "website_variant": {
+      "glb": "model-gps-case-only.glb",
+      "blend": "Apple_Watch_Series_6_44_GPS_Space_Gray_Case_Only.blend",
+      "poster": "poster-gps-case-only.png",
+      "adaptation": "无表带表壳；按已确认 GPS 版本调整表冠表面材质，二进制几何保持不变。",
+      "audit": "gps-case-only-adaptation.json"
+    },
+    "path_base": "relative_to_product_json"
+  },
+  "field_source_refs": {
+    "name_and_release_year": [
+      "watch_series_6_44_space_gray_sport_loop_spec",
+      "identify_watch",
+      "watch6_launch"
+    ],
+    "specifications": [
+      "watch_series_6_44_space_gray_sport_loop_spec"
+    ],
+    "identification": [
+      "identify_watch",
+      "watch6_launch"
+    ]
+  },
+  "sources": {
+    "watch_series_6_44_space_gray_sport_loop_spec": {
+      "url": "https://support.apple.com/zh-cn/111918",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_reference"
+    },
+    "identify_watch": {
+      "url": "https://support.apple.com/zh-cn/108056",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_identification"
+    },
+    "watch6_launch": {
+      "url": "https://www.apple.com.cn/newsroom/2020/09/apple-watch-series-6-delivers-breakthrough-wellness-and-fitness-capabilities/",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_reference"
+    }
+  },
+  "ownership": {
+    "status": "retired",
+    "specification": "深空灰色 · 44 毫米 · GPS · 黑色运动回环表带 M/L 码 · 国行",
+    "acquired": "2021年3月"
+  },
+  "configuration_confirmed_at": "2026-09-08",
+  "ownership_confirmed_at": "2026-09-08"
+}

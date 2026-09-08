@@ -1,0 +1,153 @@
+{
+  "id": "studio_display_2026_standard",
+  "brand": "Apple",
+  "category": "display",
+  "name": {
+    "zh_CN": "Studio Display 2026 · 标准玻璃基础支架",
+    "en": "Studio Display (2026) — Standard Glass / Tilt-Adjustable Stand"
+  },
+  "release_year": 2026,
+  "configuration": {
+    "color": {
+      "zh_CN": "银色",
+      "en": "Silver"
+    },
+    "storage": null,
+    "memory_gb": null,
+    "sales_region": "中国大陆（国行）",
+    "retail_part_number": null,
+    "glass": "standard",
+    "stand": "tilt_adjustable"
+  },
+  "unconfirmed_fields": [
+    "retail_part_number"
+  ],
+  "identification": {
+    "confirmed_unit_model_number": null,
+    "official_references": [
+      {
+        "value": "A3350",
+        "kind": "hardware_model_number",
+        "scope": "Studio Display (2026)",
+        "source_ref": "display_number"
+      }
+    ],
+    "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+    "matched_official_models": [
+      {
+        "value": "A3350",
+        "kind": "hardware_model_number",
+        "scope": "Studio Display (2026)",
+        "source_ref": "display_number"
+      }
+    ],
+    "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+    "matched_at": "2026-09-08"
+  },
+  "specifications": {
+    "chip": null,
+    "display": {
+      "diagonal_inches": 27,
+      "resolution_px": {
+        "width": 5120,
+        "height": 2880
+      },
+      "technology": "5K Retina",
+      "max_refresh_hz": 60
+    },
+    "dimensions_mm": {
+      "width": 623,
+      "height": 478,
+      "depth": 168,
+      "scope": "含可调倾斜度支架"
+    },
+    "weights_g": [
+      {
+        "value": 6300,
+        "scope": "含可调倾斜度支架"
+      }
+    ],
+    "materials": [
+      "铝金属机身和支架",
+      "标准玻璃"
+    ],
+    "ports": [
+      "1 × Thunderbolt 5 上行（96W 主机供电）",
+      "1 × Thunderbolt 5 下行",
+      "2 × USB-C（最高 10Gb/s）"
+    ],
+    "source_ref": "studio_display_2026_standard_spec"
+  },
+  "notes": [
+    "用户指定基础版本，按标准玻璃和仅可调倾斜角度支架记录。",
+    "未从所查规格页确认内置处理器，chip 留空。"
+  ],
+  "source_refs": [
+    "studio_display_2026_standard_spec",
+    "identify_display",
+    "display_number"
+  ],
+  "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。未确认的购买店铺、零售部件号等不作推定。",
+  "updated_at": "2026-09-08",
+  "asset": {
+    "status": "ready",
+    "blend": "Studio_Display_2026_Standard.blend",
+    "glb": "model.glb",
+    "previews": {
+      "poster": "poster.png"
+    },
+    "adaptations": "官方 2026 标准玻璃基础支架 AR，省略拖尾电源线。",
+    "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
+    "modeled_scope": "product_exterior",
+    "omitted_requested_parts": [],
+    "geometry_provenance": {
+      "basis": "official_ar_adapted",
+      "official_mesh_count": 73,
+      "authored_mesh_count": 0,
+      "authored_parts": [],
+      "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
+    },
+    "path_base": "relative_to_product_json"
+  },
+  "field_source_refs": {
+    "name_and_release_year": [
+      "studio_display_2026_standard_spec",
+      "identify_display",
+      "display_number"
+    ],
+    "specifications": [
+      "studio_display_2026_standard_spec"
+    ],
+    "identification": [
+      "identify_display",
+      "display_number"
+    ]
+  },
+  "sources": {
+    "studio_display_2026_standard_spec": {
+      "url": "https://support.apple.com/zh-cn/126324",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_reference"
+    },
+    "identify_display": {
+      "url": "https://support.apple.com/zh-cn/126265",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_identification"
+    },
+    "display_number": {
+      "url": "https://support.apple.com/ko-kr/126324",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_reference"
+    }
+  },
+  "ownership": {
+    "status": "active",
+    "specification": "银色 · 标准玻璃 · 可调倾斜度支架 · 国行",
+    "acquired": "2026年7月"
+  },
+  "configuration_confirmed_at": "2026-09-08",
+  "ownership_confirmed_at": "2026-09-08"
+}

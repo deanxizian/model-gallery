@@ -1,0 +1,143 @@
+{
+  "id": "siri_remote_3",
+  "brand": "Apple",
+  "category": "remote",
+  "name": {
+    "zh_CN": "Siri Remote 第三代 · 银色",
+    "en": "Siri Remote (3rd generation)"
+  },
+  "release_year": 2022,
+  "configuration": {
+    "color": {
+      "zh_CN": "银色",
+      "en": "Silver"
+    },
+    "storage": null,
+    "memory_gb": null,
+    "sales_region": "中国大陆（国行）",
+    "retail_part_number": null
+  },
+  "unconfirmed_fields": [
+    "retail_part_number"
+  ],
+  "identification": {
+    "confirmed_unit_model_number": null,
+    "official_references": [
+      {
+        "value": "A2854",
+        "kind": "hardware_model_number",
+        "scope": "Siri Remote 第三代",
+        "source_ref": "remote_number"
+      }
+    ],
+    "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+    "matched_official_models": [
+      {
+        "value": "A2854",
+        "kind": "hardware_model_number",
+        "scope": "第三代 USB-C",
+        "source_ref": "remote_number"
+      }
+    ],
+    "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+    "matched_at": "2026-09-08"
+  },
+  "specifications": {
+    "chip": null,
+    "display": null,
+    "dimensions_mm": {
+      "width": 35,
+      "height": 136,
+      "depth": 9.25,
+      "scope": "遥控器本体"
+    },
+    "weights_g": [
+      {
+        "value": 66,
+        "scope": "遥控器"
+      }
+    ],
+    "materials": [
+      "铝金属外壳"
+    ],
+    "ports": [
+      "USB-C 充电"
+    ],
+    "source_ref": "siri_remote_3_spec",
+    "wireless": [
+      "Bluetooth 5.0",
+      "红外线发射器"
+    ]
+  },
+  "notes": [
+    "藏品为遥控器本身；Apple TV 4K 主机型号、处理器和容量不属于此条目。"
+  ],
+  "source_refs": [
+    "siri_remote_3_spec",
+    "identify_remote",
+    "remote_number"
+  ],
+  "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。未确认的购买店铺、零售部件号等不作推定。",
+  "updated_at": "2026-09-08",
+  "asset": {
+    "status": "ready",
+    "blend": "Siri_Remote_3.blend",
+    "glb": "model.glb",
+    "previews": {
+      "poster": "poster.png"
+    },
+    "adaptations": "从 Apple TV 4K 与遥控器官方组合 AR 中单独提取遥控器。",
+    "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
+    "modeled_scope": "product_exterior",
+    "omitted_requested_parts": [],
+    "geometry_provenance": {
+      "basis": "official_ar_adapted",
+      "official_mesh_count": 25,
+      "authored_mesh_count": 0,
+      "authored_parts": [],
+      "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
+    },
+    "path_base": "relative_to_product_json"
+  },
+  "field_source_refs": {
+    "name_and_release_year": [
+      "siri_remote_3_spec",
+      "identify_remote",
+      "remote_number"
+    ],
+    "specifications": [
+      "siri_remote_3_spec"
+    ],
+    "identification": [
+      "identify_remote",
+      "remote_number"
+    ]
+  },
+  "sources": {
+    "siri_remote_3_spec": {
+      "url": "https://support.apple.com/en-us/111844",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_reference"
+    },
+    "identify_remote": {
+      "url": "https://support.apple.com/zh-cn/103233",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_identification"
+    },
+    "remote_number": {
+      "url": "https://support.apple.com/zh-tw/111844",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_reference"
+    }
+  },
+  "ownership": {
+    "status": "active",
+    "specification": "银色 · 国行",
+    "acquired": "2026年8月"
+  },
+  "configuration_confirmed_at": "2026-09-08",
+  "ownership_confirmed_at": "2026-09-08"
+}

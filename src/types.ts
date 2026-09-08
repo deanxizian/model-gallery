@@ -24,6 +24,7 @@ export interface SpecificationGroup {
 interface SpecificationSourceRecord {
   label: string;
   checkedAt: string;
+  timeZone?: string;
 }
 export type SpecificationSource = SpecificationSourceRecord &
   ({ kind?: 'official'; url: string } | { kind: 'local-design'; url?: never });

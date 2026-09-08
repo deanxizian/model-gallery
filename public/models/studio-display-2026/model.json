@@ -1,0 +1,113 @@
+{
+  "id": "studio-display-2026",
+  "name": "Studio Display 2026",
+  "subtitle": "银色 · 标准玻璃 · 可调倾斜度支架 · 国行",
+  "description": "配备 27 英寸 5K 视网膜屏幕的桌面显示器，提供 Thunderbolt 与 USB-C 扩展接口。",
+  "category": "显示器",
+  "brand": "Apple",
+  "order": 13,
+  "ownership": {
+    "status": "active",
+    "specification": "银色 · 标准玻璃 · 可调倾斜度支架 · 国行",
+    "acquired": "2026年7月"
+  },
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "25deg 72deg 100%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "Studio_Display_2026_Standard.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "我的版本",
+      "items": [
+        {
+          "label": "配色",
+          "value": "银色"
+        },
+        {
+          "label": "玻璃",
+          "value": "标准玻璃"
+        },
+        {
+          "label": "支架",
+          "value": "可调倾斜度支架"
+        }
+      ]
+    },
+    {
+      "title": "硬件规格",
+      "items": [
+        {
+          "label": "发布年份",
+          "value": "2026"
+        },
+        {
+          "label": "尺寸（宽 × 高 × 深）",
+          "value": "623 × 478 × 168 mm；含可调倾斜度支架"
+        },
+        {
+          "label": "重量 · 含可调倾斜度支架",
+          "value": "6300 g"
+        },
+        {
+          "label": "屏幕",
+          "value": "27 英寸 · 5K Retina · 5120 × 2880 · 最高 60 Hz"
+        },
+        {
+          "label": "材质",
+          "value": "铝金属机身和支架、标准玻璃"
+        },
+        {
+          "label": "接口",
+          "value": "1 × Thunderbolt 5 上行（96W 主机供电）；1 × Thunderbolt 5 下行；2 × USB-C（最高 10Gb/s）"
+        }
+      ]
+    },
+    {
+      "title": "型号与地区",
+      "items": [
+        {
+          "label": "硬件型号（官方匹配）",
+          "value": "A3350"
+        },
+        {
+          "label": "销售地区",
+          "value": "中国大陆（国行）"
+        },
+        {
+          "label": "零售部件号",
+          "value": null
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "Studio Display 2026 官方资料",
+      "url": "https://support.apple.com/zh-cn/126324",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Studio Display 2026 官方机型识别",
+      "url": "https://support.apple.com/zh-cn/126265",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Studio Display 2026 官方资料",
+      "url": "https://support.apple.com/ko-kr/126324",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "note": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。 官方 2026 标准玻璃基础支架 AR，省略拖尾电源线。"
+}
