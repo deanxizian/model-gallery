@@ -1,5 +1,5 @@
 import { statusLabels, type GalleryModel } from '../types';
-import { ChevronDown } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import DownloadMenu from './DownloadMenu';
 import { ownedSpecification } from '../archive';
 
@@ -48,19 +48,12 @@ export default function ModelDetails({
         <section className="ownership-record" aria-label="拥有记录">
           <h3>拥有记录</h3>
           <dl className="ownership-grid">
-            {[
-              ['购入时间', ownership?.acquired],
-              ...(status === 'retired'
-                ? [['退役时间', ownership?.retired]]
-                : []),
-            ].map(([label, value]) => (
-              <div key={label}>
-                <dt>{label}</dt>
-                <dd className={!value ? 'unconfirmed' : undefined}>
-                  {value || '待补充'}
-                </dd>
-              </div>
-            ))}
+            <div>
+              <dt>购入时间</dt>
+              <dd className={!ownership?.acquired ? 'unconfirmed' : undefined}>
+                {ownership?.acquired || '待补充'}
+              </dd>
+            </div>
             <div className="ownership-specification">
               <dt>我的规格</dt>
               <dd className={!specification ? 'unconfirmed' : undefined}>
@@ -80,7 +73,7 @@ export default function ModelDetails({
         <details className="product-specs" key={model.id} aria-label="参数规格">
           <summary>
             <h3>参数规格</h3>
-            <ChevronDown size={19} aria-hidden="true" />
+            <ChevronLeft size={19} aria-hidden="true" />
           </summary>
           <div className="spec-groups">
             {model.specGroups.map((group) => (

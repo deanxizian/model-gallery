@@ -1,4 +1,4 @@
-import { readdir, readFile, writeFile, mkdir, rm } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { dirname, resolve, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
@@ -7,7 +7,8 @@ import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 import { toCreasedNormals } from 'three/addons/utils/BufferGeometryUtils.js';
 import {
   localAsset,
-  validateMetadata,
+  modelDownloads,
+  readModelEntries,
   validateGlb,
   validateRelationships,
 } from './catalog-lib.mjs';
@@ -16,8 +17,8 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = resolve(root, 'public');
 const modelDir = resolve(publicDir, 'models');
 const generatedDir = resolve(publicDir, 'generated');
-const url = (id, file) =>
-  `models/${id}/${file.split('/').map(encodeURIComponent).join('/')}`;
+const url = (path, file) =>
+  `models/${path}/${file.split('/').map(encodeURIComponent).join('/')}`;
 await rm(generatedDir, { recursive: true, force: true });
 await mkdir(generatedDir, { recursive: true });
 
@@ -80,17 +81,12 @@ async function convertStl(source, destination, meta) {
 }
 
 const models = [];
-for (const entry of (await readdir(modelDir, { withFileTypes: true })).sort(
-  (a, b) => a.name.localeCompare(b.name),
+for (const { directory, relativePath, meta } of await readModelEntries(
+  modelDir,
 )) {
-  if (!entry.isDirectory() || entry.name.startsWith('.')) continue;
-  const directory = resolve(modelDir, entry.name);
-  const meta = validateMetadata(
-    JSON.parse(await readFile(resolve(directory, 'model.json'), 'utf8')),
-    entry.name,
-  );
   const previewFile = await localAsset(directory, meta.preview);
-  let preview = url(meta.id, meta.preview);
+  let preview = url(relativePath, meta.preview);
+  let glbFile = previewFile;
   if (extname(meta.preview).toLowerCase() === '.stl') {
     const hash = createHash('sha256')
       .update(await readFile(previewFile.path))
@@ -99,6 +95,7 @@ for (const entry of (await readdir(modelDir, { withFileTypes: true })).sort(
       .slice(0, 12);
     const name = `${meta.id}-${hash}.glb`;
     await convertStl(previewFile.path, resolve(generatedDir, name), meta);
+    glbFile = await localAsset(generatedDir, name);
     preview = `generated/${name}`;
   } else await validateGlb(previewFile.path);
   let poster;
@@ -110,14 +107,14 @@ for (const entry of (await readdir(modelDir, { withFileTypes: true })).sort(
       )
     )
       throw new Error(`${meta.id}: 缩略图需要 PNG、JPG、WebP 或 AVIF`);
-    poster = url(meta.id, meta.poster);
+    poster = url(relativePath, meta.poster);
   }
   const downloads = [];
   for (const item of meta.downloads) {
     const file = await localAsset(directory, item.file);
     downloads.push({
       label: item.label,
-      url: url(meta.id, item.file),
+      url: url(relativePath, item.file),
       filename: item.file.split('/').at(-1),
       bytes: file.bytes,
     });
@@ -133,7 +130,15 @@ for (const entry of (await readdir(modelDir, { withFileTypes: true })).sort(
     preview,
     poster,
     cameraOrbit: meta.cameraOrbit ?? '30deg 65deg 100%',
-    downloads,
+    downloads: modelDownloads(downloads, {
+      label: 'GLB',
+      url: preview,
+      filename:
+        extname(meta.preview).toLowerCase() === '.stl'
+          ? 'model.glb'
+          : meta.preview.split('/').at(-1),
+      bytes: glbFile.bytes,
+    }),
     note: meta.note,
     source: meta.source,
     parentId: meta.parentId,

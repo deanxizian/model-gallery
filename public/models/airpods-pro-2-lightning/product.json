@@ -1,0 +1,198 @@
+{
+  "id": "airpods_pro_2_lightning",
+  "brand": "Apple",
+  "category": "earbuds",
+  "name": {
+    "zh_CN": "AirPods Pro 2 · 2022 Lightning 充电盒",
+    "en": "AirPods Pro (2nd generation, 2022) — MagSafe Charging Case (Lightning)"
+  },
+  "release_year": 2022,
+  "configuration": {
+    "color": {
+      "zh_CN": "白色",
+      "en": "White"
+    },
+    "storage": null,
+    "memory_gb": null,
+    "sales_region": "美国（美版）",
+    "retail_part_number": null,
+    "generation": 2,
+    "charging_case": "2022 MagSafe Charging Case (Lightning)",
+    "charging_connector": "Lightning"
+  },
+  "unconfirmed_fields": [
+    "retail_part_number"
+  ],
+  "identification": {
+    "confirmed_unit_model_number": null,
+    "official_references": [
+      {
+        "value": "A2931",
+        "kind": "hardware_model_number",
+        "scope": "2022 版耳机型号组",
+        "source_ref": "identify_airpods"
+      },
+      {
+        "value": "A2699",
+        "kind": "hardware_model_number",
+        "scope": "2022 版耳机型号组",
+        "source_ref": "identify_airpods"
+      },
+      {
+        "value": "A2698",
+        "kind": "hardware_model_number",
+        "scope": "2022 版耳机型号组",
+        "source_ref": "identify_airpods"
+      },
+      {
+        "value": "A2700",
+        "kind": "hardware_model_number",
+        "scope": "2022 MagSafe Lightning 充电盒",
+        "source_ref": "identify_airpods"
+      }
+    ],
+    "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+    "matched_official_models": [
+      {
+        "value": "A2931",
+        "kind": "earbud_model_group",
+        "scope": "2022 Lightning 版官方耳机型号组，官网未逐一指定地区及左右耳",
+        "source_ref": "identify_airpods"
+      },
+      {
+        "value": "A2699",
+        "kind": "earbud_model_group",
+        "scope": "2022 Lightning 版官方耳机型号组",
+        "source_ref": "identify_airpods"
+      },
+      {
+        "value": "A2698",
+        "kind": "earbud_model_group",
+        "scope": "2022 Lightning 版官方耳机型号组",
+        "source_ref": "identify_airpods"
+      },
+      {
+        "value": "A2700",
+        "kind": "charging_case_model",
+        "scope": "2022 MagSafe Lightning 充电盒",
+        "source_ref": "identify_airpods"
+      }
+    ],
+    "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+    "matched_at": "2026-09-08"
+  },
+  "specifications": {
+    "chip": "Apple H2（耳机）+ Apple U1（充电盒）",
+    "display": null,
+    "dimensions_mm": {
+      "width": 60.6,
+      "height": 45.2,
+      "depth": 21.7,
+      "scope": "闭合充电盒"
+    },
+    "weights_g": [
+      {
+        "value": 5.3,
+        "scope": "单只耳机"
+      },
+      {
+        "value": 50.8,
+        "scope": "充电盒"
+      }
+    ],
+    "materials": [
+      "塑料外壳",
+      "硅胶耳塞"
+    ],
+    "ports": [
+      "Lightning（充电盒）"
+    ],
+    "storage_options": [],
+    "configuration_options": {
+      "wireless": [
+        "Bluetooth 5.3"
+      ],
+      "charging": [
+        "Lightning",
+        "MagSafe",
+        "Apple Watch 充电器",
+        "Qi"
+      ],
+      "earbud_dimensions_mm": {
+        "width": 21.8,
+        "height": 30.9,
+        "depth": 24,
+        "scope": "单只耳机"
+      },
+      "active_noise_cancellation": true
+    },
+    "source_ref": "airpods_pro_2_lightning_spec"
+  },
+  "notes": [
+    "用户明确选择 2022 Lightning 充电盒。耳机型号 A3047/A3048/A3049 及盒子 A2968 属于 2023 USB-C 版本，不属于此条目。"
+  ],
+  "source_refs": [
+    "airpods_pro_2_lightning_spec",
+    "identify_airpods"
+  ],
+  "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。未确认的购买店铺、零售部件号等不作推定。",
+  "updated_at": "2026-09-08",
+  "asset": {
+    "status": "ready",
+    "blend": "airpods_pro_2_lightning/AirPods_Pro_2_Lightning_2022.blend",
+    "glb": "airpods_pro_2_lightning/AirPods_Pro_2_Lightning_2022.glb",
+    "previews": {
+      "detail": "airpods_pro_2_lightning/preview_detail.png",
+      "front": "airpods_pro_2_lightning/preview_front.png",
+      "rear": "airpods_pro_2_lightning/preview_rear.png"
+    },
+    "documentation": "airpods_pro_2_lightning/README.md",
+    "validation": "airpods_pro_2_lightning/validation.json",
+    "source_record": "airpods_pro_2_lightning/references/sources.json",
+    "adaptations": "使用 2023 年 7 月存档的苹果 2022 Lightning AR；苹果现行同名 URL 已改为 USB-C。",
+    "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
+    "modeled_scope": "product_exterior",
+    "omitted_requested_parts": [],
+    "geometry_provenance": {
+      "basis": "official_ar_adapted",
+      "official_mesh_count": 78,
+      "authored_mesh_count": 0,
+      "authored_parts": [],
+      "audit": "geometry_provenance_audit.json",
+      "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
+    }
+  },
+  "field_source_refs": {
+    "name_and_release_year": [
+      "airpods_pro_2_lightning_spec",
+      "identify_airpods"
+    ],
+    "specifications": [
+      "airpods_pro_2_lightning_spec"
+    ],
+    "identification": [
+      "identify_airpods"
+    ]
+  },
+  "sources": {
+    "airpods_pro_2_lightning_spec": {
+      "url": "https://support.apple.com/zh-cn/111851",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_reference"
+    },
+    "identify_airpods": {
+      "url": "https://support.apple.com/zh-cn/109525",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_identification"
+    }
+  },
+  "ownership": {
+    "status": "active",
+    "specification": "白色 · 2022 Lightning 充电盒 · 美版",
+    "acquired": "2022年10月"
+  },
+  "configuration_confirmed_at": "2026-09-08",
+  "ownership_confirmed_at": "2026-09-08"
+}

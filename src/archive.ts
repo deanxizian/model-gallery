@@ -8,11 +8,44 @@ export function ownedSpecification(ownership?: Ownership) {
   );
 }
 
+function acquisitionDateKey(value?: string) {
+  const date = value
+    ?.trim()
+    .replace('年', '-')
+    .replace('月', '-')
+    .replace(/日$/, '')
+    .replace(/-$/, '')
+    .match(/^(\d{4})(?:-(\d{1,2})(?:-(\d{1,2}))?)?$/);
+  if (!date) return 0;
+  const year = Number(date[1]);
+  const month = date[2] === undefined ? 0 : Number(date[2]);
+  const day = date[3] === undefined ? 0 : Number(date[3]);
+  if (
+    year < 1000 ||
+    (date[2] !== undefined && (month < 1 || month > 12)) ||
+    (date[3] !== undefined &&
+      (day < 1 || day > new Date(Date.UTC(year, month, 0)).getUTCDate()))
+  )
+    return 0;
+  return year * 10000 + month * 100 + day;
+}
+
+// Stable sorting preserves the catalog order for equal or unknown dates.
+// Accessories retain their own order within their product.
 export const devicesIn = (models: GalleryModel[]) =>
-  models.filter((model) => !model.parentId);
+  models
+    .filter((model) => !model.parentId)
+    .sort(
+      (a, b) =>
+        acquisitionDateKey(b.ownership?.acquired) -
+        acquisitionDateKey(a.ownership?.acquired),
+    );
 
 export const accessoriesOf = (models: GalleryModel[], deviceId: string) =>
   models.filter((model) => model.parentId === deviceId);
+
+export const modelRoute = (model: GalleryModel) =>
+  model.parentId ? `${model.parentId}/${model.id}` : model.id;
 
 export const brandsIn = (models: GalleryModel[]) => [
   ...new Set(
@@ -45,7 +78,9 @@ export function archiveSelection(
   selectedId: string,
   visibleDevices = devicesIn(models),
 ) {
-  const requested = models.find((model) => model.id === selectedId);
+  const requested = models.find(
+    (model) => model.id === selectedId || modelRoute(model) === selectedId,
+  );
   const device =
     visibleDevices.find(
       (model) => model.id === (requested?.parentId ?? requested?.id),

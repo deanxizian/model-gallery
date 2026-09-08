@@ -1,0 +1,232 @@
+{
+  "id": "ipad_pro_m2_12_9_cellular_space_gray",
+  "brand": "Apple",
+  "category": "tablet",
+  "name": {
+    "zh_CN": "iPad Pro M2 12.9 英寸 · 深空灰蜂窝版",
+    "en": "iPad Pro 12.9-inch (6th generation) — Space Gray / Wi-Fi + Cellular"
+  },
+  "release_year": 2022,
+  "configuration": {
+    "color": {
+      "zh_CN": "深空灰色",
+      "en": "Space Gray"
+    },
+    "storage": {
+      "value": 128,
+      "unit": "GB"
+    },
+    "memory_gb": 8,
+    "sales_region": "美国（美版）",
+    "retail_part_number": null,
+    "generation": 6,
+    "connectivity_variant": "Wi-Fi + Cellular（美国，sub-6 GHz + mmWave）",
+    "sim": "nano-SIM + eSIM"
+  },
+  "unconfirmed_fields": [
+    "retail_part_number"
+  ],
+  "identification": {
+    "confirmed_unit_model_number": null,
+    "official_references": [
+      {
+        "value": "A2437",
+        "kind": "hardware_model_number",
+        "scope": "Wi-Fi + Cellular，非 mmWave",
+        "source_ref": "identify_ipad"
+      },
+      {
+        "value": "A2764",
+        "kind": "hardware_model_number",
+        "scope": "Wi-Fi + Cellular，配备 mmWave",
+        "source_ref": "identify_ipad"
+      },
+      {
+        "value": "A2766",
+        "kind": "hardware_model_number",
+        "scope": "Wi-Fi + Cellular，中国大陆",
+        "source_ref": "identify_ipad"
+      }
+    ],
+    "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+    "matched_official_models": [
+      {
+        "value": "A2764",
+        "kind": "hardware_model_number",
+        "scope": "美国，12.9 英寸第六代 Wi-Fi + 蜂窝网络，支持 mmWave",
+        "source_ref": "ipad_us_spec"
+      }
+    ],
+    "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+    "matched_at": "2026-09-08"
+  },
+  "specifications": {
+    "chip": "Apple M2",
+    "display": {
+      "diagonal_inches": 12.9,
+      "resolution_px": {
+        "width": 2048,
+        "height": 2732
+      },
+      "technology": "mini-LED IPS / Liquid Retina XDR",
+      "max_refresh_hz": 120
+    },
+    "dimensions_mm": {
+      "width": 214.9,
+      "height": 280.6,
+      "depth": 6.4,
+      "scope": "机身，不含镜头和按钮突起"
+    },
+    "weights_g": [
+      {
+        "value": 684,
+        "scope": "Wi-Fi + Cellular 整机"
+      }
+    ],
+    "materials": [
+      "铝金属机身",
+      "玻璃屏幕"
+    ],
+    "ports": [
+      "Thunderbolt / USB 4（USB-C）",
+      "Smart Connector",
+      "nano-SIM 卡托"
+    ],
+    "storage_options": [
+      {
+        "value": 128,
+        "unit": "GB"
+      },
+      {
+        "value": 256,
+        "unit": "GB"
+      },
+      {
+        "value": 512,
+        "unit": "GB"
+      },
+      {
+        "value": 1,
+        "unit": "TB"
+      },
+      {
+        "value": 2,
+        "unit": "TB"
+      }
+    ],
+    "configuration_options": {
+      "memory_rules": [
+        {
+          "storage": [
+            {
+              "value": 128,
+              "unit": "GB"
+            },
+            {
+              "value": 256,
+              "unit": "GB"
+            },
+            {
+              "value": 512,
+              "unit": "GB"
+            }
+          ],
+          "memory_gb": 8
+        },
+        {
+          "storage": [
+            {
+              "value": 1,
+              "unit": "TB"
+            },
+            {
+              "value": 2,
+              "unit": "TB"
+            }
+          ],
+          "memory_gb": 16
+        }
+      ]
+    },
+    "source_ref": "ipad_pro_m2_12_9_cellular_space_gray_spec"
+  },
+  "notes": [
+    "用户确认美版、128 GB；依官方容量对应关系记录 8 GB 内存。",
+    "A2764 为支持 mmWave 的美版蜂窝机型。现有预览仍为无 mmWave 天线窗口的外观，该地区细节待适配。"
+  ],
+  "source_refs": [
+    "ipad_pro_m2_12_9_cellular_space_gray_spec",
+    "identify_ipad",
+    "ipad_us_spec"
+  ],
+  "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。未确认的购买店铺、零售部件号等不作推定。",
+  "updated_at": "2026-09-08",
+  "asset": {
+    "status": "ready",
+    "blend": "ipad_pro_m2_12_9_cellular_space_gray/iPad_Pro_M2_12_9_Cellular_Space_Gray.blend",
+    "glb": "ipad_pro_m2_12_9_cellular_space_gray/iPad_Pro_M2_12_9_Cellular_Space_Gray.glb",
+    "previews": {
+      "detail": "ipad_pro_m2_12_9_cellular_space_gray/preview_detail.png",
+      "front": "ipad_pro_m2_12_9_cellular_space_gray/preview_front.png",
+      "rear": "ipad_pro_m2_12_9_cellular_space_gray/preview_rear.png"
+    },
+    "documentation": "ipad_pro_m2_12_9_cellular_space_gray/README.md",
+    "validation": "ipad_pro_m2_12_9_cellular_space_gray/validation.json",
+    "source_record": "ipad_pro_m2_12_9_cellular_space_gray/references/sources.json",
+    "adaptations": "官方银色 Wi-Fi AR 改深空灰，依据尺寸图补建实体 SIM 卡托；无 mmWave 窗口。",
+    "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
+    "modeled_scope": "product_exterior",
+    "omitted_requested_parts": [],
+    "geometry_provenance": {
+      "basis": "official_ar_with_authored_additions",
+      "official_mesh_count": 34,
+      "authored_mesh_count": 3,
+      "authored_parts": [
+        "Nano-SIM tray perimeter seam",
+        "Removable nano-SIM tray face",
+        "SIM eject pin aperture"
+      ],
+      "audit": "geometry_provenance_audit.json",
+      "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
+    }
+  },
+  "field_source_refs": {
+    "name_and_release_year": [
+      "ipad_pro_m2_12_9_cellular_space_gray_spec",
+      "identify_ipad"
+    ],
+    "specifications": [
+      "ipad_pro_m2_12_9_cellular_space_gray_spec"
+    ],
+    "identification": [
+      "identify_ipad"
+    ]
+  },
+  "sources": {
+    "ipad_pro_m2_12_9_cellular_space_gray_spec": {
+      "url": "https://support.apple.com/zh-cn/111841",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_reference"
+    },
+    "identify_ipad": {
+      "url": "https://support.apple.com/zh-cn/108043",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_identification"
+    },
+    "ipad_us_spec": {
+      "url": "https://support.apple.com/en-us/111841",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_identification"
+    }
+  },
+  "ownership": {
+    "status": "active",
+    "specification": "深空灰色 · 128 GB · Wi-Fi + 蜂窝网络 · 美版",
+    "acquired": "2024年8月"
+  },
+  "configuration_confirmed_at": "2026-09-08",
+  "ownership_confirmed_at": "2026-09-08"
+}

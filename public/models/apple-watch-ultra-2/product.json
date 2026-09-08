@@ -1,0 +1,182 @@
+{
+  "id": "watch_ultra_2_natural_milanese",
+  "brand": "Apple",
+  "category": "watch",
+  "name": {
+    "zh_CN": "Apple Watch Ultra 2 · 原色钛金属米兰尼斯",
+    "en": "Apple Watch Ultra 2 — Natural Titanium / Titanium Milanese Loop"
+  },
+  "release_year": 2023,
+  "configuration": {
+    "color": {
+      "zh_CN": "原色钛金属",
+      "en": "Natural Titanium"
+    },
+    "storage": {
+      "value": 64,
+      "unit": "GB"
+    },
+    "memory_gb": null,
+    "sales_region": "中国大陆（国行）",
+    "retail_part_number": null,
+    "case_size_mm": 49,
+    "connectivity_variant": "GPS + Cellular",
+    "band": {
+      "name_zh_CN": "钛金属米兰尼斯表带",
+      "color_zh_CN": "原色钛金属",
+      "introduced_year": 2024
+    },
+    "band_size": "M"
+  },
+  "unconfirmed_fields": [
+    "retail_part_number"
+  ],
+  "identification": {
+    "confirmed_unit_model_number": null,
+    "official_references": [
+      {
+        "value": "A2986",
+        "kind": "hardware_model_number",
+        "scope": "北美洲、欧洲、亚太地区",
+        "source_ref": "identify_watch"
+      },
+      {
+        "value": "A2987",
+        "kind": "hardware_model_number",
+        "scope": "中国大陆",
+        "source_ref": "identify_watch"
+      }
+    ],
+    "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+    "matched_official_models": [
+      {
+        "value": "A2987",
+        "kind": "hardware_model_number",
+        "scope": "中国大陆，49 毫米 GPS + 蜂窝网络",
+        "source_ref": "identify_watch"
+      }
+    ],
+    "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+    "matched_at": "2026-09-08"
+  },
+  "specifications": {
+    "chip": "Apple S9 SiP",
+    "display": {
+      "diagonal_inches": null,
+      "resolution_px": {
+        "width": 410,
+        "height": 502
+      },
+      "technology": "LTPO2 OLED / Always-On Retina",
+      "max_refresh_hz": null
+    },
+    "dimensions_mm": {
+      "width": 44,
+      "height": 49,
+      "depth": 12,
+      "scope": "官方标称表壳；不含表带"
+    },
+    "weights_g": [
+      {
+        "value": 61,
+        "scope": "原色表壳，不含表带"
+      }
+    ],
+    "materials": [
+      "5 级钛金属表壳",
+      "蓝宝石玻璃表镜",
+      "钛金属编织表带"
+    ],
+    "ports": [
+      "磁力充电"
+    ],
+    "storage_options": [
+      {
+        "value": 64,
+        "unit": "GB"
+      }
+    ],
+    "configuration_options": {},
+    "source_ref": "watch_ultra_2_natural_milanese_spec"
+  },
+  "notes": [
+    "Ultra 2 主机于 2023 年推出；本次搭配的钛金属米兰尼斯表带于 2024 年推出，不能将组合写成 2023 年首发套装。"
+  ],
+  "source_refs": [
+    "watch_ultra_2_natural_milanese_spec",
+    "identify_watch",
+    "ultra_band"
+  ],
+  "configuration_basis": "实际配置、销售地区、购入时间及在役状态来自用户补充；硬件型号按 Apple 官方资料匹配。未确认的购买店铺、零售部件号等不作推定。",
+  "updated_at": "2026-09-08",
+  "asset": {
+    "status": "ready",
+    "blend": "watch_ultra_2_natural_milanese/Apple_Watch_Ultra_2_Natural_Milanese.blend",
+    "glb": "watch_ultra_2_natural_milanese/Apple_Watch_Ultra_2_Natural_Milanese.glb",
+    "previews": {
+      "alpha_deep_test": "watch_ultra_2_natural_milanese/preview_alpha_deep_test.png",
+      "alpha_test": "watch_ultra_2_natural_milanese/preview_alpha_test.png",
+      "culling_test": "watch_ultra_2_natural_milanese/preview_culling_test.png",
+      "detail": "watch_ultra_2_natural_milanese/preview_detail.png",
+      "front": "watch_ultra_2_natural_milanese/preview_front.png",
+      "glass_separated_test": "watch_ultra_2_natural_milanese/preview_glass_separated_test.png",
+      "rear": "watch_ultra_2_natural_milanese/preview_rear.png"
+    },
+    "documentation": "watch_ultra_2_natural_milanese/README.md",
+    "validation": "watch_ultra_2_natural_milanese/validation.json",
+    "source_record": "watch_ultra_2_natural_milanese/references/sources.json",
+    "adaptations": "官方 2024 黑色钛金属米兰尼斯组合 AR 改为原色钛金属；表带为静态展示姿态。",
+    "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
+    "modeled_scope": "product_exterior",
+    "omitted_requested_parts": [],
+    "geometry_provenance": {
+      "basis": "official_ar_adapted",
+      "official_mesh_count": 62,
+      "authored_mesh_count": 0,
+      "authored_parts": [],
+      "audit": "geometry_provenance_audit.json",
+      "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
+    }
+  },
+  "field_source_refs": {
+    "name_and_release_year": [
+      "watch_ultra_2_natural_milanese_spec",
+      "identify_watch",
+      "ultra_band"
+    ],
+    "specifications": [
+      "watch_ultra_2_natural_milanese_spec"
+    ],
+    "identification": [
+      "identify_watch",
+      "ultra_band"
+    ]
+  },
+  "sources": {
+    "watch_ultra_2_natural_milanese_spec": {
+      "url": "https://support.apple.com/zh-cn/111832",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_reference"
+    },
+    "identify_watch": {
+      "url": "https://support.apple.com/zh-cn/108056",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_identification"
+    },
+    "ultra_band": {
+      "url": "https://www.apple.com.cn/newsroom/2024/09/apple-watch-ultra-2-now-available-in-black-titanium/",
+      "publisher": "Apple",
+      "accessed_at": "2026-09-08",
+      "kind": "official_reference"
+    }
+  },
+  "ownership": {
+    "status": "active",
+    "specification": "原色钛金属 · 49 毫米 · 钛金属米兰尼斯表带 M 码 · 国行",
+    "acquired": "2023年11月"
+  },
+  "configuration_confirmed_at": "2026-09-08",
+  "ownership_confirmed_at": "2026-09-08"
+}

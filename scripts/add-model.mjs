@@ -1,6 +1,6 @@
 import { parseArgs } from 'node:util';
 import { mkdir, copyFile, writeFile, readFile, access } from 'node:fs/promises';
-import { resolve, dirname, basename, extname } from 'node:path';
+import { resolve, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validateMetadata, validateRelationships } from './catalog-lib.mjs';
 
@@ -67,11 +67,15 @@ if (values.parent) {
 }
 await access(source);
 if (values.poster) await access(resolve(values.poster));
-const destination = resolve(
+const modelsDirectory = resolve(
   dirname(fileURLToPath(import.meta.url)),
   '../public/models',
-  metadata.id,
 );
+const parentDirectory = values.parent
+  ? resolve(modelsDirectory, values.parent, 'accessories')
+  : modelsDirectory;
+if (values.parent) await mkdir(parentDirectory, { recursive: true });
+const destination = resolve(parentDirectory, metadata.id);
 // mkdir without recursive deliberately refuses to overwrite an existing model.
 await mkdir(destination);
 await copyFile(source, resolve(destination, metadata.preview));
@@ -82,5 +86,5 @@ await writeFile(
   JSON.stringify(metadata, null, 2) + '\n',
 );
 console.log(
-  `已添加 ${metadata.name}: public/models/${basename(destination)}\n请补充参数规格与拥有记录，再运行 pnpm test、pnpm build 并预览。修改保留在工作分支；明确要求提 PR 后，经过 Codex Code Review 再合并发布。`,
+  `已添加 ${metadata.name}: ${destination}\n请补充参数规格与拥有记录，再运行 pnpm test、pnpm build 并预览。修改保留在工作分支；明确要求提 PR 后，经过 Codex Code Review 再合并发布。`,
 );

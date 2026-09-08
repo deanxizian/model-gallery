@@ -1,0 +1,131 @@
+{
+  "id": "macbook-air-15-m5",
+  "name": "MacBook Air 15 英寸 · M5",
+  "subtitle": "银色 · 16 GB 内存 · 512 GB SSD · 中英文键盘 · 国行",
+  "description": "搭载 M5 芯片的轻薄笔记本电脑，配备 15.3 英寸 Liquid Retina 显示屏与 MagSafe 充电接口。",
+  "category": "笔记本电脑",
+  "brand": "Apple",
+  "order": 11,
+  "ownership": {
+    "status": "active",
+    "specification": "银色 · 16 GB 内存 · 512 GB SSD · 中英文键盘 · 国行",
+    "acquired": "2026年5月"
+  },
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "25deg 72deg 100%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "MacBook_Air_15_M5_Silver.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "我的版本",
+      "items": [
+        {
+          "label": "配色",
+          "value": "银色"
+        },
+        {
+          "label": "存储容量",
+          "value": "512 GB"
+        },
+        {
+          "label": "内存",
+          "value": "16 GB"
+        },
+        {
+          "label": "键盘布局",
+          "value": "标准中英文布局"
+        }
+      ]
+    },
+    {
+      "title": "硬件规格",
+      "items": [
+        {
+          "label": "发布年份",
+          "value": "2026"
+        },
+        {
+          "label": "芯片",
+          "value": "Apple M5（10 核 CPU、10 核 GPU）"
+        },
+        {
+          "label": "尺寸（宽 × 高 × 深）",
+          "value": "340.4 × 11.5 × 237.6 mm；整机合盖；宽×高×深"
+        },
+        {
+          "label": "重量 · 整机；依配置有所差异",
+          "value": "1510 g"
+        },
+        {
+          "label": "屏幕",
+          "value": "15.3 英寸 · IPS LCD / Liquid Retina · 2880 × 1864"
+        },
+        {
+          "label": "材质",
+          "value": "铝金属机身"
+        },
+        {
+          "label": "接口",
+          "value": "MagSafe 3；2 × Thunderbolt 4 / USB-C；3.5 mm 耳机插孔"
+        }
+      ]
+    },
+    {
+      "title": "型号与地区",
+      "items": [
+        {
+          "label": "硬件型号（官方匹配）",
+          "value": "A3448"
+        },
+        {
+          "label": "机型标识符",
+          "value": "Mac17,4"
+        },
+        {
+          "label": "销售地区",
+          "value": "中国大陆（国行）"
+        },
+        {
+          "label": "零售部件号",
+          "value": null
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "MacBook Air 15 英寸 · M5 官方资料",
+      "url": "https://support.apple.com/zh-cn/126321",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "MacBook Air 15 英寸 · M5 官方机型识别",
+      "url": "https://support.apple.com/zh-cn/102869",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "MacBook Air 15 英寸 · M5 官方资料",
+      "url": "https://regulatoryinfo.apple.com/rfexposure/model/A3448/zh-HK",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple MacBook Air M5 硬件型号",
+      "url": "https://support.apple.com/ko-kr/126321",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "note": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。 M5 官网复用 2025 路径的银色外观 AR；只体现外观，不包含内部芯片。"
+}

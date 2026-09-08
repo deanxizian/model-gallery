@@ -1,0 +1,105 @@
+{
+  "id": "siri-remote-3",
+  "name": "Siri Remote 第三代",
+  "subtitle": "银色 · 国行",
+  "description": "适用于 Apple TV 的铝金属遥控器，支持蓝牙与红外线控制，通过 USB-C 接口充电。",
+  "category": "遥控器",
+  "brand": "Apple",
+  "order": 14,
+  "ownership": {
+    "status": "active",
+    "specification": "银色 · 国行",
+    "acquired": "2026年8月"
+  },
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "25deg 72deg 100%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "Siri_Remote_3.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "我的版本",
+      "items": [
+        {
+          "label": "配色",
+          "value": "银色"
+        }
+      ]
+    },
+    {
+      "title": "硬件规格",
+      "items": [
+        {
+          "label": "发布年份",
+          "value": "2022"
+        },
+        {
+          "label": "尺寸（宽 × 高 × 深）",
+          "value": "35 × 136 × 9.25 mm；遥控器本体"
+        },
+        {
+          "label": "重量 · 遥控器",
+          "value": "66 g"
+        },
+        {
+          "label": "材质",
+          "value": "铝金属外壳"
+        },
+        {
+          "label": "接口",
+          "value": "USB-C 充电"
+        },
+        {
+          "label": "无线连接",
+          "value": "Bluetooth 5.0、红外线发射器"
+        }
+      ]
+    },
+    {
+      "title": "型号与地区",
+      "items": [
+        {
+          "label": "硬件型号（官方匹配）",
+          "value": "A2854"
+        },
+        {
+          "label": "销售地区",
+          "value": "中国大陆（国行）"
+        },
+        {
+          "label": "零售部件号",
+          "value": null
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "Siri Remote 第三代 官方资料",
+      "url": "https://support.apple.com/en-us/111844",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Siri Remote 第三代 官方机型识别",
+      "url": "https://support.apple.com/zh-cn/103233",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Siri Remote 第三代 官方资料",
+      "url": "https://support.apple.com/zh-tw/111844",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "note": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。 从 Apple TV 4K 与遥控器官方组合 AR 中单独提取遥控器。"
+}

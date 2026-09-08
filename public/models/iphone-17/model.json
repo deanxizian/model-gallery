@@ -2,10 +2,15 @@
   "id": "iphone-17",
   "name": "iPhone 17",
   "subtitle": "黑色 · 512 GB",
-  "description": "黑色 iPhone 17 的外观存档，保留机身、镜头与按键细节。模型取自 Apple 公开 AR 资源。",
-  "dimensions": "71.50 × 149.60 × 7.95 mm",
-  "revision": "黑色",
-  "order": 2,
+  "description": "搭载 A19 芯片的智能手机，配备 6.3 英寸 ProMotion 显示屏与融合式双摄系统。",
+  "category": "智能手机",
+  "brand": "Apple",
+  "order": 10,
+  "ownership": {
+    "status": "active",
+    "specification": "黑色 · 512 GB · 国行",
+    "acquired": "2025年10月"
+  },
   "preview": "model.glb",
   "poster": "poster.png",
   "cameraOrbit": "150deg 78deg 110%",
@@ -13,20 +18,12 @@
     {
       "label": "GLB",
       "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "iPhone_17_Black.blend"
     }
   ],
-  "source": {
-    "label": "Apple 原始资源",
-    "url": "https://www.apple.com.cn/105/media/ww/iphone-17/2025/b2c72de3-1cbc-4e24-b4d3-23c7abcec4ec/ar/iphone-17-p-sim.usdz"
-  },
-  "note": "几何与贴图来源于 Apple；外观参考模型，不是机械制造 CAD。",
-  "category": "智能手机",
-  "brand": "Apple",
-  "ownership": {
-    "status": "active",
-    "acquired": "2025年10月",
-    "specification": "黑色 · 512 GB"
-  },
   "specGroups": [
     {
       "title": "机身与显示",
@@ -133,6 +130,27 @@
         {
           "label": "流媒体视频播放",
           "value": "最长 27 小时（官方标称）"
+        },
+        {
+          "label": "网络版本",
+          "value": "国行 · 5G · 双 nano-SIM 卡"
+        }
+      ]
+    },
+    {
+      "title": "型号与地区",
+      "items": [
+        {
+          "label": "硬件型号（官方匹配）",
+          "value": "A3521"
+        },
+        {
+          "label": "销售地区",
+          "value": "中国大陆（国行）"
+        },
+        {
+          "label": "零售部件号",
+          "value": null
         }
       ]
     }
@@ -142,6 +160,25 @@
       "label": "Apple iPhone 17 技术规格",
       "url": "https://www.apple.com.cn/iphone-17/specs/",
       "checkedAt": "2026-09-07"
+    },
+    {
+      "label": "iPhone 17 官方机型识别",
+      "url": "https://support.apple.com/zh-cn/108044",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple 双 nano-SIM 卡说明",
+      "url": "https://support.apple.com/zh-cn/108898",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
     }
-  ]
+  ],
+  "note": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。 官方薰衣草紫实体 SIM 版本 AR，依据官方照片改为黑色。",
+  "dimensions": "71.50 × 149.60 × 7.95 mm",
+  "revision": "黑色",
+  "source": {
+    "label": "Apple 原始资源",
+    "url": "https://www.apple.com.cn/105/media/ww/iphone-17/2025/b2c72de3-1cbc-4e24-b4d3-23c7abcec4ec/ar/iphone-17-p-sim.usdz"
+  }
 }

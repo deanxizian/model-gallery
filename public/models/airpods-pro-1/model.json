@@ -1,0 +1,129 @@
+{
+  "id": "airpods-pro-1",
+  "name": "AirPods Pro 初代",
+  "subtitle": "白色 · 2019 无线充电盒 · 国行",
+  "description": "搭载 H1 芯片的入耳式无线耳机，配备支持 Qi 无线充电的充电盒。",
+  "category": "无线耳机",
+  "brand": "Apple",
+  "order": 18,
+  "ownership": {
+    "status": "retired",
+    "specification": "白色 · 2019 无线充电盒 · 国行",
+    "acquired": "2019年10月"
+  },
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "25deg 72deg 100%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "AirPods_Pro_1.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "我的版本",
+      "items": [
+        {
+          "label": "配色",
+          "value": "白色"
+        },
+        {
+          "label": "充电盒",
+          "value": "2019 无线充电盒（Lightning）"
+        }
+      ]
+    },
+    {
+      "title": "硬件规格",
+      "items": [
+        {
+          "label": "发布年份",
+          "value": "2019"
+        },
+        {
+          "label": "上市日期",
+          "value": "2019年10月30日"
+        },
+        {
+          "label": "芯片",
+          "value": "Apple H1"
+        },
+        {
+          "label": "尺寸（宽 × 高 × 深）",
+          "value": "60.6 × 45.2 × 21.7 mm；闭合充电盒"
+        },
+        {
+          "label": "重量 · 单只耳机",
+          "value": "5.4 g"
+        },
+        {
+          "label": "重量 · 充电盒",
+          "value": "45.6 g"
+        },
+        {
+          "label": "材质",
+          "value": "塑料外壳、硅胶耳塞"
+        },
+        {
+          "label": "接口",
+          "value": "Lightning（充电盒）"
+        },
+        {
+          "label": "无线连接",
+          "value": "Bluetooth 5.0"
+        },
+        {
+          "label": "充电方式",
+          "value": "Lightning、Qi"
+        }
+      ]
+    },
+    {
+      "title": "型号与地区",
+      "items": [
+        {
+          "label": "耳机官方型号组",
+          "value": "A2084 / A2083"
+        },
+        {
+          "label": "充电盒型号",
+          "value": "A2190"
+        },
+        {
+          "label": "销售地区",
+          "value": "中国大陆（国行）"
+        },
+        {
+          "label": "零售部件号",
+          "value": null
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "AirPods Pro 初代 官方资料",
+      "url": "https://support.apple.com/zh-cn/111861",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "AirPods Pro 初代 官方机型识别",
+      "url": "https://support.apple.com/zh-cn/109525",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple AirPods Pro 初代上市时间",
+      "url": "https://www.apple.com.cn/newsroom/2019/10/airpods-pro-arrive-in-stores-around-the-world/",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "note": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。 官方 2019 原始 AR；保留开盖、耳机悬浮姿态。"
+}

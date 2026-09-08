@@ -1,0 +1,73 @@
+{
+  "id": "x3-type-c-adapter",
+  "name": "Type-C 充电转接头",
+  "subtitle": "磁吸充电转接头",
+  "description": "适用于阅星瞳 X3 的磁吸充电转接头，通过 Type-C 接口连接电源。",
+  "parentId": "xteink-x3",
+  "category": "充电转接头",
+  "order": 2,
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "-15deg 65deg 100%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    },
+    {
+      "label": "STEP",
+      "file": "X3_Type_C_Adapter.step"
+    },
+    {
+      "label": "Blender",
+      "file": "X3_Type_C_Adapter.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "实测尺寸",
+      "items": [
+        {
+          "label": "主体（长 × 高 × 厚）",
+          "value": "31.74 × 11.92 × 7.90 mm"
+        },
+        {
+          "label": "含台阶总厚度",
+          "value": "10.70 mm；量到黑色台阶表面，不含触针"
+        },
+        {
+          "label": "触点台阶（长 × 高）",
+          "value": "19.30 × 4.66 mm"
+        },
+        {
+          "label": "台阶突出主体",
+          "value": "2.80 mm"
+        },
+        {
+          "label": "台阶近端余量",
+          "value": "1.58 mm；由 20.88 − 19.30 推得"
+        },
+        {
+          "label": "实际触针高度",
+          "value": null
+        }
+      ]
+    },
+    {
+      "title": "测绘说明",
+      "items": [
+        {
+          "label": "模型依据",
+          "value": "主体和台阶按本人实测尺寸重建；触针高度、微小圆角与凹面深度仍为示意。"
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "kind": "local-design",
+      "label": "个人实测记录与外观重建模型",
+      "checkedAt": "2026-09-07"
+    }
+  ]
+}

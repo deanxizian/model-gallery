@@ -1,0 +1,10 @@
+{
+  "source": "Apple_Watch_Series_6_44_Space_Gray_Case_Only.glb",
+  "preview": "model-gps-case-only.glb",
+  "change": "Replaced the cellular red crown ring finish with space gray; original geometry and original downloads retained.",
+  "geometry_binary_unchanged": true,
+  "source_sha256": "ee4f3c1299612e6130ca65ad3bf740c924658a784c8301d788bf5f00674e48e8",
+  "result_sha256": "348fe8bc0e7285fd3a771caa60ec17b4098b8d09a18a016d4ecfa864a757fe41",
+  "reference": "https://support.apple.com/zh-cn/108056",
+  "checked_at": "2026-09-08"
+}

@@ -1,0 +1,126 @@
+{
+  "id": "iphone-13-pro",
+  "name": "iPhone 13 Pro",
+  "subtitle": "远峰蓝色 · 256 GB · 国行",
+  "description": "搭载 A15 仿生芯片的智能手机，配备 6.1 英寸超视网膜 XDR 显示屏，支持 ProMotion 自适应刷新率。",
+  "category": "智能手机",
+  "brand": "Apple",
+  "order": 16,
+  "ownership": {
+    "status": "active",
+    "specification": "远峰蓝色 · 256 GB · 国行",
+    "acquired": "2022年11月"
+  },
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "25deg 72deg 100%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "iPhone_13_Pro_Sierra_Blue.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "我的版本",
+      "items": [
+        {
+          "label": "配色",
+          "value": "远峰蓝色"
+        },
+        {
+          "label": "存储容量",
+          "value": "256 GB"
+        },
+        {
+          "label": "网络版本",
+          "value": "国行 · 5G · 双 nano-SIM 卡"
+        }
+      ]
+    },
+    {
+      "title": "硬件规格",
+      "items": [
+        {
+          "label": "发布年份",
+          "value": "2021"
+        },
+        {
+          "label": "芯片",
+          "value": "Apple A15 Bionic"
+        },
+        {
+          "label": "尺寸（宽 × 高 × 深）",
+          "value": "71.5 × 146.7 × 7.65 mm；机身，不含镜头和按钮突起"
+        },
+        {
+          "label": "重量 · 整机",
+          "value": "203 g"
+        },
+        {
+          "label": "屏幕",
+          "value": "6.1 英寸 · OLED / Super Retina XDR · 1170 × 2532 · 最高 120 Hz"
+        },
+        {
+          "label": "材质",
+          "value": "不锈钢边框、亚光玻璃背板、超瓷晶面板"
+        },
+        {
+          "label": "接口",
+          "value": "Lightning"
+        }
+      ]
+    },
+    {
+      "title": "型号与地区",
+      "items": [
+        {
+          "label": "硬件型号（官方匹配）",
+          "value": "A2639"
+        },
+        {
+          "label": "销售地区",
+          "value": "中国大陆（国行）"
+        },
+        {
+          "label": "零售部件号",
+          "value": null
+        }
+      ]
+    },
+    {
+      "title": "版本备注",
+      "items": [
+        {
+          "label": "说明",
+          "value": "用户确认国行、256 GB；官方对应 A2639。现有预览沿用源 AR 的地区天线细节，尚未完全适配 A2639 外观。"
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "iPhone 13 Pro 官方资料",
+      "url": "https://support.apple.com/zh-cn/111871",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "iPhone 13 Pro 官方机型识别",
+      "url": "https://support.apple.com/zh-cn/108044",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple 双 nano-SIM 卡说明",
+      "url": "https://support.apple.com/zh-cn/108898",
+      "checkedAt": "2026-09-08",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "note": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。 官方远峰蓝单机 AR，保留源模型天线窗口及 SIM 细节。"
+}

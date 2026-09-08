@@ -1,0 +1,29 @@
+{
+  "unit": "mm",
+  "source": "User caliper measurements, supplied in centimetres and converted by ×10.",
+  "adapter_body": {
+    "length": 31.74,
+    "height": 11.92,
+    "depth_excluding_contact_step": 7.9
+  },
+  "depth_including_contact_step": 10.7,
+  "derived_step_projection": 2.8,
+  "contact_step_face": {
+    "long_dimension": 19.3,
+    "short_dimension": 4.66,
+    "short_dimension_orientation": "Height of the contact face, established from user photographs."
+  },
+  "front_recess": {
+    "exists": true,
+    "depth": null,
+    "width": null,
+    "profile": "Two round ends, narrowed waist, shallow recessed face inside a surrounding rim; depths unmeasured."
+  },
+  "user_input_original": "typc充电长度3.174厘米，高度是1.192厘米。厚度不算触点是0.79厘米。算上触点那个凸起的台阶是1.07厘米。触点凸起台阶的宽度是1.93厘米。宽度是0.466厘米，中间有凹进去一点。",
+  "pending": "Pin extension, small radii, waist/recess depth and reader contact datum remain photo-derived estimates.",
+  "total_depth_reference": "Black step face, explicitly confirmed by user; metal tips excluded.",
+  "caliper_span_step_far_edge_to_near_body_end": 20.88,
+  "derived_contact_near_end_margin": 1.58,
+  "derived_contact_far_end_margin": 10.86,
+  "derived_contact_center_offset_magnitude": 4.64
+}
