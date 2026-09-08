@@ -89,32 +89,12 @@
       "2 × Thunderbolt 4 / USB-C",
       "3.5 mm 耳机插孔"
     ],
-    "storage_options": [
-      {
-        "value": 512,
-        "unit": "GB"
-      },
-      {
-        "value": 1,
-        "unit": "TB"
-      },
-      {
-        "value": 2,
-        "unit": "TB"
-      },
-      {
-        "value": 4,
-        "unit": "TB"
-      }
-    ],
-    "configuration_options": {
-      "memory_gb": [
-        16,
-        24,
-        32
-      ]
+    "source_ref": "macbook_air_15_m5_silver_spec",
+    "storage": {
+      "value": 512,
+      "unit": "GB"
     },
-    "source_ref": "macbook_air_15_m5_silver_spec"
+    "memory_gb": 16
   },
   "notes": [
     "15 英寸是商品尺寸名称；官方显示屏对角线为 15.3 英寸。",
@@ -130,16 +110,11 @@
   "updated_at": "2026-09-08",
   "asset": {
     "status": "ready",
-    "blend": "macbook_air_15_m5_silver/MacBook_Air_15_M5_Silver.blend",
-    "glb": "macbook_air_15_m5_silver/MacBook_Air_15_M5_Silver.glb",
+    "blend": "MacBook_Air_15_M5_Silver.blend",
+    "glb": "model.glb",
     "previews": {
-      "detail": "macbook_air_15_m5_silver/preview_detail.png",
-      "front": "macbook_air_15_m5_silver/preview_front.png",
-      "rear": "macbook_air_15_m5_silver/preview_rear.png"
+      "poster": "poster.png"
     },
-    "documentation": "macbook_air_15_m5_silver/README.md",
-    "validation": "macbook_air_15_m5_silver/validation.json",
-    "source_record": "macbook_air_15_m5_silver/references/sources.json",
     "adaptations": "M5 官网复用 2025 路径的银色外观 AR；只体现外观，不包含内部芯片。",
     "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
     "modeled_scope": "product_exterior",
@@ -149,9 +124,9 @@
       "official_mesh_count": 46,
       "authored_mesh_count": 0,
       "authored_parts": [],
-      "audit": "geometry_provenance_audit.json",
       "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
-    }
+    },
+    "path_base": "relative_to_product_json"
   },
   "field_source_refs": {
     "name_and_release_year": [

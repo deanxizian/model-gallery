@@ -1,8 +1,65 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
+import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 import { readModelEntries, localAsset } from './catalog-lib.mjs';
 import { devicesIn, accessoriesOf } from '../src/archive.ts';
+
+test('product records contain only owned capacities and reference published assets', async () => {
+  const entries = await readModelEntries(
+    fileURLToPath(new URL('../public/models', import.meta.url)),
+  );
+  const storageGB = {
+    'iphone-17': 512,
+    'iphone-13-pro': 256,
+    'ipad-pro-m2-12-9': 128,
+    'macbook-air-15-m5': 512,
+    'apple-watch-series-6': 32,
+    'apple-watch-ultra-2': 64,
+  };
+  const memoryGB = { 'ipad-pro-m2-12-9': 8, 'macbook-air-15-m5': 16 };
+  for (const { directory, meta } of entries.filter(
+    (entry) => entry.meta.brand === 'Apple',
+  )) {
+    const product = JSON.parse(
+      await readFile(resolve(directory, 'product.json'), 'utf8'),
+    );
+    const { specifications, configuration, asset } = product;
+    assert.equal(specifications.storage_options, undefined, meta.id);
+    assert.equal(specifications.configuration_options, undefined, meta.id);
+    if (meta.id in storageGB) {
+      const expected = { value: storageGB[meta.id], unit: 'GB' };
+      assert.deepEqual(configuration.storage, expected, meta.id);
+      assert.deepEqual(specifications.storage, expected, meta.id);
+    } else assert.equal(configuration.storage, null, meta.id);
+    if (meta.id in memoryGB) {
+      assert.equal(configuration.memory_gb, memoryGB[meta.id], meta.id);
+      assert.equal(specifications.memory_gb, memoryGB[meta.id], meta.id);
+    }
+    assert.equal(asset.status, 'ready');
+    assert.equal(asset.path_base, 'relative_to_product_json');
+    assert.equal(asset.glb, meta.preview, meta.id);
+    assert.equal(
+      asset.blend,
+      meta.downloads.find((file) => file.file.endsWith('.blend'))?.file,
+      meta.id,
+    );
+    assert.equal(asset.previews.poster, meta.poster, meta.id);
+    // Check every declared file, including nested variant and provenance records.
+    async function checkPaths(value) {
+      if (
+        typeof value === 'string' &&
+        /\.(?:glb|blend|png|jpe?g|json|md|stl|step)$/i.test(value)
+      )
+        await localAsset(directory, value);
+      else if (value && typeof value === 'object')
+        for (const child of Object.values(value)) await checkPaths(child);
+    }
+    await checkPaths(asset);
+    assert.deepEqual(product.ownership, meta.ownership, meta.id);
+  }
+});
 
 test('the published archive contains the ten completed Apple models and both X3 accessories', async () => {
   const entries = await readModelEntries(

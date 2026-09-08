@@ -92,63 +92,12 @@
       "Smart Connector",
       "nano-SIM 卡托"
     ],
-    "storage_options": [
-      {
-        "value": 128,
-        "unit": "GB"
-      },
-      {
-        "value": 256,
-        "unit": "GB"
-      },
-      {
-        "value": 512,
-        "unit": "GB"
-      },
-      {
-        "value": 1,
-        "unit": "TB"
-      },
-      {
-        "value": 2,
-        "unit": "TB"
-      }
-    ],
-    "configuration_options": {
-      "memory_rules": [
-        {
-          "storage": [
-            {
-              "value": 128,
-              "unit": "GB"
-            },
-            {
-              "value": 256,
-              "unit": "GB"
-            },
-            {
-              "value": 512,
-              "unit": "GB"
-            }
-          ],
-          "memory_gb": 8
-        },
-        {
-          "storage": [
-            {
-              "value": 1,
-              "unit": "TB"
-            },
-            {
-              "value": 2,
-              "unit": "TB"
-            }
-          ],
-          "memory_gb": 16
-        }
-      ]
+    "source_ref": "ipad_pro_m2_12_9_cellular_space_gray_spec",
+    "storage": {
+      "value": 128,
+      "unit": "GB"
     },
-    "source_ref": "ipad_pro_m2_12_9_cellular_space_gray_spec"
+    "memory_gb": 8
   },
   "notes": [
     "用户确认美版、128 GB；依官方容量对应关系记录 8 GB 内存。",
@@ -163,16 +112,11 @@
   "updated_at": "2026-09-08",
   "asset": {
     "status": "ready",
-    "blend": "ipad_pro_m2_12_9_cellular_space_gray/iPad_Pro_M2_12_9_Cellular_Space_Gray.blend",
-    "glb": "ipad_pro_m2_12_9_cellular_space_gray/iPad_Pro_M2_12_9_Cellular_Space_Gray.glb",
+    "blend": "iPad_Pro_M2_12_9_Cellular_Space_Gray.blend",
+    "glb": "model.glb",
     "previews": {
-      "detail": "ipad_pro_m2_12_9_cellular_space_gray/preview_detail.png",
-      "front": "ipad_pro_m2_12_9_cellular_space_gray/preview_front.png",
-      "rear": "ipad_pro_m2_12_9_cellular_space_gray/preview_rear.png"
+      "poster": "poster.png"
     },
-    "documentation": "ipad_pro_m2_12_9_cellular_space_gray/README.md",
-    "validation": "ipad_pro_m2_12_9_cellular_space_gray/validation.json",
-    "source_record": "ipad_pro_m2_12_9_cellular_space_gray/references/sources.json",
     "adaptations": "官方银色 Wi-Fi AR 改深空灰，依据尺寸图补建实体 SIM 卡托；无 mmWave 窗口。",
     "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
     "modeled_scope": "product_exterior",
@@ -186,9 +130,9 @@
         "Removable nano-SIM tray face",
         "SIM eject pin aperture"
       ],
-      "audit": "geometry_provenance_audit.json",
       "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
-    }
+    },
+    "path_base": "relative_to_product_json"
   },
   "field_source_refs": {
     "name_and_release_year": [

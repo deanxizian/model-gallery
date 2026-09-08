@@ -107,26 +107,23 @@
     "ports": [
       "Lightning（充电盒）"
     ],
-    "storage_options": [],
-    "configuration_options": {
-      "wireless": [
-        "Bluetooth 5.3"
-      ],
-      "charging": [
-        "Lightning",
-        "MagSafe",
-        "Apple Watch 充电器",
-        "Qi"
-      ],
-      "earbud_dimensions_mm": {
-        "width": 21.8,
-        "height": 30.9,
-        "depth": 24,
-        "scope": "单只耳机"
-      },
-      "active_noise_cancellation": true
+    "source_ref": "airpods_pro_2_lightning_spec",
+    "wireless": [
+      "Bluetooth 5.3"
+    ],
+    "charging": [
+      "Lightning",
+      "MagSafe",
+      "Apple Watch 充电器",
+      "Qi"
+    ],
+    "earbud_dimensions_mm": {
+      "width": 21.8,
+      "height": 30.9,
+      "depth": 24,
+      "scope": "单只耳机"
     },
-    "source_ref": "airpods_pro_2_lightning_spec"
+    "active_noise_cancellation": true
   },
   "notes": [
     "用户明确选择 2022 Lightning 充电盒。耳机型号 A3047/A3048/A3049 及盒子 A2968 属于 2023 USB-C 版本，不属于此条目。"
@@ -139,16 +136,11 @@
   "updated_at": "2026-09-08",
   "asset": {
     "status": "ready",
-    "blend": "airpods_pro_2_lightning/AirPods_Pro_2_Lightning_2022.blend",
-    "glb": "airpods_pro_2_lightning/AirPods_Pro_2_Lightning_2022.glb",
+    "blend": "AirPods_Pro_2_Lightning_2022.blend",
+    "glb": "model.glb",
     "previews": {
-      "detail": "airpods_pro_2_lightning/preview_detail.png",
-      "front": "airpods_pro_2_lightning/preview_front.png",
-      "rear": "airpods_pro_2_lightning/preview_rear.png"
+      "poster": "poster.png"
     },
-    "documentation": "airpods_pro_2_lightning/README.md",
-    "validation": "airpods_pro_2_lightning/validation.json",
-    "source_record": "airpods_pro_2_lightning/references/sources.json",
     "adaptations": "使用 2023 年 7 月存档的苹果 2022 Lightning AR；苹果现行同名 URL 已改为 USB-C。",
     "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
     "modeled_scope": "product_exterior",
@@ -158,9 +150,9 @@
       "official_mesh_count": 78,
       "authored_mesh_count": 0,
       "authored_parts": [],
-      "audit": "geometry_provenance_audit.json",
       "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
-    }
+    },
+    "path_base": "relative_to_product_json"
   },
   "field_source_refs": {
     "name_and_release_year": [

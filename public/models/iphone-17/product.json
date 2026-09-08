@@ -95,18 +95,11 @@
     "ports": [
       "USB-C（USB 2）"
     ],
-    "storage_options": [
-      {
-        "value": 256,
-        "unit": "GB"
-      },
-      {
-        "value": 512,
-        "unit": "GB"
-      }
-    ],
-    "configuration_options": {},
-    "source_ref": "iphone_17_black_spec"
+    "source_ref": "iphone_17_black_spec",
+    "storage": {
+      "value": 512,
+      "unit": "GB"
+    }
   },
   "notes": [
     "现有 3D 模型包含实体 SIM 卡托，不能用该外观代表无卡托地区版本。"
@@ -120,17 +113,11 @@
   "updated_at": "2026-09-08",
   "asset": {
     "status": "ready",
-    "blend": "iphone_17_black/iPhone_17_Black.blend",
-    "glb": "iphone_17_black/iPhone_17_Black.glb",
+    "blend": "iPhone_17_Black.blend",
+    "glb": "model.glb",
     "previews": {
-      "bottom": "iphone_17_black/preview_bottom.png",
-      "camera_detail": "iphone_17_black/preview_camera_detail.png",
-      "front_back": "iphone_17_black/preview_front_back.png",
-      "rear": "iphone_17_black/preview_rear.png"
+      "poster": "poster.png"
     },
-    "documentation": "iphone_17_black/README.md",
-    "validation": "iphone_17_black/validation.json",
-    "source_record": "iphone_17_black/references/sources.json",
     "adaptations": "官方薰衣草紫实体 SIM 版本 AR，依据官方照片改为黑色。",
     "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
     "modeled_scope": "product_exterior",
@@ -140,9 +127,9 @@
       "official_mesh_count": 76,
       "authored_mesh_count": 0,
       "authored_parts": [],
-      "audit": "geometry_provenance_audit.json",
       "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
-    }
+    },
+    "path_base": "relative_to_product_json"
   },
   "field_source_refs": {
     "name_and_release_year": [

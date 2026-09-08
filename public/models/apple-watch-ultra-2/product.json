@@ -90,14 +90,11 @@
     "ports": [
       "磁力充电"
     ],
-    "storage_options": [
-      {
-        "value": 64,
-        "unit": "GB"
-      }
-    ],
-    "configuration_options": {},
-    "source_ref": "watch_ultra_2_natural_milanese_spec"
+    "source_ref": "watch_ultra_2_natural_milanese_spec",
+    "storage": {
+      "value": 64,
+      "unit": "GB"
+    }
   },
   "notes": [
     "Ultra 2 主机于 2023 年推出；本次搭配的钛金属米兰尼斯表带于 2024 年推出，不能将组合写成 2023 年首发套装。"
@@ -111,20 +108,11 @@
   "updated_at": "2026-09-08",
   "asset": {
     "status": "ready",
-    "blend": "watch_ultra_2_natural_milanese/Apple_Watch_Ultra_2_Natural_Milanese.blend",
-    "glb": "watch_ultra_2_natural_milanese/Apple_Watch_Ultra_2_Natural_Milanese.glb",
+    "blend": "Apple_Watch_Ultra_2_Natural_Milanese.blend",
+    "glb": "model.glb",
     "previews": {
-      "alpha_deep_test": "watch_ultra_2_natural_milanese/preview_alpha_deep_test.png",
-      "alpha_test": "watch_ultra_2_natural_milanese/preview_alpha_test.png",
-      "culling_test": "watch_ultra_2_natural_milanese/preview_culling_test.png",
-      "detail": "watch_ultra_2_natural_milanese/preview_detail.png",
-      "front": "watch_ultra_2_natural_milanese/preview_front.png",
-      "glass_separated_test": "watch_ultra_2_natural_milanese/preview_glass_separated_test.png",
-      "rear": "watch_ultra_2_natural_milanese/preview_rear.png"
+      "poster": "poster.png"
     },
-    "documentation": "watch_ultra_2_natural_milanese/README.md",
-    "validation": "watch_ultra_2_natural_milanese/validation.json",
-    "source_record": "watch_ultra_2_natural_milanese/references/sources.json",
     "adaptations": "官方 2024 黑色钛金属米兰尼斯组合 AR 改为原色钛金属；表带为静态展示姿态。",
     "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
     "modeled_scope": "product_exterior",
@@ -134,9 +122,9 @@
       "official_mesh_count": 62,
       "authored_mesh_count": 0,
       "authored_parts": [],
-      "audit": "geometry_provenance_audit.json",
       "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
-    }
+    },
+    "path_base": "relative_to_product_json"
   },
   "field_source_refs": {
     "name_and_release_year": [

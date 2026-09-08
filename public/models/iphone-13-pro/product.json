@@ -101,26 +101,11 @@
     "ports": [
       "Lightning"
     ],
-    "storage_options": [
-      {
-        "value": 128,
-        "unit": "GB"
-      },
-      {
-        "value": 256,
-        "unit": "GB"
-      },
-      {
-        "value": 512,
-        "unit": "GB"
-      },
-      {
-        "value": 1,
-        "unit": "TB"
-      }
-    ],
-    "configuration_options": {},
-    "source_ref": "iphone_13_pro_sierra_blue_spec"
+    "source_ref": "iphone_13_pro_sierra_blue_spec",
+    "storage": {
+      "value": 256,
+      "unit": "GB"
+    }
   },
   "notes": [
     "用户确认国行、256 GB；官方对应 A2639。现有预览沿用源 AR 的地区天线细节，尚未完全适配 A2639 外观。"
@@ -134,16 +119,11 @@
   "updated_at": "2026-09-08",
   "asset": {
     "status": "ready",
-    "blend": "iphone_13_pro_sierra_blue/iPhone_13_Pro_Sierra_Blue.blend",
-    "glb": "iphone_13_pro_sierra_blue/iPhone_13_Pro_Sierra_Blue.glb",
+    "blend": "iPhone_13_Pro_Sierra_Blue.blend",
+    "glb": "model.glb",
     "previews": {
-      "detail": "iphone_13_pro_sierra_blue/preview_detail.png",
-      "front": "iphone_13_pro_sierra_blue/preview_front.png",
-      "rear": "iphone_13_pro_sierra_blue/preview_rear.png"
+      "poster": "poster.png"
     },
-    "documentation": "iphone_13_pro_sierra_blue/README.md",
-    "validation": "iphone_13_pro_sierra_blue/validation.json",
-    "source_record": "iphone_13_pro_sierra_blue/references/sources.json",
     "adaptations": "官方远峰蓝单机 AR，保留源模型天线窗口及 SIM 细节。",
     "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
     "modeled_scope": "product_exterior",
@@ -153,9 +133,9 @@
       "official_mesh_count": 78,
       "authored_mesh_count": 0,
       "authored_parts": [],
-      "audit": "geometry_provenance_audit.json",
       "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
-    }
+    },
+    "path_base": "relative_to_product_json"
   },
   "field_source_refs": {
     "name_and_release_year": [

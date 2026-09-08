@@ -97,14 +97,11 @@
     "ports": [
       "磁力充电"
     ],
-    "storage_options": [
-      {
-        "value": 32,
-        "unit": "GB"
-      }
-    ],
-    "configuration_options": {},
-    "source_ref": "watch_series_6_44_space_gray_sport_loop_spec"
+    "source_ref": "watch_series_6_44_space_gray_sport_loop_spec",
+    "storage": {
+      "value": 32,
+      "unit": "GB"
+    }
   },
   "notes": [
     "用户确认国行、44 毫米 GPS、黑色运动回环表带 M/L 码；已退役，具体退役日期未提供。"
@@ -118,16 +115,11 @@
   "updated_at": "2026-09-08",
   "asset": {
     "status": "ready",
-    "blend": "watch_series_6_44_space_gray_sport_loop/Apple_Watch_Series_6_44_Space_Gray_Case_Only.blend",
-    "glb": "watch_series_6_44_space_gray_sport_loop/Apple_Watch_Series_6_44_Space_Gray_Case_Only.glb",
+    "blend": "Apple_Watch_Series_6_44_GPS_Space_Gray_Case_Only.blend",
+    "glb": "model-gps-case-only.glb",
     "previews": {
-      "detail": "watch_series_6_44_space_gray_sport_loop/preview_detail.png",
-      "front": "watch_series_6_44_space_gray_sport_loop/preview_front.png",
-      "rear": "watch_series_6_44_space_gray_sport_loop/preview_rear.png"
+      "poster": "poster-gps-case-only.png"
     },
-    "documentation": "watch_series_6_44_space_gray_sport_loop/README.md",
-    "validation": "watch_series_6_44_space_gray_sport_loop/validation.json",
-    "source_record": "watch_series_6_44_space_gray_sport_loop/references/sources.json",
     "adaptations": "仅保留官方银色蜂窝版 AR 表壳部分并改深空灰；移除原始表带和全部自建表带、连接件及表扣。保留屏幕、表冠、侧键、传感器和表壳自身的表带释放按钮。",
     "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
     "modeled_scope": "watch_case_only",
@@ -139,7 +131,6 @@
       "official_mesh_count": 35,
       "authored_mesh_count": 0,
       "authored_parts": [],
-      "audit": "geometry_provenance_audit.json",
       "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
     },
     "website_variant": {
@@ -148,7 +139,8 @@
       "poster": "poster-gps-case-only.png",
       "adaptation": "无表带表壳；按已确认 GPS 版本调整表冠表面材质，二进制几何保持不变。",
       "audit": "gps-case-only-adaptation.json"
-    }
+    },
+    "path_base": "relative_to_product_json"
   },
   "field_source_refs": {
     "name_and_release_year": [

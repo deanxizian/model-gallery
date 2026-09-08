@@ -63,14 +63,11 @@
     "ports": [
       "USB-C 充电"
     ],
-    "storage_options": [],
-    "configuration_options": {
-      "wireless": [
-        "Bluetooth 5.0",
-        "红外线发射器"
-      ]
-    },
-    "source_ref": "siri_remote_3_spec"
+    "source_ref": "siri_remote_3_spec",
+    "wireless": [
+      "Bluetooth 5.0",
+      "红外线发射器"
+    ]
   },
   "notes": [
     "藏品为遥控器本身；Apple TV 4K 主机型号、处理器和容量不属于此条目。"
@@ -84,16 +81,11 @@
   "updated_at": "2026-09-08",
   "asset": {
     "status": "ready",
-    "blend": "siri_remote_3/Siri_Remote_3.blend",
-    "glb": "siri_remote_3/Siri_Remote_3.glb",
+    "blend": "Siri_Remote_3.blend",
+    "glb": "model.glb",
     "previews": {
-      "detail": "siri_remote_3/preview_detail.png",
-      "front": "siri_remote_3/preview_front.png",
-      "rear": "siri_remote_3/preview_rear.png"
+      "poster": "poster.png"
     },
-    "documentation": "siri_remote_3/README.md",
-    "validation": "siri_remote_3/validation.json",
-    "source_record": "siri_remote_3/references/sources.json",
     "adaptations": "从 Apple TV 4K 与遥控器官方组合 AR 中单独提取遥控器。",
     "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
     "modeled_scope": "product_exterior",
@@ -103,9 +95,9 @@
       "official_mesh_count": 25,
       "authored_mesh_count": 0,
       "authored_parts": [],
-      "audit": "geometry_provenance_audit.json",
       "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
-    }
+    },
+    "path_base": "relative_to_product_json"
   },
   "field_source_refs": {
     "name_and_release_year": [

@@ -95,24 +95,21 @@
     "ports": [
       "Lightning（充电盒）"
     ],
-    "storage_options": [],
-    "configuration_options": {
-      "wireless": [
-        "Bluetooth 5.0"
-      ],
-      "charging": [
-        "Lightning",
-        "Qi"
-      ],
-      "earbud_dimensions_mm": {
-        "width": 21.8,
-        "height": 30.9,
-        "depth": 24,
-        "scope": "单只耳机"
-      },
-      "active_noise_cancellation": true
+    "source_ref": "airpods_pro_1_spec",
+    "wireless": [
+      "Bluetooth 5.0"
+    ],
+    "charging": [
+      "Lightning",
+      "Qi"
+    ],
+    "earbud_dimensions_mm": {
+      "width": 21.8,
+      "height": 30.9,
+      "depth": 24,
+      "scope": "单只耳机"
     },
-    "source_ref": "airpods_pro_1_spec"
+    "active_noise_cancellation": true
   },
   "notes": [
     "购入时间记录为 2019年10月，使用 2019 无线充电盒版本；已退役，具体退役日期未提供。"
@@ -126,16 +123,11 @@
   "updated_at": "2026-09-08",
   "asset": {
     "status": "ready",
-    "blend": "airpods_pro_1/AirPods_Pro_1.blend",
-    "glb": "airpods_pro_1/AirPods_Pro_1.glb",
+    "blend": "AirPods_Pro_1.blend",
+    "glb": "model.glb",
     "previews": {
-      "detail": "airpods_pro_1/preview_detail.png",
-      "front": "airpods_pro_1/preview_front.png",
-      "rear": "airpods_pro_1/preview_rear.png"
+      "poster": "poster.png"
     },
-    "documentation": "airpods_pro_1/README.md",
-    "validation": "airpods_pro_1/validation.json",
-    "source_record": "airpods_pro_1/references/sources.json",
     "adaptations": "官方 2019 原始 AR；保留开盖、耳机悬浮姿态。",
     "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
     "modeled_scope": "product_exterior",
@@ -145,9 +137,9 @@
       "official_mesh_count": 80,
       "authored_mesh_count": 0,
       "authored_parts": [],
-      "audit": "geometry_provenance_audit.json",
       "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
-    }
+    },
+    "path_base": "relative_to_product_json"
   },
   "field_source_refs": {
     "name_and_release_year": [

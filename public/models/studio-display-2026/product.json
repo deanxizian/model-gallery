@@ -76,8 +76,6 @@
       "1 × Thunderbolt 5 下行",
       "2 × USB-C（最高 10Gb/s）"
     ],
-    "storage_options": [],
-    "configuration_options": {},
     "source_ref": "studio_display_2026_standard_spec"
   },
   "notes": [
@@ -93,16 +91,11 @@
   "updated_at": "2026-09-08",
   "asset": {
     "status": "ready",
-    "blend": "studio_display_2026_standard/Studio_Display_2026_Standard.blend",
-    "glb": "studio_display_2026_standard/Studio_Display_2026_Standard.glb",
+    "blend": "Studio_Display_2026_Standard.blend",
+    "glb": "model.glb",
     "previews": {
-      "detail": "studio_display_2026_standard/preview_detail.png",
-      "front": "studio_display_2026_standard/preview_front.png",
-      "rear": "studio_display_2026_standard/preview_rear.png"
+      "poster": "poster.png"
     },
-    "documentation": "studio_display_2026_standard/README.md",
-    "validation": "studio_display_2026_standard/validation.json",
-    "source_record": "studio_display_2026_standard/references/sources.json",
     "adaptations": "官方 2026 标准玻璃基础支架 AR，省略拖尾电源线。",
     "accuracy": "外观展示网格；真实规格取 specifications，不能用开盖/含表带模型的包围盒代替产品标称尺寸。",
     "modeled_scope": "product_exterior",
@@ -112,9 +105,9 @@
       "official_mesh_count": 73,
       "authored_mesh_count": 0,
       "authored_parts": [],
-      "audit": "geometry_provenance_audit.json",
       "note": "官方源网格的连接结构已核对；配色、材质、尺度和微小图层位置经过适配，不代表原封不动的官方文件。摄影布景不算产品部件。"
-    }
+    },
+    "path_base": "relative_to_product_json"
   },
   "field_source_refs": {
     "name_and_release_year": [
