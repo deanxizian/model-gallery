@@ -1,8 +1,12 @@
 import { parseArgs } from 'node:util';
-import { mkdir, copyFile, writeFile, readFile, access } from 'node:fs/promises';
+import { mkdir, copyFile, writeFile, access } from 'node:fs/promises';
 import { resolve, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { validateMetadata, validateRelationships } from './catalog-lib.mjs';
+import {
+  validateMetadata,
+  validateRelationships,
+  readModelEntries,
+} from './catalog-lib.mjs';
 
 const { values } = parseArgs({
   options: {
@@ -53,24 +57,16 @@ const metadata = {
 validateMetadata(metadata, values.id);
 if (values.parent && values.status)
   throw new Error('配件使用所属产品的状态，请省略 --status');
-if (values.parent) {
-  const parentDir = resolve(
-    dirname(fileURLToPath(import.meta.url)),
-    '../public/models',
-    values.parent,
-  );
-  const parent = validateMetadata(
-    JSON.parse(await readFile(resolve(parentDir, 'model.json'), 'utf8')),
-    values.parent,
-  );
-  validateRelationships([parent, metadata]);
-}
-await access(source);
-if (values.poster) await access(resolve(values.poster));
 const modelsDirectory = resolve(
   dirname(fileURLToPath(import.meta.url)),
   '../public/models',
 );
+// IDs are shared by products and every accessory, regardless of their folder.
+// Validate the entire proposed catalog before creating any directories or files.
+const existing = await readModelEntries(modelsDirectory);
+validateRelationships([...existing.map((entry) => entry.meta), metadata]);
+await access(source);
+if (values.poster) await access(resolve(values.poster));
 const parentDirectory = values.parent
   ? resolve(modelsDirectory, values.parent, 'accessories')
   : modelsDirectory;

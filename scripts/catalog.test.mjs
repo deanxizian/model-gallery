@@ -176,6 +176,81 @@ test('accessories must belong to an existing device, never themselves or another
   assert.throws(() => validateRelationships([device, device]), /不能重复/);
 });
 
+test('model:add rejects global ID collisions and invalid parents before writing files', async () => {
+  const root = await mkdtemp(resolve(tmpdir(), 'gallery-cli-collision-'));
+  try {
+    const scripts = resolve(root, 'scripts');
+    const models = resolve(root, 'public/models');
+    await mkdir(scripts);
+    for (const name of ['add-model.mjs', 'catalog-lib.mjs'])
+      await copyFile(new URL(name, import.meta.url), resolve(scripts, name));
+    for (const id of ['reader', 'phone']) {
+      await mkdir(resolve(models, id), { recursive: true });
+      await writeFile(
+        resolve(models, id, 'model.json'),
+        JSON.stringify({ ...sample(), id }),
+      );
+    }
+    const dockDir = resolve(models, 'reader/accessories/dock');
+    await mkdir(dockDir, { recursive: true });
+    await writeFile(
+      resolve(dockDir, 'model.json'),
+      JSON.stringify({ ...sample(), id: 'dock', parentId: 'reader' }),
+    );
+    const source = resolve(root, 'source.stl');
+    await writeFile(source, 'solid sample\nendsolid sample\n');
+    const before = (await readdir(models, { recursive: true })).sort();
+    for (const [id, parent, error] of [
+      ['dock', 'phone', /ID 不能重复/],
+      ['reader', 'phone', /ID 不能重复/],
+      ['dock', undefined, /ID 不能重复/],
+      ['reader', undefined, /ID 不能重复/],
+      ['unique', 'dock', /不能嵌套/],
+      ['unique', 'missing', /不存在/],
+    ]) {
+      const result = spawnSync(
+        process.execPath,
+        [
+          resolve(scripts, 'add-model.mjs'),
+          '--file',
+          source,
+          '--id',
+          id,
+          '--name',
+          'New model',
+          ...(parent ? ['--parent', parent] : []),
+        ],
+        { encoding: 'utf8' },
+      );
+      assert.equal(result.status, 1);
+      assert.match(result.stderr, error);
+      assert.deepEqual(
+        (await readdir(models, { recursive: true })).sort(),
+        before,
+      );
+    }
+    const valid = spawnSync(
+      process.execPath,
+      [
+        resolve(scripts, 'add-model.mjs'),
+        '--file',
+        source,
+        '--id',
+        'phone-dock',
+        '--name',
+        'Phone dock',
+        '--parent',
+        'phone',
+      ],
+      { encoding: 'utf8' },
+    );
+    assert.equal(valid.status, 0, valid.stderr);
+    assert.equal((await readModelEntries(models)).length, 4);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
 test('accessory brands are inherited and invalid CLI options create no model files', async () => {
   const accessory = { ...sample(), parentId: 'reader' };
   assert.doesNotThrow(() => validateMetadata(accessory, accessory.id));
