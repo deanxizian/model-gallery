@@ -12,6 +12,8 @@ import {
 } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
+import { createHash } from 'node:crypto';
+import { legacyAssets } from './legacy-assets.mjs';
 import { resolve } from 'node:path';
 import {
   validateMetadata,
@@ -37,6 +39,31 @@ const sample = () => ({
   description: '说明',
   preview: 'model.stl',
   downloads: [{ label: 'STL', file: 'model.stl' }],
+});
+test('published dock URLs retain their original files, including cached previews and metadata', async () => {
+  const paths = [
+    'models/x3-dock/model.stl',
+    'models/x3-dock/model.step',
+    'models/x3-dock/poster.png',
+    'models/x3-dock/model.json',
+    'generated/x3-dock-245f031decb0.glb',
+  ];
+  for (const path of paths) {
+    const asset = legacyAssets[path];
+    assert.ok(asset, path);
+    const file = await readFile(
+      new URL('../public/' + asset.source, import.meta.url),
+    );
+    assert.equal(
+      createHash('sha256').update(file).digest('hex'),
+      asset.sha256,
+      path,
+    );
+    // Historical generated assets must survive the catalog builder's cleanup.
+    assert.ok(!asset.source.startsWith('generated/'));
+  }
+  const preview = legacyAssets[paths.at(-1)];
+  await validateGlb(new URL('../public/' + preview.source, import.meta.url));
 });
 test('download menus include the preview GLB once, normalize formats, and preserve original files', () => {
   const preview = {
