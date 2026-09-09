@@ -976,7 +976,10 @@ button {
     font-size: 11px;
   }
   .model-label > .model-variant {
-    display: none;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .model-label .product-status {
     font-size: 11px;
