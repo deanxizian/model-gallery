@@ -15,7 +15,7 @@
   --line: #e7e9ec;
   --accent: #2778f0;
   --page-gutter: 24px;
-  --header-height: 84px;
+  --header-height: 48px;
 }
 * {
   box-sizing: border-box;
@@ -80,23 +80,23 @@ button {
   align-items: center;
   padding: 0 var(--page-gutter);
   border-bottom: 1px solid var(--line);
-  gap: 48px;
+  gap: 12px;
   background: #fff;
 }
 .brand {
+  margin-left: auto;
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  font-size: 34px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 650;
   line-height: 1;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.03em;
   white-space: nowrap;
 }
 .repository-link {
-  margin-left: auto;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,14 +113,14 @@ button {
 }
 .library {
   border-right: 1px solid var(--line);
-  padding: 24px var(--page-gutter) 28px;
+  padding: 16px var(--page-gutter) 20px;
   min-width: 0;
 }
 .library-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 .library-heading h1 {
   margin: 0;
@@ -134,8 +134,8 @@ button {
 .library-filters {
   display: grid;
   gap: 8px;
-  padding-bottom: 20px;
-  margin-bottom: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 8px;
   border-bottom: 1px solid var(--line);
 }
 .filter-row {
@@ -180,7 +180,7 @@ button {
   display: flex;
   align-items: center;
   padding: 0 11px;
-  margin: 0 0 18px;
+  margin: 0 0 12px;
   color: #a0a5ac;
   gap: 10px;
 }
@@ -316,7 +316,7 @@ button {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 14px 32px;
+  padding: 5px 32px;
   border-bottom: 1px solid var(--line);
 }
 .product-model-options {
@@ -858,9 +858,6 @@ button {
   :root {
     --page-gutter: 20px;
   }
-  .header {
-    gap: 28px;
-  }
   .model-label strong {
     font-size: 16px;
   }
@@ -881,7 +878,7 @@ button {
     grid-template-columns: 1fr;
   }
   .product-models {
-    padding: 12px 26px;
+    padding: 5px 26px;
   }
   .downloads {
     padding-top: 0;
@@ -906,15 +903,6 @@ button {
   html {
     scrollbar-gutter: stable;
   }
-  :root {
-    --header-height: 72px;
-  }
-  .header {
-    gap: 20px;
-  }
-  .brand {
-    font-size: 28px;
-  }
   .workspace {
     display: flex;
     flex-direction: column;
@@ -922,10 +910,10 @@ button {
   .library {
     border-right: 0;
     border-bottom: 1px solid var(--line);
-    padding: 16px var(--page-gutter) 12px;
+    padding: 12px var(--page-gutter) 10px;
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
-    gap: 14px 16px;
+    gap: 10px 16px;
   }
   .library-heading {
     padding: 0;
@@ -987,12 +975,18 @@ button {
   .model-label > span {
     font-size: 11px;
   }
+  .model-label > .model-variant {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .model-label .product-status {
     font-size: 11px;
     gap: 8px;
   }
   .product-models {
-    padding: 10px 20px;
+    padding: 5px 20px;
     gap: 10px;
     flex-wrap: wrap;
   }

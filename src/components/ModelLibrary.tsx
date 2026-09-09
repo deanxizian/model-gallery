@@ -47,7 +47,11 @@ export default function ModelLibrary({
   return (
     <aside className="library" aria-label="我的设备">
       <div className="library-heading">
-        <h1>我的设备</h1>
+        <h1>
+          <a href={import.meta.env.BASE_URL} aria-label="我的设备首页">
+            我的设备
+          </a>
+        </h1>
         <span aria-label={`${filtered.length} 件设备`}>
           {filtered.length} 件
         </span>
