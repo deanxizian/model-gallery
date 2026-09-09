@@ -6,6 +6,32 @@
 
 相关资料：[模型目录与导入记录](model-import.md) · [设备信息](device-records.md) · [型号对应表](model-identifiers.md)
 
+## 项目目录
+
+```text
+model-gallery/
+├── public/
+│   ├── models/              # 网站使用的模型、封面和设备资料
+│   │   └── xteink-x3/
+│   │       └── accessories/ # X3 底座、充电转接头
+│   ├── legacy/              # 保留旧下载链接所需的文件
+│   ├── generated/           # 自动生成的预览和缩略图
+│   └── catalog.json         # 自动生成的设备目录
+├── src/                     # 网页代码与样式
+├── scripts/                 # 模型导入、处理和检查工具
+├── docs/                    # 项目说明和设备记录
+│   └── design/              # 早期设计资料与验收截图
+├── .github/workflows/       # GitHub 自动检查和发布配置
+├── node_modules/            # 安装的依赖
+└── dist/                    # 构建后的网站
+```
+
+每件设备的预览、下载文件、封面和说明放在同一个目录；有对应 Blender 工程时也放在这里。配件使用设备目录下的 `accessories/`，不在根目录另存一套源工程。
+
+`public/generated/`、`public/catalog.json` 和 `dist/` 都会自动生成，不需要手动编辑或提交。`public/legacy/` 及设备目录中用于旧链接的文件需要保留，避免以前分享的下载地址失效。
+
+`docs/design/` 是早期页面的历史参考，不代表当前界面；现行约定见 [AGENTS.md](../AGENTS.md)。完整的原始建模项目另存于网站仓库外的本地工作区。
+
 ## 添加一个模型
 
 需要 Node.js 24 和 pnpm 11.19.0。先创建工作分支，再在本仓库中执行：
@@ -108,11 +134,11 @@ public/models/my-model/
 
 ## Blender 工程
 
-`sources/` 保留最初三个模型的历史 Blender 工程副本，不进入网页部署目录。网页提供的当前工程放在各产品或配件目录，并在 `model.json` 的 `downloads` 中登记。Blender 工程不强制要求；有对应源工程且方便提供时再加入下载，同时核对工程与预览版本。
+网页提供的工程统一放在各产品或配件目录，并在 `model.json` 的 `downloads` 中登记。Blender 工程不强制要求；有对应源工程且方便提供时再加入下载，同时核对工程与预览版本。
 
 X3 本体使用白色版原工程；转接头工程从生成当前 GLB 的 P21 装配场景提取，保留原有几何与材质。底座工程在原 P21 装配工程副本中更新了当前 Clean v3 网格，保留原装配参考与设计脚本；原始工程及 STL、STEP 文件保持不变。
 
-建模原项目与这个仓库互相独立，历史迭代、旧版本和本地归档不在本仓库中。
+原 `sources/` 中的 iPhone 17 和白色 X3 工程与对应设备目录中的文件逐字节一致，已移除重复副本。P19 底座工程与本机原始建模项目中的 `models/xteink_x3_dock/p19_thinner_base/X3_One_Piece_P19.blend` 一致，原件继续保留；也可从 [整理前的仓库版本](https://github.com/deanxizian/model-gallery/blob/93d3f8a1c78651eff096ad4bb9e363e33e9551b8/sources/X3_One_Piece_P19.blend) 取回。网站当前下载仍使用设备目录中登记的版本。
 
 ## 开发和部署
 

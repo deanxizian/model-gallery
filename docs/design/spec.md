@@ -1,5 +1,7 @@
 # Model gallery visual specification
 
+Historical design reference. These notes describe the early layout and may differ from the current website. See [the project rules](../../AGENTS.md) for the current requirements.
+
 The original desktop concept is `concept.png`, generated with the built-in Image Gen tool for this project. It is a layout reference; the user's later revisions below take precedence. Public model geometry always comes from the user's actual files.
 
 - Native concept: 1536 × 1024. White header 74 px high, white left rail about 25% width (maximum 380 px), light gray main stage, white metadata band below.
