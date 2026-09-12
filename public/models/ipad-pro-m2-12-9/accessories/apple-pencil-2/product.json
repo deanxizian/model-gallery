@@ -1,0 +1,96 @@
+{
+  "id": "apple_pencil_2nd_generation",
+  "brand": "Apple",
+  "name": "Apple Pencil (第二代)",
+  "category": "stylus",
+  "user_device_match": {
+    "device": "iPad Pro 12.9 英寸（第六代，M2，2022）",
+    "compatible": true,
+    "magnetic_pairing_and_wireless_charging": true,
+    "apple_pencil_hover": true,
+    "user_confirmation": "用户描述磁吸无线充电、悬停；结合 M2 iPad Pro 的官方兼容列表确认第二代。"
+  },
+  "specifications": {
+    "length_mm": 166,
+    "diameter_mm": 8.9,
+    "weight_g": 18.2,
+    "bluetooth": true,
+    "magnetic_pairing_and_wireless_charging": true
+  },
+  "specifications_source": "https://www.apple.com/shop/product/mxn43am/a/apple-pencil-2nd-generation",
+  "asset": {
+    "status": "ready",
+    "format": "GLB",
+    "official_geometry": true,
+    "authored_geometry": false,
+    "source_context": "2021 款 iPad mini 官方 AR 组合模型中的第二代 Apple Pencil",
+    "source_mesh_count": 7,
+    "source_meshes_preserved": true,
+    "geometry_units": "meters",
+    "bounds_xyz_mm": [
+      8.871197234839201,
+      8.473284542560577,
+      166.31890857357877
+    ],
+    "glb_bytes": 647260,
+    "glb_sha256": "84bc8ab23b315554c5a4f8b08dd7ff8b3ef31314cdad52ba664006bda922a068",
+    "triangle_count": 11463,
+    "embedded_texture_count": 1,
+    "note": "苹果官方第二代 Apple Pencil 网格单独提取，无补建部件；约 166.319 mm 的原始 AR 几何长度保持不变。",
+    "glb": "model.glb",
+    "blend": "Apple_Pencil_2nd_Generation.blend",
+    "previews": {
+      "poster": "poster.png"
+    },
+    "path_base": "relative_to_product_json"
+  },
+  "updated_at": "2026-09-12",
+  "gallery_id": "apple-pencil-2",
+  "parent_gallery_id": "ipad-pro-m2-12-9",
+  "ownership": {
+    "status": "active",
+    "acquired": "2025年4月",
+    "specification": "白色 · 磁吸无线充电 · 国行"
+  },
+  "unconfirmed_fields": [
+    "configuration.retail_part_number"
+  ],
+  "sources": [
+    {
+      "label": "Apple Pencil 第二代技术规格",
+      "url": "https://support.apple.com/zh-cn/111889",
+      "checkedAt": "2026-09-12",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple Pencil 第二代型号资料",
+      "url": "https://support.apple.com/zh-tw/111889",
+      "checkedAt": "2026-09-12",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "configuration": {
+    "color": "白色",
+    "sales_region": "中国大陆（国行）",
+    "retail_part_number": null
+  },
+  "identification": {
+    "confirmed_unit_model_number": null,
+    "matched_official_models": [
+      {
+        "value": "A2051",
+        "kind": "hardware_model_number",
+        "scope": "Apple Pencil（第二代）",
+        "source_url": "https://support.apple.com/zh-tw/111889"
+      }
+    ],
+    "matched_at": "2026-09-12",
+    "match_basis": "按已确认的第二代型号匹配官方规格，未抄录实机编号。"
+  },
+  "asset_provenance": {
+    "source_url": "https://www.apple.com/105/media/us/ipad-mini/2021/9748fc88-97dc-4617-9360-dfc27305ae3e/ar/ipad_mini_ios15_purple_wifi.usdz",
+    "source_sha256": "5ceddd422ddbf35c2cce600ba2433d048512e67d5157086b7e4770fa81b7bf18",
+    "source_subtree": "dxOmJCCtwdlVFiq",
+    "original_meshes_preserved": true
+  }
+}

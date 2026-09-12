@@ -1,0 +1,84 @@
+{
+  "id": "m5stack_sticks3",
+  "brand": "M5Stack",
+  "name": "StickS3",
+  "sku": "K150",
+  "category": "programmable_controller",
+  "specifications": {
+    "soc": "ESP32-S3-PICO-1-N8R8",
+    "flash_mb": 8,
+    "psram_mb": 8,
+    "display": {
+      "diagonal_inches": 1.14,
+      "resolution_px": [
+        135,
+        240
+      ]
+    },
+    "dimensions_mm": {
+      "length": 48.0,
+      "width": 24.0,
+      "height": 15.0
+    },
+    "weight_g": 20.0,
+    "battery_mah": 250
+  },
+  "specifications_source": "https://docs.m5stack.com/en/core/StickS3",
+  "asset": {
+    "status": "ready",
+    "modeled_scope": "complete_exterior_display_model",
+    "format": "GLB",
+    "authored_geometry": true,
+    "geometry_units": "meters",
+    "nominal_dimensions_whd_mm": [
+      24,
+      48,
+      15
+    ],
+    "bounds_xyz_blender_mm": [
+      24.08147044479847,
+      15.005000866949558,
+      48.00187051295523
+    ],
+    "glb_bytes": 2981768,
+    "glb_sha256": "147c2f170c73b31bd67f6322a6e6adc1cb0f7a3c8f4521a4bf79bc5ad8a40cd2",
+    "triangles": 36314,
+    "revision": "real-device-screen-fit",
+    "embedded_texture_count": 4,
+    "note": "根据用户四张实物照片修订的完整外观展示版。官方外壳、前盖与按键的原始几何保持不变；补建接口、标签、红外器件、螺丝和指示灯。屏幕恢复 M5Stack 官方产品图中的白底 STICK S3 默认画面。补建几何不是官方 CAD。",
+    "glb": "model.glb",
+    "blend": "M5Stack_StickS3_Complete.blend",
+    "previews": {
+      "poster": "poster.png"
+    },
+    "path_base": "relative_to_product_json"
+  },
+  "updated_at": "2026-09-12",
+  "gallery_id": "m5stack-sticks3",
+  "ownership": {
+    "status": "active",
+    "specification": "灰色 · 蓝色按键 · 8 MB Flash · 8 MB PSRAM · 国行",
+    "acquired": "2026年7月"
+  },
+  "unconfirmed_fields": [],
+  "sources": [
+    {
+      "label": "M5Stack StickS3 官方文档",
+      "url": "https://docs.m5stack.com/en/core/StickS3",
+      "checkedAt": "2026-09-12",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "configuration": {
+    "color": "灰色",
+    "button_color": "蓝色",
+    "sales_region": "中国大陆（国行）"
+  },
+  "asset_provenance": {
+    "official_geometry_url": "https://raw.githubusercontent.com/m5stack/M5_Hardware/master/Products/K150_StickS3/Structures/StickS3.stl",
+    "official_geometry_sha256": "cadfa88716cb74a85d0d76dc866d83dbd627d6f5c310b528d43e588dab37ecec",
+    "license_url": "https://raw.githubusercontent.com/m5stack/M5_Hardware/master/LICENSE",
+    "local_license": "m5stack-source-license.txt",
+    "added_geometry": "接口、标签、红外器件、螺丝和指示灯等补建外观由个人建模项目提供。"
+  }
+}

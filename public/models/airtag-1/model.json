@@ -1,0 +1,103 @@
+{
+  "id": "airtag-1",
+  "name": "AirTag 第一代",
+  "subtitle": "白色 · 国行",
+  "description": "配合「查找」App 使用的物品追踪器，内置 U1 芯片和扬声器，支持近距离精确查找与丢失模式。",
+  "brand": "Apple",
+  "category": "物品追踪器",
+  "order": 31,
+  "ownership": {
+    "status": "active",
+    "acquired": "2021年12月",
+    "specification": "白色 · 国行"
+  },
+  "dimensions": "直径 31.9 mm · 厚度 8.0 mm",
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "25deg 74deg 145%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "AirTag_1st_Generation.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "硬件规格",
+      "items": [
+        {
+          "label": "发布年份",
+          "value": "2021"
+        },
+        {
+          "label": "芯片",
+          "value": "Apple U1"
+        },
+        {
+          "label": "无线连接",
+          "value": "蓝牙、超宽带（UWB）、NFC"
+        },
+        {
+          "label": "尺寸",
+          "value": "直径 31.9 mm · 厚度 8.0 mm"
+        },
+        {
+          "label": "重量",
+          "value": "11 g"
+        },
+        {
+          "label": "电池",
+          "value": "可更换的 CR2032 纽扣电池"
+        },
+        {
+          "label": "声音提示",
+          "value": "内置扬声器"
+        },
+        {
+          "label": "传感器",
+          "value": "加速感应器"
+        },
+        {
+          "label": "防护等级",
+          "value": "IP67"
+        }
+      ]
+    },
+    {
+      "title": "型号与地区",
+      "items": [
+        {
+          "label": "硬件型号",
+          "value": "A2187"
+        },
+        {
+          "label": "销售地区",
+          "value": "中国大陆（国行）"
+        },
+        {
+          "label": "零售部件号",
+          "value": null
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "AirTag 第一代技术规格",
+      "url": "https://support.apple.com/zh-cn/111847",
+      "checkedAt": "2026-09-12",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "AirTag 型号资料",
+      "url": "https://support.apple.com/zh-cn/102170",
+      "checkedAt": "2026-09-12",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "note": "从 Apple 官方 AR 资源提取的第一代外观模型，保留原有五个网格与嵌入贴图，未附加刻字或钥匙扣。原始 AR 几何不缩放到标称尺寸。"
+}

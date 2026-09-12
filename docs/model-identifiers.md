@@ -2,6 +2,8 @@
 
 核对日期：2026-09-08（Asia/Shanghai）。根据用户确认的产品、地区、版本匹配官网，未冒充逐台抄录过实机铭文。matched_official_models 保存匹配结果，confirmed_unit_model_number 仅用于实际读取的编号。
 
+AirTag 第一代和 Apple Pencil 第二代于 2026-09-12 补充核对；其余条目的核对日期保持原记录。
+
 | 设备 | 销售地区 | 官方匹配型号 | Apple 官方依据 |
 | --- | --- | --- | --- |
 | iPhone 17 | 中国大陆（国行） | A3521 | [官方资料 1](https://support.apple.com/zh-cn/108044) |
@@ -14,6 +16,8 @@
 | Apple Watch Series 6 | 中国大陆（国行） | A2292 | [官方资料 1](https://support.apple.com/zh-cn/108056) |
 | AirPods Pro 初代 | 中国大陆（国行） | 耳机型号组：A2084 / A2083；充电盒：A2190 | [官方资料 1](https://support.apple.com/zh-cn/109525) |
 | AirPods Pro 2 · Lightning | 美国（美版） | 耳机型号组：A2931 / A2699 / A2698；充电盒：A2700 | [官方资料 1](https://support.apple.com/zh-cn/109525) |
+| AirTag 第一代 | 中国大陆（国行） | A2187 | [官方型号资料](https://support.apple.com/zh-cn/102170) |
+| Apple Pencil 第二代（iPad 配件） | 中国大陆（国行） | A2051 | [官方技术规格](https://support.apple.com/zh-tw/111889) |
 
 AirPods 的官方识别页按代际列出耳机型号组，未逐一说明这些编号的地区及左右耳映射；不能仅凭美版或国行强行选择其中一个。充电盒的编号分开记录，A2190 按用户已确认的 2019 无线盒区分，未混作后来的初代 MagSafe 盒。
 
@@ -39,4 +43,6 @@ iPad A2764 的毫米波支持、128 GB 对应 8 GB 内存见 [Apple 美国版技
 
 - Ultra 2：用户确认 2023 年原配灰白配色野径回环 M/L。未找到与完整配色唯一对应的国行套装；不使用绿配灰色等近似配色编号代填。当前原色钛金属米兰尼斯 M 码不用于推断原购套装。
 - Siri Remote：用户确认单独购买，要求去掉零售部件号项。保留硬件型号 A2854；不将其他地区编号直接改为 CH/A，也不宣称该产品没有零售编号。
+- AirTag 第一代：单件装与四件装使用不同零售部件号，包装规格待确认，不根据展示的单个模型推定包装数量。
+- Apple Pencil 第二代：已确认国行和购入月份，尚未读取零售部件号；不将当前销售页面的编号直接视为 2025 年购入的那一件。
 - Series 6：原配煤灰色 Nike 洞洞运动表带，按煤黑配黑色 Nike 标准套装匹配 MG173CH/A；M/L 是用户佩戴的表带长度。Nike GPS 44 毫米仍对应 A2292。苹果 2021 教育价目表可核对同款美版标准套装（MG173LL/A）及名称，[Apple 价目表](https://www.apple.com/education/pricelists/pdfs/Apple_US_Education_Institution_Price_List-01-08-2021.pdf)；国行编号另据零售商地区目录，不通过替换后缀生成。

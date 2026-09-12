@@ -6,17 +6,17 @@
   "dimensions": "63.70 × 97.60 × 5.10 mm",
   "revision": "白色",
   "order": 1,
-  "preview": "model.glb",
-  "poster": "poster.png",
+  "preview": "model-owned.glb",
+  "poster": "poster-owned.png",
   "cameraOrbit": "25deg 77deg 100%",
   "downloads": [
     {
       "label": "GLB",
-      "file": "model.glb"
+      "file": "model-owned.glb"
     },
     {
       "label": "Blender",
-      "file": "XTEINK_X3_White.blend"
+      "file": "XTEINK_X3_White_Owned.blend"
     }
   ],
   "category": "电子书阅读器",

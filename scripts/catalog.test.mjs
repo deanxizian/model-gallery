@@ -40,13 +40,16 @@ const sample = () => ({
   preview: 'model.stl',
   downloads: [{ label: 'STL', file: 'model.stl' }],
 });
-test('published dock URLs retain their original files, including cached previews and metadata', async () => {
+test('published model URLs retain their original files, including cached previews and metadata', async () => {
   const paths = [
     'models/x3-dock/model.stl',
     'models/x3-dock/model.step',
     'models/x3-dock/poster.png',
     'models/x3-dock/model.json',
     'generated/x3-dock-245f031decb0.glb',
+    'generated/x3-dock-2602e09afb58.glb',
+    'generated/thumbnail-d639c20eb9f7f39a.webp',
+    'generated/thumbnail-a14d754df24b6383.webp',
   ];
   for (const path of paths) {
     const asset = legacyAssets[path];
@@ -62,8 +65,10 @@ test('published dock URLs retain their original files, including cached previews
     // Historical generated assets must survive the catalog builder's cleanup.
     assert.ok(!asset.source.startsWith('generated/'));
   }
-  const preview = legacyAssets[paths.at(-1)];
-  await validateGlb(new URL('../public/' + preview.source, import.meta.url));
+  for (const path of paths.filter((path) => path.endsWith('.glb'))) {
+    const preview = legacyAssets[path];
+    await validateGlb(new URL('../public/' + preview.source, import.meta.url));
+  }
 });
 test('download menus include the preview GLB once, normalize formats, and preserve original files', () => {
   const preview = {

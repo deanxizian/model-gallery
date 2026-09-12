@@ -1,0 +1,26 @@
+{
+  "imported_at": "2026-09-12",
+  "source_product_id": "apple_pencil_2nd_generation",
+  "source_revision": null,
+  "geometry_and_embedded_textures_unchanged": true,
+  "files": [
+    {
+      "source_file": "Apple_Pencil_2nd_Generation.glb",
+      "file": "model.glb",
+      "bytes": 647260,
+      "sha256": "84bc8ab23b315554c5a4f8b08dd7ff8b3ef31314cdad52ba664006bda922a068"
+    },
+    {
+      "source_file": "Apple_Pencil_2nd_Generation.blend",
+      "file": "Apple_Pencil_2nd_Generation.blend",
+      "bytes": 616186,
+      "sha256": "90f338c11f0d0d925e46acbe52e427dcb4bb7a99bd1dbe9e165b78fe4580b9ef"
+    },
+    {
+      "source_file": "preview_front.png",
+      "file": "poster.png",
+      "bytes": 469416,
+      "sha256": "06e22307bd4e99e9908124c2b581ea2cdd5cb84631b80ef2ee4ea8c651a58032"
+    }
+  ]
+}

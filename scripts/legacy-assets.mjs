@@ -20,4 +20,16 @@ export const legacyAssets = {
     source: 'legacy/x3-dock/x3-dock-245f031decb0.glb',
     sha256: 'cf6a08535c42efae694652f80f766215f8ee196758352e8a5da4e4edc3f06426',
   },
+  'generated/x3-dock-2602e09afb58.glb': {
+    source: 'legacy/x3-dock/x3-dock-2602e09afb58.glb',
+    sha256: 'a2c03eca0c0470c51116944107edd6e994b93f9d1eae35515a6132931e743ef3',
+  },
+  'generated/thumbnail-d639c20eb9f7f39a.webp': {
+    source: 'legacy/x3-dock/thumbnail-d639c20eb9f7f39a.webp',
+    sha256: 'd639c20eb9f7f39aea18c8cb5903df24e4dd3efe1c7d8eaf91f6c13e10cb60ec',
+  },
+  'generated/thumbnail-a14d754df24b6383.webp': {
+    source: 'legacy/xteink-x3/thumbnail-a14d754df24b6383.webp',
+    sha256: 'a14d754df24b6383907604ee773b33ab568fec7ca25c9f97cc635f37d22694ad',
+  },
 };

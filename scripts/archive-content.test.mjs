@@ -138,7 +138,7 @@ test('retail configuration matches have traceable sources and stay distinct from
   }
 });
 
-test('the published archive contains the ten completed Apple models and both X3 accessories', async () => {
+test('the published archive includes completed devices and keeps Pencil and both X3 accessories under their owners', async () => {
   const entries = await readModelEntries(
     fileURLToPath(new URL('../public/models', import.meta.url)),
   );
@@ -159,6 +159,7 @@ test('the published archive contains the ten completed Apple models and both X3 
     'apple-watch-series-6',
     'airpods-pro-1',
     'airpods-pro-2-lightning',
+    'airtag-1',
   ];
   for (const id of appleIds) {
     const entry = entries.find((entry) => entry.meta.id === id);
@@ -169,6 +170,12 @@ test('the published archive contains the ten completed Apple models and both X3 
       await localAsset(entry.directory, download.file);
   }
   assert.ok(devicesIn(models).some((model) => model.id === 'xteink-x3'));
+  assert.ok(devicesIn(models).some((model) => model.id === 'm5stack-sticks3'));
+  assert.ok(!devicesIn(models).some((model) => model.id === 'apple-pencil-2'));
+  assert.deepEqual(
+    accessoriesOf(models, 'ipad-pro-m2-12-9').map((model) => model.id),
+    ['apple-pencil-2'],
+  );
   assert.deepEqual(
     accessoriesOf(models, 'xteink-x3')
       .map((model) => model.id)

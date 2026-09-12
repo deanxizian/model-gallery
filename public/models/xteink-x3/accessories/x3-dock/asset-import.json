@@ -1,0 +1,26 @@
+{
+  "imported_at": "2026-09-12",
+  "source_product_id": "xteink_x3_dock",
+  "source_revision": "P22",
+  "source_files_unchanged": true,
+  "files": [
+    {
+      "source_file": "print/X3_One_Piece_Dock_P22.stl",
+      "file": "X3_One_Piece_Dock_P22.stl",
+      "bytes": 53705884,
+      "sha256": "9f3ae10a629146004d55a4a9cfeb6a5c1d4d1c60b95f94261c5e57d2d0406997"
+    },
+    {
+      "source_file": "cad/X3_One_Piece_Dock_P22.step",
+      "file": "X3_One_Piece_Dock_P22.step",
+      "bytes": 799561,
+      "sha256": "96f748eeb8408fe94369f2f06e776311c4beadb2ed9bc4c694b3074283ddb993"
+    },
+    {
+      "source_file": "X3_One_Piece_P22_Owned.blend",
+      "file": "X3_One_Piece_P22_Owned.blend",
+      "bytes": 35491630,
+      "sha256": "0987f87ec4ff9608d880625c69724eab76f40e95fa3135fc88cd88fe5ea50fcb"
+    }
+  ]
+}

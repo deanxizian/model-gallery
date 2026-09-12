@@ -1,0 +1,25 @@
+{
+  "imported_at": "2026-09-12",
+  "source_product_id": "airtag_1st_generation",
+  "geometry_and_embedded_textures_unchanged": true,
+  "files": [
+    {
+      "source_file": "AirTag_1st_Generation.glb",
+      "file": "model.glb",
+      "bytes": 1512612,
+      "sha256": "ec5afe0e67dae336cb87b7330eac16e6d34700a766332a530cf1acd51b9e3922"
+    },
+    {
+      "source_file": "AirTag_1st_Generation.blend",
+      "file": "AirTag_1st_Generation.blend",
+      "bytes": 1254291,
+      "sha256": "38c97603777a239c690e5145d371b06b327506e4a387879df899f8a3b176c7d8"
+    },
+    {
+      "source_file": "preview_front.png",
+      "file": "poster.png",
+      "bytes": 1377025,
+      "sha256": "42417b3496e7595dbad28aa26614b946b5b4f626c951beb696368448cee5878f"
+    }
+  ]
+}
