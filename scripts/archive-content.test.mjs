@@ -176,6 +176,22 @@ test('the published archive includes completed devices and keeps Pencil and both
     accessoriesOf(models, 'ipad-pro-m2-12-9').map((model) => model.id),
     ['apple-pencil-2'],
   );
+  const pencil = entries.find((entry) => entry.meta.id === 'apple-pencil-2');
+  const pencilProduct = JSON.parse(
+    await readFile(resolve(pencil.directory, 'product.json'), 'utf8'),
+  );
+  const pencilRecord = pencil.meta.specGroups.find(
+    (group) => group.title === '拥有记录',
+  );
+  const statuses = { active: '在役', retired: '已退役', unknown: '待确认' };
+  assert.equal(
+    pencilRecord.items.find((item) => item.label === '使用状态')?.value,
+    statuses[pencilProduct.ownership.status],
+  );
+  assert.equal(
+    pencilRecord.items.find((item) => item.label === '购入时间')?.value,
+    pencilProduct.ownership.acquired,
+  );
   assert.deepEqual(
     accessoriesOf(models, 'xteink-x3')
       .map((model) => model.id)
