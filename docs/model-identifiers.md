@@ -30,6 +30,8 @@ iPad A2764 的毫米波支持、128 GB 对应 8 GB 内存见 [Apple 美国版技
 
 核对日期：2026-09-09（Asia/Shanghai）。以下是按用户配置匹配的标准零售目录编号，不是从实机或包装抄录，也不代表用户的购买店铺。Apple 仍在售的配置以官网为依据；停售产品补用第一方零售商目录，元数据明确区分 `official` 与 `retailer` 来源。
 
+AirTag 四件装和早期 Apple Pencil 第二代根据用户补充，于 2026-09-12 完成零售编号匹配。
+
 | 设备 | 配置匹配编号 | 匹配范围与依据 |
 | --- | --- | --- |
 | AirPods Pro 初代 | MWP22CH/A | AirPods Pro 初代；2019 无线充电盒；中国大陆零售配置；[SHI](https://eu.shi.com/product/41719653/Apple-AirPods-Pro-1st-generation) |
@@ -40,9 +42,11 @@ iPad A2764 的毫米波支持、128 GB 对应 8 GB 内存见 [Apple 美国版技
 | iPhone 17 | MG724CH/A | iPhone 17；黑色；512 GB；中国大陆；[Apple](https://www.apple.com.cn/shop/buy-iphone/iphone-17/mg724ch/a) |
 | MacBook Air 15 英寸 · M5 | MDV94CH/A | 15 英寸 M5；银色；10 核 CPU / 10 核 GPU；16 GB；512 GB；中国大陆标准中文键盘。Apple 购买页内嵌 partNumber 为 MDV94CH/A；[Apple](https://www.apple.com.cn/shop/buy-mac/macbook-air/15-inch-silver-m5-chip-10-core-cpu-10-core-gpu-16gb-memory-512gb-storage) |
 | Studio Display 2026 | MFEX4CH/A | 2026 Studio Display；标准玻璃；可调倾斜度支架；中国大陆；[Apple](https://www.apple.com.cn/shop/buy-mac/studio-display/mfex4ch/a) |
+| AirTag 第一代 | MX542CH/A | 用户确认四件装；中国大陆零售配置；[Mobile 2000](https://mobile2000.com/products/apple-airtag-4-pack) |
+| Apple Pencil 第二代（iPad 配件） | MU8F2CH/A | 用户确认早期版本；白色；中国大陆零售配置；[晨飞雁](https://www.chenfeiyan.com/GoodsDetail.aspx?pid=11) |
 
 - Ultra 2：用户确认 2023 年原配灰白配色野径回环 M/L。未找到与完整配色唯一对应的国行套装；不使用绿配灰色等近似配色编号代填。当前原色钛金属米兰尼斯 M 码不用于推断原购套装。
 - Siri Remote：用户确认单独购买，要求去掉零售部件号项。保留硬件型号 A2854；不将其他地区编号直接改为 CH/A，也不宣称该产品没有零售编号。
-- AirTag 第一代：单件装与四件装使用不同零售部件号，包装规格待确认，不根据展示的单个模型推定包装数量。
-- Apple Pencil 第二代：已确认国行和购入月份，尚未读取零售部件号；不将当前销售页面的编号直接视为 2025 年购入的那一件。
+- AirTag 第一代：四件装来自用户补充，页面仍展示一个产品条目，不以包装数量复制设备卡片。
+- Apple Pencil 第二代：按用户确认的早期版本匹配 MU8F2CH/A，购入时间仍为 2025年4月。早期规格采用 20.7 g，依据 [Apple 保留的 2018 款规格](https://www.apple.com.cn/shop/product/fu8f2ch/a)；该页面用于规格参考，不表示用户购买的是翻新产品，也不使用其 F 前缀编号。
 - Series 6：原配煤灰色 Nike 洞洞运动表带，按煤黑配黑色 Nike 标准套装匹配 MG173CH/A；M/L 是用户佩戴的表带长度。Nike GPS 44 毫米仍对应 A2292。苹果 2021 教育价目表可核对同款美版标准套装（MG173LL/A）及名称，[Apple 价目表](https://www.apple.com/education/pricelists/pdfs/Apple_US_Education_Institution_Price_List-01-08-2021.pdf)；国行编号另据零售商地区目录，不通过替换后缀生成。

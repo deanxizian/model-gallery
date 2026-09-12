@@ -1,7 +1,7 @@
 {
   "id": "airtag-1",
   "name": "AirTag 第一代",
-  "subtitle": "白色 · 国行",
+  "subtitle": "白色 · 四件装 · 国行",
   "description": "配合「查找」App 使用的物品追踪器，内置 U1 芯片和扬声器，支持近距离精确查找与丢失模式。",
   "brand": "Apple",
   "category": "物品追踪器",
@@ -9,7 +9,7 @@
   "ownership": {
     "status": "active",
     "acquired": "2021年12月",
-    "specification": "白色 · 国行"
+    "specification": "白色 · 四件装 · 国行"
   },
   "dimensions": "直径 31.9 mm · 厚度 8.0 mm",
   "preview": "model.glb",
@@ -80,7 +80,11 @@
         },
         {
           "label": "零售部件号",
-          "value": null
+          "value": "MX542CH/A"
+        },
+        {
+          "label": "包装规格",
+          "value": "四件装"
         }
       ]
     }
@@ -97,6 +101,13 @@
       "url": "https://support.apple.com/zh-cn/102170",
       "checkedAt": "2026-09-12",
       "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Mobile 2000 零售目录",
+      "url": "https://mobile2000.com/products/apple-airtag-4-pack",
+      "checkedAt": "2026-09-12",
+      "timeZone": "Asia/Shanghai",
+      "kind": "retailer"
     }
   ],
   "note": "从 Apple 官方 AR 资源提取的第一代外观模型，保留原有五个网格与嵌入贴图，未附加刻字或钥匙扣。原始 AR 几何不缩放到标称尺寸。"

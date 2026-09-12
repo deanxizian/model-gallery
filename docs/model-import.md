@@ -26,9 +26,9 @@ public/models/xteink-x3/
 
 StickS3 位于 `public/models/m5stack-sticks3/`，采用已按实物照片修订的完整外观版 `real-device-screen-fit`，包括默认 STICK S3 屏幕。提供完整 GLB 和对应 Blender 工程，封面由现成正面预览生成缩略图；外壳单独的 STL 不作为整机打印文件提供。公开规格按 [M5Stack 官方文档](https://docs.m5stack.com/en/core/StickS3)填写，原外壳来源的许可保留在同目录的 `m5stack-source-license.txt`。
 
-Apple Pencil 第二代位于 `public/models/ipad-pro-m2-12-9/accessories/apple-pencil-2/`，页面地址为 `#ipad-pro-m2-12-9/apple-pencil-2`。模型从官方 AR 资源单独提取，保留原有网格和贴图，提供 GLB 与 Blender 下载；只在 iPad 页面中切换，不单列为设备。规格按 [Apple 技术规格](https://support.apple.com/zh-cn/111889)填写，确认支持该款 M2 iPad Pro 的磁吸配对、无线充电和悬停。配件自己的购入信息保存在其 `product.json` 中，并在规格中展示为 2025年4月、国行，不从 iPad 购入时间或地区推定。
+Apple Pencil 第二代位于 `public/models/ipad-pro-m2-12-9/accessories/apple-pencil-2/`，页面地址为 `#ipad-pro-m2-12-9/apple-pencil-2`。模型从官方 AR 资源单独提取，保留原有网格和贴图，提供 GLB 与 Blender 下载；只在 iPad 页面中切换，不单列为设备。用户确认早期国行版本，零售编号匹配 MU8F2CH/A，重量按 [Apple 保留的早期规格](https://www.apple.com.cn/shop/product/fu8f2ch/a)记录为 20.7 g；[Apple 技术规格](https://support.apple.com/zh-cn/111889)确认支持该款 M2 iPad Pro 的磁吸配对、无线充电和悬停。配件自己的购入信息保存在其 `product.json` 中，并在规格中展示为 2025年4月、国行，不从 iPad 购入时间或地区推定。
 
-AirTag 第一代位于 `public/models/airtag-1/`，采用已完成的官方 AR 提取模型，提供 GLB 和 Blender 下载。按 [Apple 第一代技术规格](https://support.apple.com/zh-cn/111847)记录 2021 年、U1 芯片、31.9 mm 直径、8.0 mm 厚度和 11 g 重量；型号 A2187 与第二代分开。用户确认 2021年12月购入、国行、在役。
+AirTag 第一代位于 `public/models/airtag-1/`，采用已完成的官方 AR 提取模型，提供 GLB 和 Blender 下载。按 [Apple 第一代技术规格](https://support.apple.com/zh-cn/111847)记录 2021 年、U1 芯片、31.9 mm 直径、8.0 mm 厚度和 11 g 重量；型号 A2187 与第二代分开。用户确认 2021年12月购入、四件装、国行、在役，零售编号匹配 MX542CH/A；包装数量不改变设备列表条目数。
 
 上述三款新增模型的复制校验记录位于各自目录的 `asset-import.json`，预览与下载文件保持源文件字节不变；完整制作资料和参考照片留在网站仓库外。StickS3 与 AirTag 按确认的购入时间参加设备排序，Pencil 作为配件不单独计数或排序到设备列表。
 

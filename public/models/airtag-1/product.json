@@ -13,8 +13,8 @@
     "key_ring": null,
     "storage": null,
     "sales_region": "中国大陆（国行）",
-    "retail_part_number": null,
-    "package_quantity": null
+    "retail_part_number": "MX542CH/A",
+    "package_quantity": 4
   },
   "specifications": {
     "diameter_mm": 31.9,
@@ -67,7 +67,7 @@
   "ownership": {
     "status": "active",
     "acquired": "2021年12月",
-    "specification": "白色 · 国行"
+    "specification": "白色 · 四件装 · 国行"
   },
   "identification": {
     "confirmed_unit_model_number": null,
@@ -79,32 +79,48 @@
         "source_url": "https://support.apple.com/zh-cn/102170"
       }
     ],
-    "matched_retail_part_number": null,
+    "matched_retail_part_number": {
+      "value": "MX542CH/A",
+      "status": "configuration_match",
+      "basis": "AirTag 第一代；用户确认四件装；中国大陆零售配置。",
+      "source_ref": "retail_configuration_match",
+      "matched_at": "2026-09-12",
+      "note": "按用户提供的包装和地区匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+    },
     "matched_at": "2026-09-12",
     "match_basis": "按用户确认的第一代匹配官方型号，未抄录实机编号。"
   },
-  "unconfirmed_fields": [
-    "configuration.package_quantity",
-    "retail_part_number"
-  ],
+  "unconfirmed_fields": [],
+  "configuration_confirmed_at": "2026-09-12",
   "asset_provenance": {
     "source_url": "https://www.apple.com/105/media/us/airtag/2025/24af9b50-4db8-44e3-aa8f-89bccafd5654/quick-look/airtag.usdz",
     "source_sha256": "3519c8984f1afc096780f1248ca5f8f0ccf36fb3bb533bbcbe2b3b63110829ec",
     "source_page": "https://www.apple.com/gr/airtag/",
     "generation_basis": "旧版 Apple 商品页的 11 g 规格与 2021 年第一代一致，资源网址中的 2025 为资源发布路径。"
   },
-  "sources": [
-    {
-      "label": "AirTag 第一代技术规格",
+  "field_source_refs": {
+    "specifications": ["airtag_1_spec"],
+    "identification": ["identify_airtag"],
+    "configuration.retail_part_number": ["retail_configuration_match"]
+  },
+  "sources": {
+    "airtag_1_spec": {
       "url": "https://support.apple.com/zh-cn/111847",
-      "checkedAt": "2026-09-12",
-      "timeZone": "Asia/Shanghai"
+      "publisher": "Apple",
+      "accessed_at": "2026-09-12",
+      "kind": "official_reference"
     },
-    {
-      "label": "AirTag 型号资料",
+    "identify_airtag": {
       "url": "https://support.apple.com/zh-cn/102170",
-      "checkedAt": "2026-09-12",
-      "timeZone": "Asia/Shanghai"
+      "publisher": "Apple",
+      "accessed_at": "2026-09-12",
+      "kind": "official_identification"
+    },
+    "retail_configuration_match": {
+      "url": "https://mobile2000.com/products/apple-airtag-4-pack",
+      "publisher": "Mobile 2000",
+      "accessed_at": "2026-09-12",
+      "kind": "retailer_catalog"
     }
-  ]
+  }
 }

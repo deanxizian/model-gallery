@@ -50,6 +50,10 @@
           "value": "A2051"
         },
         {
+          "label": "零售部件号",
+          "value": "MU8F2CH/A"
+        },
+        {
           "label": "配色",
           "value": "白色"
         },
@@ -63,7 +67,7 @@
         },
         {
           "label": "重量",
-          "value": "18.2 g"
+          "value": "20.7 g"
         },
         {
           "label": "无线连接",
@@ -95,8 +99,8 @@
   ],
   "specSources": [
     {
-      "label": "Apple Pencil 第二代技术规格",
-      "url": "https://support.apple.com/zh-cn/111889",
+      "label": "Apple Pencil 第二代早期规格",
+      "url": "https://www.apple.com.cn/shop/product/fu8f2ch/a",
       "checkedAt": "2026-09-12",
       "timeZone": "Asia/Shanghai"
     },
@@ -105,6 +109,13 @@
       "url": "https://support.apple.com/zh-tw/111889",
       "checkedAt": "2026-09-12",
       "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "晨飞雁零售目录",
+      "url": "https://www.chenfeiyan.com/GoodsDetail.aspx?pid=11",
+      "checkedAt": "2026-09-12",
+      "timeZone": "Asia/Shanghai",
+      "kind": "retailer"
     }
   ],
   "note": "从 Apple 官方 AR 组合资源中单独提取的第二代 Apple Pencil；保留原始几何、材质与贴图。标称长度 166 mm，原始 AR 网格约 166.319 mm，未缩放。"
