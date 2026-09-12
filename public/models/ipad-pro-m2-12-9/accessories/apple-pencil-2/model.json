@@ -1,0 +1,122 @@
+{
+  "id": "apple-pencil-2",
+  "parentId": "ipad-pro-m2-12-9",
+  "name": "Apple Pencil 第二代",
+  "subtitle": "白色 · 磁吸无线充电 · 国行",
+  "category": "触控笔",
+  "order": 1,
+  "description": "适用于 iPad 的触控笔，支持磁吸配对、无线充电和轻点两下切换工具；搭配 M2 iPad Pro 可使用悬停功能。",
+  "dimensions": "长度 166 mm · 直径 8.9 mm",
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "25deg 82deg 165%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "Apple_Pencil_2nd_Generation.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "拥有记录",
+      "items": [
+        {
+          "label": "使用状态",
+          "value": "在役"
+        },
+        {
+          "label": "购入时间",
+          "value": "2025年4月"
+        },
+        {
+          "label": "销售地区",
+          "value": "中国大陆（国行）"
+        }
+      ]
+    },
+    {
+      "title": "硬件规格",
+      "items": [
+        {
+          "label": "发布年份",
+          "value": "2018"
+        },
+        {
+          "label": "硬件型号",
+          "value": "A2051"
+        },
+        {
+          "label": "零售部件号",
+          "value": "MU8F2CH/A"
+        },
+        {
+          "label": "配色",
+          "value": "白色"
+        },
+        {
+          "label": "长度",
+          "value": "166 mm"
+        },
+        {
+          "label": "直径",
+          "value": "8.9 mm"
+        },
+        {
+          "label": "重量",
+          "value": "20.7 g"
+        },
+        {
+          "label": "无线连接",
+          "value": "蓝牙"
+        },
+        {
+          "label": "配对与充电",
+          "value": "磁吸配对、无线充电"
+        },
+        {
+          "label": "手势",
+          "value": "轻点两下切换工具"
+        }
+      ]
+    },
+    {
+      "title": "与我的 iPad 配合",
+      "items": [
+        {
+          "label": "适配设备",
+          "value": "iPad Pro 12.9 英寸 · M2（第六代）"
+        },
+        {
+          "label": "悬停功能",
+          "value": "支持"
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "Apple Pencil 第二代早期规格",
+      "url": "https://www.apple.com.cn/shop/product/fu8f2ch/a",
+      "checkedAt": "2026-09-12",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "Apple Pencil 第二代型号资料",
+      "url": "https://support.apple.com/zh-tw/111889",
+      "checkedAt": "2026-09-12",
+      "timeZone": "Asia/Shanghai"
+    },
+    {
+      "label": "晨飞雁零售目录",
+      "url": "https://www.chenfeiyan.com/GoodsDetail.aspx?pid=11",
+      "checkedAt": "2026-09-12",
+      "timeZone": "Asia/Shanghai",
+      "kind": "retailer"
+    }
+  ],
+  "note": "从 Apple 官方 AR 组合资源中单独提取的第二代 Apple Pencil；保留原始几何、材质与贴图。标称长度 166 mm，原始 AR 网格约 166.319 mm，未缩放。"
+}

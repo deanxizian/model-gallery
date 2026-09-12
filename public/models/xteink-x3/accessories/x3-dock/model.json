@@ -5,33 +5,33 @@
   "description": "适用于阅星瞳 X3 的一体式桌面底座，提供倾斜支撑，并配合磁吸转接头为设备充电。",
   "dimensions": "68.30 × 39.37 × 13.75 mm",
   "order": 1,
-  "preview": "X3_One_Piece_Dock_P21_Clean_v3.stl",
-  "poster": "poster.png",
+  "preview": "X3_One_Piece_Dock_P22.stl",
+  "poster": "poster-p22.png",
   "cameraOrbit": "32deg 56deg 100%",
   "downloads": [
     {
       "label": "STL",
-      "file": "X3_One_Piece_Dock_P21_Clean_v3.stl"
+      "file": "X3_One_Piece_Dock_P22.stl"
     },
     {
       "label": "STEP",
-      "file": "X3_One_Piece_Dock_P21.step"
+      "file": "X3_One_Piece_Dock_P22.step"
     },
     {
       "label": "Blender",
-      "file": "X3_One_Piece_Dock_P21_Clean_v3.blend"
+      "file": "X3_One_Piece_P22_Owned.blend"
     }
   ],
   "units": "mm",
   "upAxis": "z",
-  "note": "当前提供 P21 Clean v3：本地网格与装配检查通过，嘉立创重新检测尚未验证；实际夹紧与充电接触需试装确认。",
+  "note": "当前采用 P22：充电头安装位沿机身插入方向下移 0.70 mm，承托面与转接头尺寸保持不变。本地网格检查通过，新位置的充电接触与稳定性待试装确认。",
   "parentId": "xteink-x3",
   "category": "充电底座",
   "specSources": [
     {
       "kind": "local-design",
       "label": "底座尺寸来自个人设计，转接头尺寸来自实物测量记录",
-      "checkedAt": "2026-09-07"
+      "checkedAt": "2026-09-12"
     }
   ],
   "specGroups": [

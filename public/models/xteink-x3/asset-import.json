@@ -1,0 +1,26 @@
+{
+  "imported_at": "2026-09-12",
+  "source_product_id": "xteink_x3",
+  "source_revision": "owned-rear-photo",
+  "source_files_unchanged": true,
+  "files": [
+    {
+      "source_file": "XTEINK_X3_White_Owned.glb",
+      "file": "model-owned.glb",
+      "bytes": 2542076,
+      "sha256": "8b204a950b9da7f8f37e10a5fcad52fb07f8de506a4730df5141734769c2823c"
+    },
+    {
+      "source_file": "XTEINK_X3_White_Owned.blend",
+      "file": "XTEINK_X3_White_Owned.blend",
+      "bytes": 3009972,
+      "sha256": "b5108a9b4251a0304937ba22f7153a9ea4d4828a4f60f4a32bb956d0b7dbcf3c"
+    },
+    {
+      "source_file": "xteink_x3_white_owned_preview.png",
+      "file": "poster-owned.png",
+      "bytes": 2642207,
+      "sha256": "bacdea612b7a4871a8dce7c94b9d06d6f384912e44b1f7c5cda30d4b30a2a73e"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "m5stack-sticks3",
+  "name": "M5Stack StickS3",
+  "subtitle": "灰色 · 蓝色按键 · 8 MB Flash · 8 MB PSRAM · 国行",
+  "description": "搭载 ESP32-S3 的便携式可编程控制器，集成彩色屏幕、麦克风、扬声器与红外收发，适用于物联网和交互项目。",
+  "brand": "M5Stack",
+  "category": "可编程控制器",
+  "order": 30,
+  "ownership": {
+    "status": "active",
+    "specification": "灰色 · 蓝色按键 · 8 MB Flash · 8 MB PSRAM · 国行",
+    "acquired": "2026年7月"
+  },
+  "dimensions": "24 × 48 × 15 mm",
+  "preview": "model.glb",
+  "poster": "poster.png",
+  "cameraOrbit": "25deg 74deg 130%",
+  "downloads": [
+    {
+      "label": "GLB",
+      "file": "model.glb"
+    },
+    {
+      "label": "Blender",
+      "file": "M5Stack_StickS3_Complete.blend"
+    }
+  ],
+  "specGroups": [
+    {
+      "title": "硬件规格",
+      "items": [
+        {
+          "label": "产品型号",
+          "value": "StickS3（K150）"
+        },
+        {
+          "label": "芯片",
+          "value": "ESP32-S3-PICO-1-N8R8 · 双核 LX7 · 240 MHz"
+        },
+        {
+          "label": "闪存",
+          "value": "8 MB Flash"
+        },
+        {
+          "label": "内存",
+          "value": "8 MB Octal PSRAM"
+        },
+        {
+          "label": "屏幕",
+          "value": "1.14 英寸 LCD · 135 × 240"
+        },
+        {
+          "label": "无线连接",
+          "value": "2.4 GHz Wi-Fi"
+        },
+        {
+          "label": "运动传感器",
+          "value": "BMI270 六轴 IMU"
+        },
+        {
+          "label": "音频",
+          "value": "MEMS 麦克风、扬声器 · ES8311 编解码器"
+        },
+        {
+          "label": "红外",
+          "value": "支持发射与接收"
+        },
+        {
+          "label": "尺寸（宽 × 高 × 厚）",
+          "value": "24 × 48 × 15 mm"
+        },
+        {
+          "label": "重量",
+          "value": "20 g"
+        },
+        {
+          "label": "销售地区",
+          "value": "中国大陆（国行）"
+        }
+      ]
+    },
+    {
+      "title": "供电与扩展",
+      "items": [
+        {
+          "label": "电池容量",
+          "value": "250 mAh"
+        },
+        {
+          "label": "充电与供电",
+          "value": "USB-C · 5 V DC"
+        },
+        {
+          "label": "扩展接口",
+          "value": "Hat2-Bus（2.54 mm，16 针）；Grove（HY2.0-4P）"
+        },
+        {
+          "label": "背部固定",
+          "value": "磁吸"
+        }
+      ]
+    }
+  ],
+  "specSources": [
+    {
+      "label": "M5Stack StickS3 官方文档",
+      "url": "https://docs.m5stack.com/en/core/StickS3",
+      "checkedAt": "2026-09-12",
+      "timeZone": "Asia/Shanghai"
+    }
+  ],
+  "note": "完整外观版本 real-device-screen-fit。灰色外壳、蓝色按键和接口细节依据实物照片，屏幕使用官方 STICK S3 默认画面；只导入展示 GLB 和对应 Blender 工程。"
+}

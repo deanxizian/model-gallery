@@ -1,0 +1,26 @@
+{
+  "imported_at": "2026-09-12",
+  "source_product_id": "m5stack_sticks3",
+  "source_revision": "real-device-screen-fit",
+  "geometry_and_embedded_textures_unchanged": true,
+  "files": [
+    {
+      "source_file": "M5Stack_StickS3_Complete.glb",
+      "file": "model.glb",
+      "bytes": 2981768,
+      "sha256": "147c2f170c73b31bd67f6322a6e6adc1cb0f7a3c8f4521a4bf79bc5ad8a40cd2"
+    },
+    {
+      "source_file": "M5Stack_StickS3_Complete.blend",
+      "file": "M5Stack_StickS3_Complete.blend",
+      "bytes": 2217428,
+      "sha256": "26ab641affbfa76b49d57e81278ec92cd6e08af528a11b105f1d2da0b78bbe04"
+    },
+    {
+      "source_file": "preview_front.png",
+      "file": "poster.png",
+      "bytes": 1534811,
+      "sha256": "1d6d50495a6c72f55cbaddc8a261863d4ad51a39abe6238ce9c4424f090f277d"
+    }
+  ]
+}
