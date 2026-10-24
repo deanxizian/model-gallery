@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-10-22",
+  "updated_at": "2026-10-24",
   "locale": "zh-CN",
   "purpose": "个人数码产品拥有记录汇总；与 3D 模型是否存在分开维护。",
   "scope": "本对话以及当前 Blender 工作区的 Gallery 拥有记录与 Apple 产品清单；不是对所有其他项目或所有聊天的全量个人物品盘点。",
@@ -11,7 +11,8 @@
     "unknown": "未提供的信息保留 null 或待确认，不根据年代、模型文件、套装关系推断。",
     "source_priority": "拥有配置优先采用 Gallery 后续已确认记录；旧建模资料仅用于补充尚未上架的条目。",
     "identification": "官网或零售目录匹配编号不等同于读取实机铭文；Kindle A569P 与候选 SA569P 分开保存。",
-    "accessories": "新增保护壳和 MagSafe 外接电池存入 owned_accessory_records，以 parent_id 关联设备；按归属分组，不把组数视为实物件数。使用状态、购入时间独立记录。既有 Apple Pencil 仍保留在 products 中并关联 iPad，不重复登记。"
+    "accessories": "新增保护壳和 MagSafe 外接电池存入 owned_accessory_records，以 parent_id 关联设备；按归属分组，不把组数视为实物件数。使用状态、购入时间独立记录。既有 Apple Pencil 仍保留在 products 中并关联 iPad，不重复登记。",
+    "sales_region": "未特别说明的销售地区按用户既有约定记为中国大陆（国行），包括配件。明确确认的美版 iPad Pro M2、AirPods Pro 2 保留美版；配件地区独立记录，不继承父设备地区。默认地区不等于已核验实机型号、零售编号或购买店铺。"
   },
   "counts": {
     "product_types": 29,
@@ -941,13 +942,24 @@
         "specification": "白色 · 原装随附 16 GB 存储卡"
       },
       "identification": null,
-      "configuration": null,
+      "configuration": {
+        "sales_region": "中国大陆（国行）"
+      },
       "source_files": [
         "model-gallery/public/models/xteink-x3/model.json"
       ],
       "ownership_source_date": "2026-09-12",
       "reviewed_at": "2026-10-22",
-      "notes": []
+      "notes": [],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "m5stack-sticks3",
@@ -994,7 +1006,7 @@
         },
         "storage": null,
         "memory_gb": null,
-        "sales_region": null,
+        "sales_region": "中国大陆（国行）",
         "retail_part_number": null,
         "finish": "matte",
         "connectivity_variant": null
@@ -1030,7 +1042,16 @@
       "reviewed_at": "2026-10-22",
       "notes": [
         "用户此前列入个人藏品建模清单；当前使用或持有状态、购入时间未补充。未因年代较早而自动标为已退役。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "iphone-5s-silver",
@@ -1051,7 +1072,7 @@
         },
         "storage": null,
         "memory_gb": null,
-        "sales_region": null,
+        "sales_region": "中国大陆（国行）",
         "retail_part_number": null,
         "connectivity_variant": null
       },
@@ -1104,7 +1125,16 @@
       "reviewed_at": "2026-10-22",
       "notes": [
         "用户此前列入个人藏品建模清单；当前使用或持有状态、购入时间未补充。未因年代较早而自动标为已退役。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "iphone-x-silver",
@@ -1125,7 +1155,7 @@
         },
         "storage": null,
         "memory_gb": null,
-        "sales_region": null,
+        "sales_region": "中国大陆（国行）",
         "retail_part_number": null,
         "connectivity_variant": null
       },
@@ -1160,7 +1190,16 @@
       "reviewed_at": "2026-10-22",
       "notes": [
         "用户此前列入个人藏品建模清单；当前使用或持有状态、购入时间未补充。未因年代较早而自动标为已退役。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "ipad-pro-9-7-rose-gold",
@@ -1181,7 +1220,7 @@
         },
         "storage": null,
         "memory_gb": null,
-        "sales_region": null,
+        "sales_region": "中国大陆（国行）",
         "retail_part_number": null,
         "connectivity_variant": null
       },
@@ -1216,7 +1255,16 @@
       "reviewed_at": "2026-10-22",
       "notes": [
         "用户此前列入个人藏品建模清单；当前使用或持有状态、购入时间未补充。未因年代较早而自动标为已退役。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "imac-27-2019-silver",
@@ -1237,7 +1285,7 @@
         },
         "storage": null,
         "memory_gb": null,
-        "sales_region": null,
+        "sales_region": "中国大陆（国行）",
         "retail_part_number": null,
         "processor": null,
         "graphics": null,
@@ -1262,7 +1310,16 @@
       "reviewed_at": "2026-10-22",
       "notes": [
         "用户此前列入个人藏品建模清单；当前使用或持有状态、购入时间未补充。未因年代较早而自动标为已退役。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "airpods-1",
@@ -1283,7 +1340,7 @@
         },
         "storage": null,
         "memory_gb": null,
-        "sales_region": null,
+        "sales_region": "中国大陆（国行）",
         "retail_part_number": null,
         "generation": 1,
         "charging_case": "2016 Lightning Charging Case",
@@ -1320,7 +1377,16 @@
       "reviewed_at": "2026-10-22",
       "notes": [
         "用户此前列入个人藏品建模清单；当前使用或持有状态、购入时间未补充。未因年代较早而自动标为已退役。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "kindle-paperwhite-a569p-pending",
@@ -1354,7 +1420,19 @@
       "notes": [
         "用户明确表示拥有；是否在役、配色、容量、销售地区和购入时间待补充。",
         "此前检索未找到可公开提取的官方模型；商品页曾返回 503，不能据此认定官方模型绝对不存在。当前仅登记。"
-      ]
+      ],
+      "configuration": {
+        "sales_region": "中国大陆（国行）"
+      },
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "macbook-pro-13-2014",
@@ -1370,7 +1448,8 @@
       },
       "configuration": {
         "model_year": 2014,
-        "display_size_inches_as_reported": 13
+        "display_size_inches_as_reported": 13,
+        "sales_region": "中国大陆（国行）"
       },
       "identification": {
         "user_reported_name": "MacBook Pro2014款13寸",
@@ -1382,7 +1461,16 @@
       "reviewed_at": "2026-10-22",
       "notes": [
         "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "redmi-turbo-4-pro",
@@ -1396,7 +1484,9 @@
         "acquired": null,
         "specification": "容量、配色待补充"
       },
-      "configuration": {},
+      "configuration": {
+        "sales_region": "中国大陆（国行）"
+      },
       "identification": {
         "user_reported_name": "红米Redmi Turbo4Pro",
         "confirmed_unit_model_number": null,
@@ -1407,7 +1497,16 @@
       "reviewed_at": "2026-10-22",
       "notes": [
         "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "ipad-2",
@@ -1422,7 +1521,8 @@
         "specification": "第二代；容量、配色、网络版本待补充"
       },
       "configuration": {
-        "generation": 2
+        "generation": 2,
+        "sales_region": "中国大陆（国行）"
       },
       "identification": {
         "user_reported_name": "第二代的ipad",
@@ -1434,7 +1534,16 @@
       "reviewed_at": "2026-10-22",
       "notes": [
         "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "sony-wh-1000xm2",
@@ -1448,7 +1557,9 @@
         "acquired": null,
         "specification": "配色待补充"
       },
-      "configuration": {},
+      "configuration": {
+        "sales_region": "中国大陆（国行）"
+      },
       "identification": {
         "user_reported_name": "索尼的wh1000x xm2",
         "confirmed_unit_model_number": null,
@@ -1460,7 +1571,16 @@
       "reviewed_at": "2026-10-22",
       "notes": [
         "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "sony-wh-1000xm5",
@@ -1474,7 +1594,9 @@
         "acquired": null,
         "specification": "配色待补充"
       },
-      "configuration": {},
+      "configuration": {
+        "sales_region": "中国大陆（国行）"
+      },
       "identification": {
         "user_reported_name": "索尼的wh1000x xm5",
         "confirmed_unit_model_number": null,
@@ -1486,7 +1608,16 @@
       "reviewed_at": "2026-10-22",
       "notes": [
         "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "garmin-255",
@@ -1501,7 +1632,8 @@
         "specification": "灰色；具体版本待补充"
       },
       "configuration": {
-        "color": "灰色"
+        "color": "灰色",
+        "sales_region": "中国大陆（国行）"
       },
       "identification": {
         "user_reported_name": "佳明255",
@@ -1520,6 +1652,13 @@
           "source": "当前对话用户明确补充",
           "date": "2026-10-22",
           "value": "灰色"
+        },
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
         }
       }
     },
@@ -1537,7 +1676,8 @@
       },
       "configuration": {
         "edition": "Solar",
-        "color": "白色"
+        "color": "白色",
+        "sales_region": "中国大陆（国行）"
       },
       "identification": {
         "user_reported_name": "佳明955sloar",
@@ -1557,6 +1697,13 @@
           "source": "当前对话用户明确补充",
           "date": "2026-10-22",
           "value": "白色"
+        },
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
         }
       }
     },
@@ -1573,7 +1720,8 @@
         "specification": "APEX 4 · 白色；尺寸待补充"
       },
       "configuration": {
-        "color": "白色"
+        "color": "白色",
+        "sales_region": "中国大陆（国行）"
       },
       "identification": {
         "user_reported_name": "apex 4",
@@ -1597,6 +1745,13 @@
           "source": "当前对话用户明确补充",
           "date": "2026-10-22",
           "value": "白色"
+        },
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
         }
       }
     }
@@ -1678,6 +1833,37 @@
       ],
       "source": "当前对话用户明确补充",
       "user_statement": "iPad 9.7 和 iPad 2 都有官方保护壳；几代 iPhone 除了现在的 iPhone 17 之外，都有各家的硅胶保护壳；APEX 4 是白色的，255 是灰色的，955 是白色的；iPhone 13 Pro 有官方的 MagSafe 磁吸充电宝。"
+    },
+    {
+      "date": "2026-10-24",
+      "action": "apply_existing_user_sales_region_default",
+      "source": "model-gallery/AGENTS.md",
+      "updated_ids": [
+        "xteink-x3",
+        "iphone-7-plus-matte-black",
+        "iphone-5s-silver",
+        "iphone-x-silver",
+        "ipad-pro-9-7-rose-gold",
+        "imac-27-2019-silver",
+        "airpods-1",
+        "kindle-paperwhite-a569p-pending",
+        "macbook-pro-13-2014",
+        "redmi-turbo-4-pro",
+        "ipad-2",
+        "sony-wh-1000xm2",
+        "sony-wh-1000xm5",
+        "garmin-255",
+        "garmin-955-solar",
+        "coros-apex-4",
+        "ipad-pro-9-7-official-cover",
+        "ipad-2-official-cover",
+        "iphone-13-pro-silicone-cases",
+        "iphone-7-plus-silicone-cases",
+        "iphone-5s-silicone-cases",
+        "iphone-x-silicone-cases",
+        "iphone-13-pro-apple-magsafe-battery"
+      ],
+      "note": "补全此前已约定的国行默认值；保留所有显式地区与其他个人资料。"
     }
   ],
   "owned_accessory_records": [
@@ -1697,7 +1883,8 @@
       "configuration": {
         "material": null,
         "color": null,
-        "variant": null
+        "variant": null,
+        "sales_region": "中国大陆（国行）"
       },
       "identification": {
         "confirmed_unit_model_number": null,
@@ -1709,7 +1896,16 @@
       "notes": [
         "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。",
         "仅确认 Apple 官方保护壳；具体款式、材料和配色未确认，不自动归类为 Smart Cover 或 Smart Case。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "ipad-2-official-cover",
@@ -1727,7 +1923,8 @@
       "configuration": {
         "material": null,
         "color": null,
-        "variant": null
+        "variant": null,
+        "sales_region": "中国大陆（国行）"
       },
       "identification": {
         "confirmed_unit_model_number": null,
@@ -1739,7 +1936,16 @@
       "notes": [
         "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。",
         "仅确认 Apple 官方保护壳；具体款式、材料和配色未确认，不自动归类为 Smart Cover 或 Smart Case。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "iphone-13-pro-silicone-cases",
@@ -1757,7 +1963,8 @@
       "configuration": {
         "material": "硅胶",
         "color": null,
-        "variant": null
+        "variant": null,
+        "sales_region": "中国大陆（国行）"
       },
       "identification": {
         "confirmed_unit_model_number": null,
@@ -1769,7 +1976,16 @@
       "notes": [
         "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。",
         "按当前已登记的 iPhone 清单逐机归属；各家品牌、款式、颜色及数量未列明，每条可能对应多个保护壳。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "iphone-7-plus-silicone-cases",
@@ -1787,7 +2003,8 @@
       "configuration": {
         "material": "硅胶",
         "color": null,
-        "variant": null
+        "variant": null,
+        "sales_region": "中国大陆（国行）"
       },
       "identification": {
         "confirmed_unit_model_number": null,
@@ -1799,7 +2016,16 @@
       "notes": [
         "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。",
         "按当前已登记的 iPhone 清单逐机归属；各家品牌、款式、颜色及数量未列明，每条可能对应多个保护壳。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "iphone-5s-silicone-cases",
@@ -1817,7 +2043,8 @@
       "configuration": {
         "material": "硅胶",
         "color": null,
-        "variant": null
+        "variant": null,
+        "sales_region": "中国大陆（国行）"
       },
       "identification": {
         "confirmed_unit_model_number": null,
@@ -1829,7 +2056,16 @@
       "notes": [
         "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。",
         "按当前已登记的 iPhone 清单逐机归属；各家品牌、款式、颜色及数量未列明，每条可能对应多个保护壳。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "iphone-x-silicone-cases",
@@ -1847,7 +2083,8 @@
       "configuration": {
         "material": "硅胶",
         "color": null,
-        "variant": null
+        "variant": null,
+        "sales_region": "中国大陆（国行）"
       },
       "identification": {
         "confirmed_unit_model_number": null,
@@ -1859,7 +2096,16 @@
       "notes": [
         "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。",
         "按当前已登记的 iPhone 清单逐机归属；各家品牌、款式、颜色及数量未列明，每条可能对应多个保护壳。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     },
     {
       "id": "iphone-13-pro-apple-magsafe-battery",
@@ -1877,7 +2123,8 @@
       "configuration": {
         "material": null,
         "color": null,
-        "variant": null
+        "variant": null,
+        "sales_region": "中国大陆（国行）"
       },
       "identification": {
         "confirmed_unit_model_number": null,
@@ -1888,7 +2135,16 @@
       "model_work_status": "deferred_by_user",
       "notes": [
         "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。"
-      ]
+      ],
+      "field_evidence": {
+        "configuration.sales_region": {
+          "source": "AGENTS.md：用户约定未特别说明的销售地区默认国行，配件独立适用",
+          "kind": "user_default",
+          "applied_at": "2026-10-24",
+          "value": "中国大陆（国行）",
+          "note": "采用用户既有默认约定，非本次逐台读取实机标识；不据父设备推定配件地区。"
+        }
+      }
     }
   ],
   "accessory_coverage_notes": [
