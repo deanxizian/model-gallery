@@ -32,6 +32,14 @@ model-gallery/
 
 `docs/design/` 是早期页面的历史参考，不代表当前界面；现行约定见 [AGENTS.md](../AGENTS.md)。完整的原始建模项目另存于网站仓库外的本地工作区。
 
+## 先登记设备与配件
+
+完整拥有清单保存在 [docs/records/digital_products.md](records/digital_products.md)，结构化数据为 [digital_products.json](records/digital_products.json)。两份文件同步维护；未建模的产品可以先登记在这里，使用状态、购入时间、配色及型号未知时保留待确认。
+
+新增保护壳和外接电池通过 `parent_id` 关联产品；配件状态、日期独立记录，不从主机推定。AirTag 四件装按一类统计，Apple Pencil 保持原有主清单条目及 iPad 归属。该档案中的路径可指向原始本地工作区，仅用于溯源，不会由网站加载。
+
+清单不会自动生成 3D 卡片。收到建模要求并完成模型后，再按下方流程加入 `public/models/`。本地 Blender 工作区的 `records/` 是导入来源；后续仓库记录以本目录为准，更新时应同步检查本地副本。
+
 ## 添加一个模型
 
 需要 Node.js 24 和 pnpm 11.19.0。先创建工作分支，再在本仓库中执行：

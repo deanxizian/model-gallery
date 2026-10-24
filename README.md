@@ -4,6 +4,8 @@
 
 [打开网站 · Vercel](https://model-gallery-dean.vercel.app/) · [备用入口 · GitHub Pages](https://deanxizian.github.io/model-gallery/)
 
+[完整设备与配件清单](docs/records/digital_products.md) · [结构化记录](docs/records/digital_products.json)（29 类产品、7 组保护壳／外接电池配件；含尚未建模的设备）
+
 ## 这里有什么
 
 - 手机、电脑、手表、耳机、阅读器、物品追踪器和便携式开发设备的 3D 模型。
