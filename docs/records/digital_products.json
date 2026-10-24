@@ -1,0 +1,1903 @@
+{
+  "schema_version": "1.0.0",
+  "updated_at": "2026-10-22",
+  "locale": "zh-CN",
+  "purpose": "个人数码产品拥有记录汇总；与 3D 模型是否存在分开维护。",
+  "scope": "本对话以及当前 Blender 工作区的 Gallery 拥有记录与 Apple 产品清单；不是对所有其他项目或所有聊天的全量个人物品盘点。",
+  "current_work_policy": "先登记产品与已知配置，后续收到用户要求再处理模型。",
+  "conventions": {
+    "counting": "主清单保持 29 类产品的统计口径：AirTag 四件装计一类，Apple Pencil 单独列出并关联 iPad。新增保护壳及外接电池按配件归属另列，不计入主清单；两个 X3 设计或测绘配件也另列。",
+    "status": "active=在役；retired=已退役，不代表已出售；unknown=使用状态未补充。Gallery 原有状态沿用原记录；本次新增状态以用户本次明确陈述为准。",
+    "unknown": "未提供的信息保留 null 或待确认，不根据年代、模型文件、套装关系推断。",
+    "source_priority": "拥有配置优先采用 Gallery 后续已确认记录；旧建模资料仅用于补充尚未上架的条目。",
+    "identification": "官网或零售目录匹配编号不等同于读取实机铭文；Kindle A569P 与候选 SA569P 分开保存。",
+    "accessories": "新增保护壳和 MagSafe 外接电池存入 owned_accessory_records，以 parent_id 关联设备；按归属分组，不把组数视为实物件数。使用状态、购入时间独立记录。既有 Apple Pencil 仍保留在 products 中并关联 iPad，不重复登记。"
+  },
+  "counts": {
+    "product_types": 29,
+    "gallery_ownership_records": 14,
+    "conversation_list_pending_details": 6,
+    "new_owned_pending_details": 1,
+    "active_as_recorded": 15,
+    "retired_as_recorded": 7,
+    "usage_status_unknown": 7,
+    "additional_x3_accessory_records": 2,
+    "user_confirmed_ownership_additions": 8,
+    "owned_accessory_groups": 7
+  },
+  "products": [
+    {
+      "id": "iphone-17",
+      "name": "iPhone 17",
+      "brand": "Apple",
+      "category": "智能手机",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "active",
+        "specification": "黑色 · 512 GB · 国行",
+        "acquired": "2025年10月"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A3258",
+            "kind": "hardware_model_number",
+            "scope": "美国、波多黎各；无实体 SIM 卡托",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A3519",
+            "kind": "hardware_model_number",
+            "scope": "部分其他市场，包括加拿大、日本等；无实体 SIM 卡托",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A3521",
+            "kind": "hardware_model_number",
+            "scope": "中国大陆",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A3520",
+            "kind": "hardware_model_number",
+            "scope": "其他国家和地区",
+            "source_ref": "identify_iphone"
+          }
+        ],
+        "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+        "matched_official_models": [
+          {
+            "value": "A3521",
+            "kind": "hardware_model_number",
+            "scope": "中国大陆",
+            "source_ref": "identify_iphone"
+          }
+        ],
+        "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+        "matched_at": "2026-09-08",
+        "matched_retail_part_number": {
+          "value": "MG724CH/A",
+          "status": "configuration_match",
+          "basis": "iPhone 17；黑色；512 GB；中国大陆",
+          "source_ref": "retail_configuration_match",
+          "matched_at": "2026-09-09",
+          "note": "按用户提供的配置匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+        }
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "黑色",
+          "en": "Black"
+        },
+        "storage": {
+          "value": 512,
+          "unit": "GB"
+        },
+        "memory_gb": null,
+        "sales_region": "中国大陆（国行）",
+        "retail_part_number": "MG724CH/A",
+        "connectivity_variant": "5G · 双 nano-SIM 卡"
+      },
+      "source_files": [
+        "model-gallery/public/models/iphone-17/model.json",
+        "model-gallery/public/models/iphone-17/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": []
+    },
+    {
+      "id": "iphone-13-pro",
+      "name": "iPhone 13 Pro",
+      "brand": "Apple",
+      "category": "智能手机",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "retired",
+        "specification": "远峰蓝色 · 256 GB · 国行",
+        "acquired": "2022年11月"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A2483",
+            "kind": "hardware_model_number",
+            "scope": "美国",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A2636",
+            "kind": "hardware_model_number",
+            "scope": "加拿大、日本、墨西哥、沙特阿拉伯",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A2639",
+            "kind": "hardware_model_number",
+            "scope": "中国大陆、香港、澳门",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A2640",
+            "kind": "hardware_model_number",
+            "scope": "亚美尼亚、白俄罗斯、哈萨克斯坦、吉尔吉斯斯坦、俄罗斯",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A2638",
+            "kind": "hardware_model_number",
+            "scope": "其他国家和地区",
+            "source_ref": "identify_iphone"
+          }
+        ],
+        "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+        "matched_official_models": [
+          {
+            "value": "A2639",
+            "kind": "hardware_model_number",
+            "scope": "中国大陆",
+            "source_ref": "identify_iphone"
+          }
+        ],
+        "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+        "matched_at": "2026-09-08",
+        "matched_retail_part_number": {
+          "value": "MLTE3CH/A",
+          "status": "configuration_match",
+          "basis": "iPhone 13 Pro；远峰蓝；256 GB；国行双卡标准零售配置",
+          "source_ref": "retail_configuration_match",
+          "matched_at": "2026-09-09",
+          "note": "按用户提供的配置匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+        }
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "远峰蓝色",
+          "en": "Sierra Blue"
+        },
+        "storage": {
+          "value": 256,
+          "unit": "GB"
+        },
+        "memory_gb": null,
+        "sales_region": "中国大陆（国行）",
+        "retail_part_number": "MLTE3CH/A",
+        "connectivity_variant": "5G · 双 nano-SIM 卡"
+      },
+      "source_files": [
+        "model-gallery/public/models/iphone-13-pro/model.json",
+        "model-gallery/public/models/iphone-13-pro/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": []
+    },
+    {
+      "id": "macbook-air-15-m5",
+      "name": "MacBook Air 15 英寸 · M5",
+      "brand": "Apple",
+      "category": "笔记本电脑",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "active",
+        "specification": "银色 · 16 GB 内存 · 512 GB SSD · 中英文键盘 · 国行",
+        "acquired": "2026年5月"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "Mac17,4",
+            "kind": "model_identifier",
+            "scope": "15 英寸 M5",
+            "source_ref": "identify_macbook_air"
+          },
+          {
+            "value": "A3448",
+            "kind": "hardware_model_number",
+            "scope": "15 英寸 M5",
+            "source_ref": "macbook_number"
+          }
+        ],
+        "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+        "matched_official_models": [
+          {
+            "value": "A3448",
+            "kind": "hardware_model_number",
+            "scope": "15 英寸 M5",
+            "source_ref": "macbook_hardware_number"
+          },
+          {
+            "value": "Mac17,4",
+            "kind": "model_identifier",
+            "scope": "15 英寸 M5",
+            "source_ref": "identify_macbook_air"
+          }
+        ],
+        "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+        "matched_at": "2026-09-08",
+        "matched_retail_part_number": {
+          "value": "MDV94CH/A",
+          "status": "configuration_match",
+          "basis": "15 英寸 M5；银色；10 核 CPU / 10 核 GPU；16 GB；512 GB；中国大陆标准中文键盘。Apple 购买页内嵌 partNumber 为 MDV94CH/A",
+          "source_ref": "retail_configuration_match",
+          "matched_at": "2026-09-09",
+          "note": "按用户提供的配置匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+        }
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "银色",
+          "en": "Silver"
+        },
+        "storage": {
+          "value": 512,
+          "unit": "GB"
+        },
+        "memory_gb": 16,
+        "sales_region": "中国大陆（国行）",
+        "retail_part_number": "MDV94CH/A",
+        "keyboard_layout": "标准中英文布局"
+      },
+      "source_files": [
+        "model-gallery/public/models/macbook-air-15-m5/model.json",
+        "model-gallery/public/models/macbook-air-15-m5/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": []
+    },
+    {
+      "id": "studio-display-2026",
+      "name": "Studio Display 2026",
+      "brand": "Apple",
+      "category": "显示器",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "active",
+        "specification": "银色 · 标准玻璃 · 可调倾斜度支架 · 国行",
+        "acquired": "2026年7月"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A3350",
+            "kind": "hardware_model_number",
+            "scope": "Studio Display (2026)",
+            "source_ref": "display_number"
+          }
+        ],
+        "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+        "matched_official_models": [
+          {
+            "value": "A3350",
+            "kind": "hardware_model_number",
+            "scope": "Studio Display (2026)",
+            "source_ref": "display_number"
+          }
+        ],
+        "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+        "matched_at": "2026-09-08",
+        "matched_retail_part_number": {
+          "value": "MFEX4CH/A",
+          "status": "configuration_match",
+          "basis": "2026 Studio Display；标准玻璃；可调倾斜度支架；中国大陆",
+          "source_ref": "retail_configuration_match",
+          "matched_at": "2026-09-09",
+          "note": "按用户提供的配置匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+        }
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "银色",
+          "en": "Silver"
+        },
+        "storage": null,
+        "memory_gb": null,
+        "sales_region": "中国大陆（国行）",
+        "retail_part_number": "MFEX4CH/A",
+        "glass": "standard",
+        "stand": "tilt_adjustable"
+      },
+      "source_files": [
+        "model-gallery/public/models/studio-display-2026/model.json",
+        "model-gallery/public/models/studio-display-2026/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": []
+    },
+    {
+      "id": "ipad-pro-m2-12-9",
+      "name": "iPad Pro 12.9 英寸 · M2",
+      "brand": "Apple",
+      "category": "平板电脑",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "active",
+        "specification": "深空灰色 · 128 GB · Wi-Fi + 蜂窝网络 · 美版",
+        "acquired": "2024年8月"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A2437",
+            "kind": "hardware_model_number",
+            "scope": "Wi-Fi + Cellular，非 mmWave",
+            "source_ref": "identify_ipad"
+          },
+          {
+            "value": "A2764",
+            "kind": "hardware_model_number",
+            "scope": "Wi-Fi + Cellular，配备 mmWave",
+            "source_ref": "identify_ipad"
+          },
+          {
+            "value": "A2766",
+            "kind": "hardware_model_number",
+            "scope": "Wi-Fi + Cellular，中国大陆",
+            "source_ref": "identify_ipad"
+          }
+        ],
+        "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+        "matched_official_models": [
+          {
+            "value": "A2764",
+            "kind": "hardware_model_number",
+            "scope": "美国，12.9 英寸第六代 Wi-Fi + 蜂窝网络，支持 mmWave",
+            "source_ref": "ipad_us_spec"
+          }
+        ],
+        "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+        "matched_at": "2026-09-08",
+        "matched_retail_part_number": {
+          "value": "MP5X3LL/A",
+          "status": "configuration_match",
+          "basis": "2022 iPad Pro 12.9 英寸 M2；深空灰；128 GB；Wi-Fi + Cellular；美国零售配置",
+          "source_ref": "retail_configuration_match",
+          "matched_at": "2026-09-09",
+          "note": "按用户提供的配置匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+        }
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "深空灰色",
+          "en": "Space Gray"
+        },
+        "storage": {
+          "value": 128,
+          "unit": "GB"
+        },
+        "memory_gb": 8,
+        "sales_region": "美国（美版）",
+        "retail_part_number": "MP5X3LL/A",
+        "generation": 6,
+        "connectivity_variant": "Wi-Fi + Cellular（美国，sub-6 GHz + mmWave）",
+        "sim": "nano-SIM + eSIM"
+      },
+      "source_files": [
+        "model-gallery/public/models/ipad-pro-m2-12-9/model.json",
+        "model-gallery/public/models/ipad-pro-m2-12-9/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": []
+    },
+    {
+      "id": "apple-pencil-2",
+      "name": "Apple Pencil 第二代",
+      "brand": "Apple",
+      "category": "触控笔",
+      "parent_id": "ipad-pro-m2-12-9",
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "active",
+        "acquired": "2025年4月",
+        "specification": "白色 · 磁吸无线充电 · 国行"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "matched_official_models": [
+          {
+            "value": "A2051",
+            "kind": "hardware_model_number",
+            "scope": "Apple Pencil（第二代）",
+            "source_url": "https://support.apple.com/zh-tw/111889"
+          }
+        ],
+        "matched_at": "2026-09-12",
+        "match_basis": "按已确认的早期第二代型号匹配官方规格，未抄录实机编号。",
+        "matched_retail_part_number": {
+          "value": "MU8F2CH/A",
+          "status": "configuration_match",
+          "basis": "Apple Pencil 第二代；用户确认早期版本；白色；中国大陆零售配置。",
+          "source_ref": "retail_configuration_match",
+          "matched_at": "2026-09-12",
+          "note": "按用户提供的版本和地区匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+        }
+      },
+      "configuration": {
+        "color": "白色",
+        "sales_region": "中国大陆（国行）",
+        "retail_part_number": "MU8F2CH/A"
+      },
+      "source_files": [
+        "model-gallery/public/models/ipad-pro-m2-12-9/accessories/apple-pencil-2/model.json",
+        "model-gallery/public/models/ipad-pro-m2-12-9/accessories/apple-pencil-2/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": []
+    },
+    {
+      "id": "apple-watch-ultra-2",
+      "name": "Apple Watch Ultra 2",
+      "brand": "Apple",
+      "category": "智能手表",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "active",
+        "specification": "原色钛金属 · 49 毫米 · 钛金属米兰尼斯表带 M 码 · 国行",
+        "acquired": "2023年11月"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A2986",
+            "kind": "hardware_model_number",
+            "scope": "北美洲、欧洲、亚太地区",
+            "source_ref": "identify_watch"
+          },
+          {
+            "value": "A2987",
+            "kind": "hardware_model_number",
+            "scope": "中国大陆",
+            "source_ref": "identify_watch"
+          }
+        ],
+        "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+        "matched_official_models": [
+          {
+            "value": "A2987",
+            "kind": "hardware_model_number",
+            "scope": "中国大陆，49 毫米 GPS + 蜂窝网络",
+            "source_ref": "identify_watch"
+          }
+        ],
+        "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+        "matched_at": "2026-09-08",
+        "retail_part_number_pending_reason": "用户确认原配灰白配色野径回环 M/L；公开目录未找到与该完整配色描述唯一对应的 2023 国行套装，不能直接套用绿配灰色或其他近似配色编号。"
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "原色钛金属",
+          "en": "Natural Titanium"
+        },
+        "storage": {
+          "value": 64,
+          "unit": "GB"
+        },
+        "memory_gb": null,
+        "sales_region": "中国大陆（国行）",
+        "retail_part_number": null,
+        "case_size_mm": 49,
+        "connectivity_variant": "GPS + Cellular",
+        "band": {
+          "name_zh_CN": "钛金属米兰尼斯表带",
+          "color_zh_CN": "原色钛金属",
+          "introduced_year": 2024
+        },
+        "band_size": "M",
+        "original_band": {
+          "name_zh_CN": "野径回环式表带",
+          "color_zh_CN": "灰白配色",
+          "size": "M/L",
+          "confirmed_at": "2026-09-09"
+        }
+      },
+      "source_files": [
+        "model-gallery/public/models/apple-watch-ultra-2/model.json",
+        "model-gallery/public/models/apple-watch-ultra-2/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "原购套装为灰白配色野径回环 M/L；当前原色钛金属米兰尼斯 M 码；主机购入日期不代表替换表带购入日期。"
+      ]
+    },
+    {
+      "id": "apple-watch-series-6",
+      "name": "Apple Watch Series 6",
+      "brand": "Apple",
+      "category": "智能手表",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "retired",
+        "specification": "深空灰色 · 44 毫米 · GPS · 煤灰色 Nike 运动表带 M/L · 国行",
+        "acquired": "2021年3月"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A2292",
+            "kind": "hardware_model_number",
+            "scope": "44 毫米 GPS",
+            "source_ref": "identify_watch"
+          },
+          {
+            "value": "A2294",
+            "kind": "hardware_model_number",
+            "scope": "44 毫米 GPS + Cellular，北美洲",
+            "source_ref": "identify_watch"
+          },
+          {
+            "value": "A2376",
+            "kind": "hardware_model_number",
+            "scope": "44 毫米 GPS + Cellular，欧洲、亚太地区和中国大陆",
+            "source_ref": "identify_watch"
+          }
+        ],
+        "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+        "matched_official_models": [
+          {
+            "value": "A2292",
+            "kind": "hardware_model_number",
+            "scope": "44 毫米 GPS",
+            "source_ref": "identify_watch"
+          }
+        ],
+        "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+        "matched_at": "2026-09-08",
+        "matched_retail_part_number": {
+          "value": "MG173CH/A",
+          "status": "configuration_match",
+          "basis": "Apple Watch Nike Series 6；44 毫米深空灰铝金属；GPS；煤黑/黑色 Nike 运动表带；中国大陆标准套装。用户称煤灰色洞洞表带，佩戴 M/L；按原配套装匹配，未读取实机部件号",
+          "source_ref": "retail_configuration_match",
+          "matched_at": "2026-09-09",
+          "note": "按用户提供的配置匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+        }
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "深空灰色",
+          "en": "Space Gray"
+        },
+        "storage": {
+          "value": 32,
+          "unit": "GB"
+        },
+        "memory_gb": null,
+        "sales_region": "中国大陆（国行）",
+        "retail_part_number": "MG173CH/A",
+        "case_size_mm": 44,
+        "band": {
+          "name_zh_CN": "Nike 运动表带",
+          "color_zh_CN": "煤灰色",
+          "material": "fluoroelastomer",
+          "color_reported_by_owner": "煤灰色",
+          "catalog_color_zh_CN": "煤黑配黑色"
+        },
+        "connectivity_variant": "GPS",
+        "band_size": "M/L",
+        "band_size_label": "M/L",
+        "original_band": {
+          "name_zh_CN": "Nike 运动表带",
+          "color_zh_CN": "煤灰色",
+          "material": "fluoroelastomer",
+          "color_reported_by_owner": "煤灰色",
+          "catalog_color_zh_CN": "煤黑配黑色",
+          "size": "M/L"
+        }
+      },
+      "source_files": [
+        "model-gallery/public/models/apple-watch-series-6/model.json",
+        "model-gallery/public/models/apple-watch-series-6/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "拥有记录为煤灰色 Nike 洞洞运动表带 M/L；当前 3D 仅表壳，不影响实物配置记录。"
+      ]
+    },
+    {
+      "id": "airpods-pro-2-lightning",
+      "name": "AirPods Pro 2 · Lightning",
+      "brand": "Apple",
+      "category": "无线耳机",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "active",
+        "specification": "白色 · 2022 Lightning 充电盒 · 美版",
+        "acquired": "2022年10月"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A2931",
+            "kind": "hardware_model_number",
+            "scope": "2022 版耳机型号组",
+            "source_ref": "identify_airpods"
+          },
+          {
+            "value": "A2699",
+            "kind": "hardware_model_number",
+            "scope": "2022 版耳机型号组",
+            "source_ref": "identify_airpods"
+          },
+          {
+            "value": "A2698",
+            "kind": "hardware_model_number",
+            "scope": "2022 版耳机型号组",
+            "source_ref": "identify_airpods"
+          },
+          {
+            "value": "A2700",
+            "kind": "hardware_model_number",
+            "scope": "2022 MagSafe Lightning 充电盒",
+            "source_ref": "identify_airpods"
+          }
+        ],
+        "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+        "matched_official_models": [
+          {
+            "value": "A2931",
+            "kind": "earbud_model_group",
+            "scope": "2022 Lightning 版官方耳机型号组，官网未逐一指定地区及左右耳",
+            "source_ref": "identify_airpods"
+          },
+          {
+            "value": "A2699",
+            "kind": "earbud_model_group",
+            "scope": "2022 Lightning 版官方耳机型号组",
+            "source_ref": "identify_airpods"
+          },
+          {
+            "value": "A2698",
+            "kind": "earbud_model_group",
+            "scope": "2022 Lightning 版官方耳机型号组",
+            "source_ref": "identify_airpods"
+          },
+          {
+            "value": "A2700",
+            "kind": "charging_case_model",
+            "scope": "2022 MagSafe Lightning 充电盒",
+            "source_ref": "identify_airpods"
+          }
+        ],
+        "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+        "matched_at": "2026-09-08",
+        "matched_retail_part_number": {
+          "value": "MQD83AM/A",
+          "status": "configuration_match",
+          "basis": "AirPods Pro 第二代；2022 MagSafe Lightning 充电盒；美国零售配置",
+          "source_ref": "retail_configuration_match",
+          "matched_at": "2026-09-09",
+          "note": "按用户提供的配置匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+        }
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "白色",
+          "en": "White"
+        },
+        "storage": null,
+        "memory_gb": null,
+        "sales_region": "美国（美版）",
+        "retail_part_number": "MQD83AM/A",
+        "generation": 2,
+        "charging_case": "2022 MagSafe Charging Case (Lightning)",
+        "charging_connector": "Lightning"
+      },
+      "source_files": [
+        "model-gallery/public/models/airpods-pro-2-lightning/model.json",
+        "model-gallery/public/models/airpods-pro-2-lightning/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": []
+    },
+    {
+      "id": "airpods-pro-1",
+      "name": "AirPods Pro 初代",
+      "brand": "Apple",
+      "category": "无线耳机",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "retired",
+        "specification": "白色 · 2019 无线充电盒 · 国行",
+        "acquired": "2019年10月"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A2083",
+            "kind": "hardware_model_number",
+            "scope": "初代耳机；不在此指定左右耳对应关系",
+            "source_ref": "identify_airpods"
+          },
+          {
+            "value": "A2084",
+            "kind": "hardware_model_number",
+            "scope": "初代耳机；不在此指定左右耳对应关系",
+            "source_ref": "identify_airpods"
+          },
+          {
+            "value": "A2190",
+            "kind": "hardware_model_number",
+            "scope": "2019 无线充电盒；同号亦用于 2021 MagSafe 盒，需结合年份识别",
+            "source_ref": "identify_airpods"
+          }
+        ],
+        "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+        "matched_official_models": [
+          {
+            "value": "A2084",
+            "kind": "earbud_model_group",
+            "scope": "初代耳机型号组，未单独指定左右耳",
+            "source_ref": "identify_airpods"
+          },
+          {
+            "value": "A2083",
+            "kind": "earbud_model_group",
+            "scope": "初代耳机型号组，未单独指定左右耳",
+            "source_ref": "identify_airpods"
+          },
+          {
+            "value": "A2190",
+            "kind": "charging_case_model",
+            "scope": "2019 无线充电盒",
+            "source_ref": "identify_airpods"
+          }
+        ],
+        "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+        "matched_at": "2026-09-08",
+        "matched_retail_part_number": {
+          "value": "MWP22CH/A",
+          "status": "configuration_match",
+          "basis": "AirPods Pro 初代；2019 无线充电盒；中国大陆零售配置",
+          "source_ref": "retail_configuration_match",
+          "matched_at": "2026-09-09",
+          "note": "按用户提供的配置匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+        }
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "白色",
+          "en": "White"
+        },
+        "storage": null,
+        "memory_gb": null,
+        "sales_region": "中国大陆（国行）",
+        "retail_part_number": "MWP22CH/A",
+        "generation": 1,
+        "charging_case": "2019 Wireless Charging Case",
+        "charging_connector": "Lightning"
+      },
+      "source_files": [
+        "model-gallery/public/models/airpods-pro-1/model.json",
+        "model-gallery/public/models/airpods-pro-1/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": []
+    },
+    {
+      "id": "siri-remote-3",
+      "name": "Siri Remote 第三代",
+      "brand": "Apple",
+      "category": "遥控器",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "active",
+        "specification": "银色 · 国行",
+        "acquired": "2026年8月"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A2854",
+            "kind": "hardware_model_number",
+            "scope": "Siri Remote 第三代",
+            "source_ref": "remote_number"
+          }
+        ],
+        "note": "A 型号或机型标识符与零售部件号分开记录。matched_official_models 为官网匹配，confirmed_unit_model_number 仅用于实际读取设备标识。",
+        "matched_official_models": [
+          {
+            "value": "A2854",
+            "kind": "hardware_model_number",
+            "scope": "第三代 USB-C",
+            "source_ref": "remote_number"
+          }
+        ],
+        "match_basis": "按用户确认的产品、地区与版本匹配 Apple 官方资料；未逐台抄录实机标识。",
+        "matched_at": "2026-09-08",
+        "retail_part_number_pending_reason": "用户确认单独购买，并要求不展示或继续收集零售部件号；尚未匹配具体地区 SKU，不表示该产品不存在零售编号。",
+        "retail_part_number_display": "omit_by_owner_request"
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "银色",
+          "en": "Silver"
+        },
+        "storage": null,
+        "memory_gb": null,
+        "sales_region": "中国大陆（国行）",
+        "retail_part_number": null,
+        "purchase_bundle": "单独购买"
+      },
+      "source_files": [
+        "model-gallery/public/models/siri-remote-3/model.json",
+        "model-gallery/public/models/siri-remote-3/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "已确认单独购买遥控器；不能据此推定拥有 Apple TV 主机。"
+      ]
+    },
+    {
+      "id": "airtag-1",
+      "name": "AirTag 第一代",
+      "brand": "Apple",
+      "category": "物品追踪器",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "active",
+        "acquired": "2021年12月",
+        "specification": "白色 · 四件装 · 国行"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "matched_official_models": [
+          {
+            "value": "A2187",
+            "kind": "hardware_model_number",
+            "scope": "AirTag 第一代",
+            "source_url": "https://support.apple.com/zh-cn/102170"
+          }
+        ],
+        "matched_retail_part_number": {
+          "value": "MX542CH/A",
+          "status": "configuration_match",
+          "basis": "AirTag 第一代；用户确认四件装；中国大陆零售配置。",
+          "source_ref": "retail_configuration_match",
+          "matched_at": "2026-09-12",
+          "note": "按用户提供的包装和地区匹配标准零售目录，未抄录实机或包装；不代表具体购买店铺。"
+        },
+        "matched_at": "2026-09-12",
+        "match_basis": "按用户确认的第一代匹配官方型号，未抄录实机编号。"
+      },
+      "configuration": {
+        "finish": "白色塑料外壳、抛光不锈钢电池护盖",
+        "engraving": null,
+        "key_ring": null,
+        "storage": null,
+        "sales_region": "中国大陆（国行）",
+        "retail_part_number": "MX542CH/A",
+        "package_quantity": 4
+      },
+      "source_files": [
+        "model-gallery/public/models/airtag-1/model.json",
+        "model-gallery/public/models/airtag-1/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "四件装按一类产品统计；不把包装件数当作四种产品。"
+      ],
+      "pack_quantity": 4
+    },
+    {
+      "id": "xteink-x3",
+      "name": "阅星瞳 X3",
+      "brand": "阅星瞳",
+      "category": "电子书阅读器",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "active",
+        "acquired": "2026年7月",
+        "specification": "白色 · 原装随附 16 GB 存储卡"
+      },
+      "identification": null,
+      "configuration": null,
+      "source_files": [
+        "model-gallery/public/models/xteink-x3/model.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": []
+    },
+    {
+      "id": "m5stack-sticks3",
+      "name": "M5Stack StickS3",
+      "brand": "M5Stack",
+      "category": "可编程控制器",
+      "parent_id": null,
+      "record_basis": "existing_gallery_ownership_record",
+      "ownership": {
+        "status": "active",
+        "specification": "灰色 · 蓝色按键 · 8 MB Flash · 8 MB PSRAM · 国行",
+        "acquired": "2026年7月"
+      },
+      "identification": null,
+      "configuration": {
+        "color": "灰色",
+        "button_color": "蓝色",
+        "sales_region": "中国大陆（国行）"
+      },
+      "source_files": [
+        "model-gallery/public/models/m5stack-sticks3/model.json",
+        "model-gallery/public/models/m5stack-sticks3/product.json"
+      ],
+      "ownership_source_date": "2026-09-12",
+      "reviewed_at": "2026-10-22",
+      "notes": []
+    },
+    {
+      "id": "iphone-7-plus-matte-black",
+      "name": "iPhone 7 Plus · 黑色铝合金",
+      "brand": "Apple",
+      "category": "phone",
+      "parent_id": null,
+      "record_basis": "conversation_collection_list",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "specification": "iPhone 7 Plus · 黑色铝合金"
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "黑色",
+          "en": "Black"
+        },
+        "storage": null,
+        "memory_gb": null,
+        "sales_region": null,
+        "retail_part_number": null,
+        "finish": "matte",
+        "connectivity_variant": null
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A1661",
+            "kind": "hardware_model_number",
+            "scope": "地区/网络版待确认",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A1784",
+            "kind": "hardware_model_number",
+            "scope": "地区/网络版待确认",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A1785",
+            "kind": "hardware_model_number",
+            "scope": "日本",
+            "source_ref": "identify_iphone"
+          }
+        ],
+        "note": "编号是官方机型或部件参考，未核对具体藏品实机；不同地区/网络版不可互相替代。零售部件号与 A 开头硬件型号是不同字段。"
+      },
+      "source_files": [
+        "models/apple/iphone_7_plus_matte_black/product.json"
+      ],
+      "ownership_source_date": null,
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "用户此前列入个人藏品建模清单；当前使用或持有状态、购入时间未补充。未因年代较早而自动标为已退役。"
+      ]
+    },
+    {
+      "id": "iphone-5s-silver",
+      "name": "iPhone 5s · 银色",
+      "brand": "Apple",
+      "category": "phone",
+      "parent_id": null,
+      "record_basis": "conversation_collection_list",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "specification": "iPhone 5s · 银色"
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "银色",
+          "en": "Silver"
+        },
+        "storage": null,
+        "memory_gb": null,
+        "sales_region": null,
+        "retail_part_number": null,
+        "connectivity_variant": null
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A1453",
+            "kind": "hardware_model_number",
+            "scope": "地区/网络版待确认",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A1457",
+            "kind": "hardware_model_number",
+            "scope": "地区/网络版待确认",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A1518",
+            "kind": "hardware_model_number",
+            "scope": "地区/网络版待确认",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A1528",
+            "kind": "hardware_model_number",
+            "scope": "地区/网络版待确认",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A1530",
+            "kind": "hardware_model_number",
+            "scope": "地区/网络版待确认",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A1533",
+            "kind": "hardware_model_number",
+            "scope": "地区/网络版待确认",
+            "source_ref": "identify_iphone"
+          }
+        ],
+        "note": "编号是官方机型或部件参考，未核对具体藏品实机；不同地区/网络版不可互相替代。零售部件号与 A 开头硬件型号是不同字段。"
+      },
+      "source_files": [
+        "models/apple/iphone_5s_silver/product.json"
+      ],
+      "ownership_source_date": null,
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "用户此前列入个人藏品建模清单；当前使用或持有状态、购入时间未补充。未因年代较早而自动标为已退役。"
+      ]
+    },
+    {
+      "id": "iphone-x-silver",
+      "name": "iPhone X · 银色白背板",
+      "brand": "Apple",
+      "category": "phone",
+      "parent_id": null,
+      "record_basis": "conversation_collection_list",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "specification": "iPhone X · 银色白背板"
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "银色",
+          "en": "Silver"
+        },
+        "storage": null,
+        "memory_gb": null,
+        "sales_region": null,
+        "retail_part_number": null,
+        "connectivity_variant": null
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A1865",
+            "kind": "hardware_model_number",
+            "scope": "地区/网络版待确认",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A1901",
+            "kind": "hardware_model_number",
+            "scope": "地区/网络版待确认",
+            "source_ref": "identify_iphone"
+          },
+          {
+            "value": "A1902",
+            "kind": "hardware_model_number",
+            "scope": "日本",
+            "source_ref": "identify_iphone"
+          }
+        ],
+        "note": "编号是官方机型或部件参考，未核对具体藏品实机；不同地区/网络版不可互相替代。零售部件号与 A 开头硬件型号是不同字段。"
+      },
+      "source_files": [
+        "models/apple/iphone_x_silver/product.json"
+      ],
+      "ownership_source_date": null,
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "用户此前列入个人藏品建模清单；当前使用或持有状态、购入时间未补充。未因年代较早而自动标为已退役。"
+      ]
+    },
+    {
+      "id": "ipad-pro-9-7-rose-gold",
+      "name": "iPad Pro 9.7 英寸 · 玫瑰金",
+      "brand": "Apple",
+      "category": "tablet",
+      "parent_id": null,
+      "record_basis": "conversation_collection_list",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "specification": "iPad Pro 9.7 英寸 · 玫瑰金"
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "玫瑰金色",
+          "en": "Rose Gold"
+        },
+        "storage": null,
+        "memory_gb": null,
+        "sales_region": null,
+        "retail_part_number": null,
+        "connectivity_variant": null
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A1673",
+            "kind": "hardware_model_number",
+            "scope": "Wi-Fi",
+            "source_ref": "identify_ipad"
+          },
+          {
+            "value": "A1674",
+            "kind": "hardware_model_number",
+            "scope": "Wi-Fi + Cellular",
+            "source_ref": "identify_ipad"
+          },
+          {
+            "value": "A1675",
+            "kind": "hardware_model_number",
+            "scope": "Wi-Fi + Cellular",
+            "source_ref": "identify_ipad"
+          }
+        ],
+        "note": "编号是官方机型或部件参考，未核对具体藏品实机；不同地区/网络版不可互相替代。零售部件号与 A 开头硬件型号是不同字段。"
+      },
+      "source_files": [
+        "models/apple/ipad_pro_9_7_rose_gold/product.json"
+      ],
+      "ownership_source_date": null,
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "用户此前列入个人藏品建模清单；当前使用或持有状态、购入时间未补充。未因年代较早而自动标为已退役。"
+      ]
+    },
+    {
+      "id": "imac-27-2019-silver",
+      "name": "iMac 27 英寸 2019 · 银色",
+      "brand": "Apple",
+      "category": "desktop",
+      "parent_id": null,
+      "record_basis": "conversation_collection_list",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "specification": "iMac 27 英寸 2019 · 银色"
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "银色",
+          "en": "Silver"
+        },
+        "storage": null,
+        "memory_gb": null,
+        "sales_region": null,
+        "retail_part_number": null,
+        "processor": null,
+        "graphics": null,
+        "storage_type": null
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "iMac19,1",
+            "kind": "model_identifier",
+            "scope": "27 英寸 Retina 5K 2019",
+            "source_ref": "identify_imac"
+          }
+        ],
+        "note": "编号是官方机型或部件参考，未核对具体藏品实机；不同地区/网络版不可互相替代。零售部件号与 A 开头硬件型号是不同字段。"
+      },
+      "source_files": [
+        "models/apple/imac_27_2019_silver/product.json"
+      ],
+      "ownership_source_date": null,
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "用户此前列入个人藏品建模清单；当前使用或持有状态、购入时间未补充。未因年代较早而自动标为已退役。"
+      ]
+    },
+    {
+      "id": "airpods-1",
+      "name": "AirPods 第一代 · 2016",
+      "brand": "Apple",
+      "category": "earbuds",
+      "parent_id": null,
+      "record_basis": "conversation_collection_list",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "specification": "AirPods 第一代 · 2016"
+      },
+      "configuration": {
+        "color": {
+          "zh_CN": "白色",
+          "en": "White"
+        },
+        "storage": null,
+        "memory_gb": null,
+        "sales_region": null,
+        "retail_part_number": null,
+        "generation": 1,
+        "charging_case": "2016 Lightning Charging Case",
+        "charging_connector": "Lightning"
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "official_references": [
+          {
+            "value": "A1523",
+            "kind": "hardware_model_number",
+            "scope": "第一代耳机",
+            "source_ref": "identify_airpods"
+          },
+          {
+            "value": "A1722",
+            "kind": "hardware_model_number",
+            "scope": "第一代耳机",
+            "source_ref": "identify_airpods"
+          },
+          {
+            "value": "A1602",
+            "kind": "hardware_model_number",
+            "scope": "2016 Lightning 充电盒；也可配第二代耳机",
+            "source_ref": "identify_airpods"
+          }
+        ],
+        "note": "编号是官方机型或部件参考，未核对具体藏品实机；不同地区/网络版不可互相替代。零售部件号与 A 开头硬件型号是不同字段。"
+      },
+      "source_files": [
+        "models/apple/airpods_1/product.json"
+      ],
+      "ownership_source_date": null,
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "用户此前列入个人藏品建模清单；当前使用或持有状态、购入时间未补充。未因年代较早而自动标为已退役。"
+      ]
+    },
+    {
+      "id": "kindle-paperwhite-a569p-pending",
+      "name": "Kindle Paperwhite",
+      "brand": "Amazon",
+      "category": "电子书阅读器",
+      "parent_id": null,
+      "record_basis": "user_confirmed_owned_details_pending",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "specification": "用户提供 Model Number：A569P；其他配置待确认。",
+        "possession": "currently_owned",
+        "user_statement": "我还有一个 Kindle Paperwhite，Model Number 是 A569P.这个官方有模型吗？"
+      },
+      "identification": {
+        "user_reported_model_number": "A569P",
+        "confirmed_unit_model_number": null,
+        "candidate_model_number": "SA569P",
+        "candidate_product": "Kindle Paperwhite Signature Edition（第 12 代，2024 款，32GB）",
+        "candidate_status": "unconfirmed_missing_leading_s",
+        "note": "保留用户原文 A569P；SA569P 是上轮官网查到的可能对应，尚未得到用户确认，不作为实机已确认型号。",
+        "candidate_sources": [
+          "https://digprjsurvey.amazon.com/csad/help/node/TTWjMJ2xjovvl2P5jX",
+          "https://digprjsurvey.amazon.com/csad/help/node/GK33S847NN4V6Y83"
+        ]
+      },
+      "source_files": [],
+      "ownership_source_date": "2026-10-22",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "用户明确表示拥有；是否在役、配色、容量、销售地区和购入时间待补充。",
+        "此前检索未找到可公开提取的官方模型；商品页曾返回 503，不能据此认定官方模型绝对不存在。当前仅登记。"
+      ]
+    },
+    {
+      "id": "macbook-pro-13-2014",
+      "name": "MacBook Pro 13 英寸（2014 款）",
+      "brand": "Apple",
+      "category": "笔记本电脑",
+      "parent_id": null,
+      "record_basis": "user_confirmed_ownership",
+      "ownership": {
+        "status": "retired",
+        "acquired": null,
+        "specification": "2014 款 · 13 英寸"
+      },
+      "configuration": {
+        "model_year": 2014,
+        "display_size_inches_as_reported": 13
+      },
+      "identification": {
+        "user_reported_name": "MacBook Pro2014款13寸",
+        "confirmed_unit_model_number": null,
+        "verification_status": "user_reported_product_only"
+      },
+      "source_files": [],
+      "ownership_source_date": "2026-10-22",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
+      ]
+    },
+    {
+      "id": "redmi-turbo-4-pro",
+      "name": "Redmi Turbo 4 Pro",
+      "brand": "Redmi",
+      "category": "智能手机",
+      "parent_id": null,
+      "record_basis": "user_confirmed_ownership",
+      "ownership": {
+        "status": "active",
+        "acquired": null,
+        "specification": "容量、配色待补充"
+      },
+      "configuration": {},
+      "identification": {
+        "user_reported_name": "红米Redmi Turbo4Pro",
+        "confirmed_unit_model_number": null,
+        "verification_status": "user_reported_product_only"
+      },
+      "source_files": [],
+      "ownership_source_date": "2026-10-22",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
+      ]
+    },
+    {
+      "id": "ipad-2",
+      "name": "iPad 第二代",
+      "brand": "Apple",
+      "category": "平板电脑",
+      "parent_id": null,
+      "record_basis": "user_confirmed_ownership",
+      "ownership": {
+        "status": "retired",
+        "acquired": null,
+        "specification": "第二代；容量、配色、网络版本待补充"
+      },
+      "configuration": {
+        "generation": 2
+      },
+      "identification": {
+        "user_reported_name": "第二代的ipad",
+        "confirmed_unit_model_number": null,
+        "verification_status": "user_reported_product_only"
+      },
+      "source_files": [],
+      "ownership_source_date": "2026-10-22",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
+      ]
+    },
+    {
+      "id": "sony-wh-1000xm2",
+      "name": "Sony WH-1000XM2",
+      "brand": "Sony",
+      "category": "头戴式耳机",
+      "parent_id": null,
+      "record_basis": "user_confirmed_ownership",
+      "ownership": {
+        "status": "retired",
+        "acquired": null,
+        "specification": "配色待补充"
+      },
+      "configuration": {},
+      "identification": {
+        "user_reported_name": "索尼的wh1000x xm2",
+        "confirmed_unit_model_number": null,
+        "verification_status": "user_reported_product_only",
+        "note": "按用户给出的 WH 系列及 XM2／XM5 代际规范拼写；尚未抄录实机型号标签。"
+      },
+      "source_files": [],
+      "ownership_source_date": "2026-10-22",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
+      ]
+    },
+    {
+      "id": "sony-wh-1000xm5",
+      "name": "Sony WH-1000XM5",
+      "brand": "Sony",
+      "category": "头戴式耳机",
+      "parent_id": null,
+      "record_basis": "user_confirmed_ownership",
+      "ownership": {
+        "status": "active",
+        "acquired": null,
+        "specification": "配色待补充"
+      },
+      "configuration": {},
+      "identification": {
+        "user_reported_name": "索尼的wh1000x xm5",
+        "confirmed_unit_model_number": null,
+        "verification_status": "user_reported_product_only",
+        "note": "按用户给出的 WH 系列及 XM2／XM5 代际规范拼写；尚未抄录实机型号标签。"
+      },
+      "source_files": [],
+      "ownership_source_date": "2026-10-22",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
+      ]
+    },
+    {
+      "id": "garmin-255",
+      "name": "佳明 255",
+      "brand": "Garmin",
+      "category": "运动手表",
+      "parent_id": null,
+      "record_basis": "user_confirmed_ownership",
+      "ownership": {
+        "status": "retired",
+        "acquired": null,
+        "specification": "灰色；具体版本待补充"
+      },
+      "configuration": {
+        "color": "灰色"
+      },
+      "identification": {
+        "user_reported_name": "佳明255",
+        "confirmed_unit_model_number": null,
+        "verification_status": "user_reported_product_only"
+      },
+      "source_files": [],
+      "ownership_source_date": "2026-10-22",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
+      ],
+      "configuration_confirmed_at": "2026-10-22",
+      "field_evidence": {
+        "configuration.color": {
+          "source": "当前对话用户明确补充",
+          "date": "2026-10-22",
+          "value": "灰色"
+        }
+      }
+    },
+    {
+      "id": "garmin-955-solar",
+      "name": "佳明 955 Solar",
+      "brand": "Garmin",
+      "category": "运动手表",
+      "parent_id": null,
+      "record_basis": "user_confirmed_ownership",
+      "ownership": {
+        "status": "active",
+        "acquired": null,
+        "specification": "Solar 版 · 白色"
+      },
+      "configuration": {
+        "edition": "Solar",
+        "color": "白色"
+      },
+      "identification": {
+        "user_reported_name": "佳明955sloar",
+        "confirmed_unit_model_number": null,
+        "verification_status": "user_reported_product_only",
+        "note": "将用户原文 sloar 规范拼写为 Solar；不额外推断配色或零售编号。"
+      },
+      "source_files": [],
+      "ownership_source_date": "2026-10-22",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
+      ],
+      "configuration_confirmed_at": "2026-10-22",
+      "field_evidence": {
+        "configuration.color": {
+          "source": "当前对话用户明确补充",
+          "date": "2026-10-22",
+          "value": "白色"
+        }
+      }
+    },
+    {
+      "id": "coros-apex-4",
+      "name": "COROS APEX 4",
+      "brand": "COROS",
+      "category": "运动手表",
+      "parent_id": null,
+      "record_basis": "user_confirmed_ownership",
+      "ownership": {
+        "status": "active",
+        "acquired": null,
+        "specification": "APEX 4 · 白色；尺寸待补充"
+      },
+      "configuration": {
+        "color": "白色"
+      },
+      "identification": {
+        "user_reported_name": "apex 4",
+        "confirmed_unit_model_number": null,
+        "verification_status": "user_reported_product_only",
+        "user_reported_name_history": [
+          "coros apex 24mm",
+          "apex 4"
+        ],
+        "note": "用户随后确认完整型号为 APEX 4；原文 24mm 不作为尺寸记录。"
+      },
+      "source_files": [],
+      "ownership_source_date": "2026-10-22",
+      "reviewed_at": "2026-10-22",
+      "notes": [
+        "产品及使用状态由用户本次明确补充；购入时间和未提供的配置留待后续补充。当前仅登记。"
+      ],
+      "configuration_confirmed_at": "2026-10-22",
+      "field_evidence": {
+        "configuration.color": {
+          "source": "当前对话用户明确补充",
+          "date": "2026-10-22",
+          "value": "白色"
+        }
+      }
+    }
+  ],
+  "additional_accessory_records": [
+    {
+      "id": "x3-dock",
+      "name": "X3 充电底座",
+      "parent_id": "xteink-x3",
+      "record_kind": "accessory_design_or_measurement",
+      "ownership_status": "unknown",
+      "source_file": "model-gallery/public/models/xteink-x3/accessories/x3-dock/model.json",
+      "note": "已有设计或实物测绘记录，未据模型文件推定已购入或在役；不计入主清单。"
+    },
+    {
+      "id": "x3-type-c-adapter",
+      "name": "Type-C 充电转接头",
+      "parent_id": "xteink-x3",
+      "record_kind": "accessory_design_or_measurement",
+      "ownership_status": "unknown",
+      "source_file": "model-gallery/public/models/xteink-x3/accessories/x3-type-c-adapter/model.json",
+      "note": "已有设计或实物测绘记录，未据模型文件推定已购入或在役；不计入主清单。"
+    }
+  ],
+  "inquiries_not_confirmed_as_owned": [
+    {
+      "name": "MagSafe 卡包",
+      "note": "此前仅询问官方模型是否存在，未确认具体持有产品。"
+    },
+    {
+      "name": "充电头",
+      "note": "此前仅询问官方模型是否存在，未确认具体持有产品。"
+    }
+  ],
+  "source_documents": [
+    "model-gallery/docs/device-records.md",
+    "model-gallery/docs/model-identifiers.md",
+    "models/apple/CATALOG.md",
+    "models/apple/accessory_availability_20260912.json"
+  ],
+  "update_instructions": "用户后续可直接给出产品名称及任何已知信息；先补入本清单，缺项留空，不强制先补齐所有参数。",
+  "record_updates": [
+    {
+      "date": "2026-10-22",
+      "action": "added_user_confirmed_products",
+      "product_ids": [
+        "macbook-pro-13-2014",
+        "redmi-turbo-4-pro",
+        "ipad-2",
+        "sony-wh-1000xm2",
+        "sony-wh-1000xm5",
+        "garmin-255",
+        "garmin-955-solar",
+        "coros-apex-4"
+      ],
+      "source": "当前对话用户补充及 COROS 型号确认",
+      "user_statement": "还有已经退役的MacBook Pro2014款13寸已退役\n还有红米Redmi Turbo4Pro在役\n还有第二代的ipad退役\n还有索尼的wh1000x xm2（退役）和xm5（在役）\n还有佳明255退役，佳明955sloar在役，coros apex 24mm在役",
+      "clarification": {
+        "question": "COROS 的完整型号和尺寸",
+        "answer": "apex 4"
+      }
+    },
+    {
+      "date": "2026-10-22",
+      "action": "added_accessories_and_watch_colors",
+      "updated_product_ids": [
+        "coros-apex-4",
+        "garmin-255",
+        "garmin-955-solar"
+      ],
+      "added_accessory_ids": [
+        "ipad-pro-9-7-official-cover",
+        "ipad-2-official-cover",
+        "iphone-13-pro-silicone-cases",
+        "iphone-7-plus-silicone-cases",
+        "iphone-5s-silicone-cases",
+        "iphone-x-silicone-cases",
+        "iphone-13-pro-apple-magsafe-battery"
+      ],
+      "source": "当前对话用户明确补充",
+      "user_statement": "iPad 9.7 和 iPad 2 都有官方保护壳；几代 iPhone 除了现在的 iPhone 17 之外，都有各家的硅胶保护壳；APEX 4 是白色的，255 是灰色的，955 是白色的；iPhone 13 Pro 有官方的 MagSafe 磁吸充电宝。"
+    }
+  ],
+  "owned_accessory_records": [
+    {
+      "id": "ipad-pro-9-7-official-cover",
+      "name": "iPad Pro 9.7 英寸官方保护壳",
+      "parent_id": "ipad-pro-9-7-rose-gold",
+      "brand": "Apple",
+      "category": "保护壳",
+      "record_basis": "user_confirmed_accessory_ownership",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "quantity": null,
+        "confirmation": "owned_or_previously_owned"
+      },
+      "configuration": {
+        "material": null,
+        "color": null,
+        "variant": null
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "retail_part_number": null
+      },
+      "source_statement": "iPad 9.7 有官方保护壳",
+      "recorded_at": "2026-10-22",
+      "model_work_status": "deferred_by_user",
+      "notes": [
+        "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。",
+        "仅确认 Apple 官方保护壳；具体款式、材料和配色未确认，不自动归类为 Smart Cover 或 Smart Case。"
+      ]
+    },
+    {
+      "id": "ipad-2-official-cover",
+      "name": "iPad 第二代官方保护壳",
+      "parent_id": "ipad-2",
+      "brand": "Apple",
+      "category": "保护壳",
+      "record_basis": "user_confirmed_accessory_ownership",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "quantity": null,
+        "confirmation": "owned_or_previously_owned"
+      },
+      "configuration": {
+        "material": null,
+        "color": null,
+        "variant": null
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "retail_part_number": null
+      },
+      "source_statement": "iPad 2 有官方保护壳",
+      "recorded_at": "2026-10-22",
+      "model_work_status": "deferred_by_user",
+      "notes": [
+        "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。",
+        "仅确认 Apple 官方保护壳；具体款式、材料和配色未确认，不自动归类为 Smart Cover 或 Smart Case。"
+      ]
+    },
+    {
+      "id": "iphone-13-pro-silicone-cases",
+      "name": "iPhone 13 Pro 硅胶保护壳",
+      "parent_id": "iphone-13-pro",
+      "brand": null,
+      "category": "保护壳",
+      "record_basis": "user_confirmed_accessory_ownership",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "quantity": null,
+        "confirmation": "owned_or_previously_owned"
+      },
+      "configuration": {
+        "material": "硅胶",
+        "color": null,
+        "variant": null
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "retail_part_number": null
+      },
+      "source_statement": "几代 iPhone 除了现在的 iPhone 17 之外，都有各家的硅胶保护壳",
+      "recorded_at": "2026-10-22",
+      "model_work_status": "deferred_by_user",
+      "notes": [
+        "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。",
+        "按当前已登记的 iPhone 清单逐机归属；各家品牌、款式、颜色及数量未列明，每条可能对应多个保护壳。"
+      ]
+    },
+    {
+      "id": "iphone-7-plus-silicone-cases",
+      "name": "iPhone 7 Plus 硅胶保护壳",
+      "parent_id": "iphone-7-plus-matte-black",
+      "brand": null,
+      "category": "保护壳",
+      "record_basis": "user_confirmed_accessory_ownership",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "quantity": null,
+        "confirmation": "owned_or_previously_owned"
+      },
+      "configuration": {
+        "material": "硅胶",
+        "color": null,
+        "variant": null
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "retail_part_number": null
+      },
+      "source_statement": "几代 iPhone 除了现在的 iPhone 17 之外，都有各家的硅胶保护壳",
+      "recorded_at": "2026-10-22",
+      "model_work_status": "deferred_by_user",
+      "notes": [
+        "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。",
+        "按当前已登记的 iPhone 清单逐机归属；各家品牌、款式、颜色及数量未列明，每条可能对应多个保护壳。"
+      ]
+    },
+    {
+      "id": "iphone-5s-silicone-cases",
+      "name": "iPhone 5s 硅胶保护壳",
+      "parent_id": "iphone-5s-silver",
+      "brand": null,
+      "category": "保护壳",
+      "record_basis": "user_confirmed_accessory_ownership",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "quantity": null,
+        "confirmation": "owned_or_previously_owned"
+      },
+      "configuration": {
+        "material": "硅胶",
+        "color": null,
+        "variant": null
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "retail_part_number": null
+      },
+      "source_statement": "几代 iPhone 除了现在的 iPhone 17 之外，都有各家的硅胶保护壳",
+      "recorded_at": "2026-10-22",
+      "model_work_status": "deferred_by_user",
+      "notes": [
+        "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。",
+        "按当前已登记的 iPhone 清单逐机归属；各家品牌、款式、颜色及数量未列明，每条可能对应多个保护壳。"
+      ]
+    },
+    {
+      "id": "iphone-x-silicone-cases",
+      "name": "iPhone X 硅胶保护壳",
+      "parent_id": "iphone-x-silver",
+      "brand": null,
+      "category": "保护壳",
+      "record_basis": "user_confirmed_accessory_ownership",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "quantity": null,
+        "confirmation": "owned_or_previously_owned"
+      },
+      "configuration": {
+        "material": "硅胶",
+        "color": null,
+        "variant": null
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "retail_part_number": null
+      },
+      "source_statement": "几代 iPhone 除了现在的 iPhone 17 之外，都有各家的硅胶保护壳",
+      "recorded_at": "2026-10-22",
+      "model_work_status": "deferred_by_user",
+      "notes": [
+        "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。",
+        "按当前已登记的 iPhone 清单逐机归属；各家品牌、款式、颜色及数量未列明，每条可能对应多个保护壳。"
+      ]
+    },
+    {
+      "id": "iphone-13-pro-apple-magsafe-battery",
+      "name": "Apple MagSafe 磁吸充电宝",
+      "parent_id": "iphone-13-pro",
+      "brand": "Apple",
+      "category": "外接电池",
+      "record_basis": "user_confirmed_accessory_ownership",
+      "ownership": {
+        "status": "unknown",
+        "acquired": null,
+        "quantity": null,
+        "confirmation": "owned_or_previously_owned"
+      },
+      "configuration": {
+        "material": null,
+        "color": null,
+        "variant": null
+      },
+      "identification": {
+        "confirmed_unit_model_number": null,
+        "retail_part_number": null
+      },
+      "source_statement": "iPhone 13 Pro 有官方的 MagSafe 磁吸充电宝",
+      "recorded_at": "2026-10-22",
+      "model_work_status": "deferred_by_user",
+      "notes": [
+        "用户已确认拥有或拥有过；当前使用状态及购入时间不从主设备推定。"
+      ]
+    }
+  ],
+  "accessory_coverage_notes": [
+    {
+      "parent_id": "iphone-17",
+      "accessory_category": "silicone_case",
+      "source_statement": "几代 iPhone 除了现在的 iPhone 17 之外，都有各家的硅胶保护壳",
+      "note": "本次硅胶保护壳归属明确排除 iPhone 17；不据此推定 iPhone 17 没有其他类型配件。",
+      "recorded_at": "2026-10-22"
+    }
+  ]
+}
